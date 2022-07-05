@@ -1,5 +1,5 @@
 insert into adotame.user(id_user, name, email, phone)
-values(123456, 'joao paulo sousa', 'jps@gmail.com', 929356735);
+values(123456, 'joao paulo', 'jps@gmail.com', 929356735);
 
 insert into adotame.login(id_login, username, password, id_user)
 values(123, 'jsousa', 'sousa123', 123456);
@@ -31,13 +31,4 @@ insert into adotame.request_type(id_request_type, name)
 values(321, 'report');
 
 insert into adotame.request(id_request, username, date_request, id_user, id_request_type)
-values(321, 'joao paulo sousa', '2022-06-28', 123456, 321);
-
-
-
-
-
-
-
-
-
+values(321, 'joao paulo', '2022-06-28', 123456, 321);
