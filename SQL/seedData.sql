@@ -16,17 +16,33 @@ insert into adotame.profile(id_profile, name, id_login) values (1, 'admin', 111)
 insert into adotame.login_profile(id_profile, id_login) values(1, 111);
 
 
-insert into adotame.permission(id_permission, name) values (1, 'Gerir_ValidarPedidos_FazerPedido_VerCatalogos_Adotar_Apadrinhar_Donativos');
-insert into adotame.permission(id_permission, name) values (2, 'FazerPedido_VerCatalogos_Adotar_Apadrinhar_Donativos');
-insert into adotame.permission(id_permission, name) values (3, 'VerCatalogos_Donativos');
+insert into adotame.permission(id_permission, name) values (1, 'Gerir Sistema');
+insert into adotame.permission(id_permission, name) values (2, 'Validar Pedidos');
+insert into adotame.permission(id_permission, name) values (3, 'Reportar Desaparecido');
+insert into adotame.permission(id_permission, name) values (4, 'Comunicar Avisto Desaparecido');
+insert into adotame.permission(id_permission, name) values (5, 'Adicionar Animal');
+insert into adotame.permission(id_permission, name) values (6, 'Ver Catalogos');
+insert into adotame.permission(id_permission, name) values (7, 'Ver Caracteristicas dos Animais');
+insert into adotame.permission(id_permission, name) values (8, 'Adotar');
+insert into adotame.permission(id_permission, name) values (9, 'Apadrinhar');
+insert into adotame.permission(id_permission, name) values (10, 'Donativos');
 
 
 insert into adotame.profile_permission(id_permission, id_profile) values(1, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(2, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(3, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(4, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(5, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(6, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(7, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(8, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(9, 1);
+insert into adotame.profile_permission(id_permission, id_profile) values(10, 1);
 
 
-insert into adotame.catalog(id_catalog, name) values (1, 'adotar_apadrinhar');
-insert into adotame.catalog(id_catalog, name) values (2, 'desaparecidos');
-insert into adotame.catalog(id_catalog, name) values (3, 'adotados_apadrinhados');
+insert into adotame.catalog(id_catalog, name) values (1, 'Adotar e Apadrinhar');
+insert into adotame.catalog(id_catalog, name) values (2, 'Desaparecidos');
+insert into adotame.catalog(id_catalog, name) values (3, 'Adotados e Apadrinhados');
 
 
 insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, state, cares) values (1, 'Capuchin',      'dog',      'https://images.dog.ceo/breeds/finnish-lapphund/mochilamvan.jpg', 'Male',       12,     'small',          'straight', 'Bulldog',           'Green',     'nao tem',  'pedigree', 'very good', 'change water erery day');
@@ -117,4 +133,7 @@ insert into adotame.catalog_animal(id_animal, id_catalog) values(41, 2);
 insert into adotame.catalog_animal(id_animal, id_catalog) values(42, 2);
 
 
-insert into adotame.request_type(id_request_type, name) values(1, 'avistar');
+insert into adotame.request_type(id_request_type, name) values(1, 'Avistar Desaparecido');
+insert into adotame.request_type(id_request_type, name) values(2, 'Reportar Desaparecido');
+insert into adotame.request_type(id_request_type, name) values(3, 'Adoção');
+insert into adotame.request_type(id_request_type, name) values(4, 'Apadrinhamento');
