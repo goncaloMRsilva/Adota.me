@@ -7,11 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/AdotarApadrinhar-caes', function(req, res, next) {
-  res.render('catalog/index', { title: 'Express' });
+  res.render('catalog/list', { id: req.params.id });
 });
 
 router.get('/AdotarApadrinhar-gatos', function(req, res, next) {
-  res.render('catalog/index', { title: 'Express' });
+  res.render('catalog/list', { title: 'Express' });
 });
 
 module.exports = router;
