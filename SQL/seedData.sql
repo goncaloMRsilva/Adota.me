@@ -6,7 +6,6 @@ v_id_login adotame.login.id_login%type;
 v_id_profile adotame.profile.id_profile%type;
 v_id_catalog adotame.catalog.id_catalog%type;
 v_id_animal adotame.animal.id_animal%type;
-v_id_request_type adotame.request_type.id_request_type%type;
 
 begin
 
@@ -132,18 +131,14 @@ RETURNING id_animal into v_id_animal;
 
 insert into adotame.catalog_animal(id_catalog, id_animal)
 select id_catalog, id_animal
-from adotame.catalog, adotame.animal; 
+from adotame.catalog, adotame.animal
+where id_catalog = v_id_catalog; 
 
 
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Avistar Desaparecido')
-RETURNING id_request_type into v_id_request_type;
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Reportar Desaparecido')
-RETURNING id_request_type into v_id_request_type;
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adotar')
-RETURNING id_request_type into v_id_request_type;
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Apadrinhar')
-RETURNING id_request_type into v_id_request_type;
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adicionar Animal')
-RETURNING id_request_type into v_id_request_type;
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Avistar Desaparecido');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Reportar Desaparecido');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adotar');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Apadrinhar');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adicionar Animal');
 
 end $$;
