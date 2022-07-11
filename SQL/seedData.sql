@@ -42,8 +42,6 @@ insert into adotame.catalog(id_catalog, name) values (gen_random_uuid(), 'Adotar
 RETURNING id_catalog into v_id_catalog;
 insert into adotame.catalog(id_catalog, name) values (gen_random_uuid(), 'Desaparecidos')
 RETURNING id_catalog into v_id_catalog;
-insert into adotame.catalog(id_catalog, name) values (gen_random_uuid(), 'Adotados e Apadrinhados')
-RETURNING id_catalog into v_id_catalog;
 
 
 insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, state, cares) values (gen_random_uuid(), 'Capuchin',      'dog',      'https://images.dog.ceo/breeds/finnish-lapphund/mochilamvan.jpg', 'Male',       12,     'small',          'straight', 'Bulldog',           'Green',     'nao tem',  'pedigree', 'very good', 'change water erery day')
