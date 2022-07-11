@@ -58,8 +58,8 @@ create table if not exists adotame.animal(
 );
 
 create table if not exists adotame.catalog_animal(
-    id_animal uuid references adotame.animal (id_animal),
-    id_catalog uuid references adotame.catalog (id_catalog)
+    id_catalog uuid references adotame.catalog (id_catalog),
+    id_animal uuid references adotame.animal (id_animal)
 );
 
 create table if not exists adotame.request_type(

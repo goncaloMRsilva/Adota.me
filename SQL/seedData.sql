@@ -132,48 +132,9 @@ insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur
 RETURNING id_animal into v_id_animal;
 
 
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
-insert into adotame.catalog_animal(id_animal, id_catalog) values(v_id_animal, v_id_catalog);
+insert into adotame.catalog_animal(id_catalog, id_animal)
+select id_catalog, id_animal
+from adotame.catalog, adotame.animal; 
 
 
 insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Avistar Desaparecido')
