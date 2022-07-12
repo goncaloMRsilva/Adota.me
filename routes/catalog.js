@@ -6,11 +6,19 @@ router.get('/', function(req, res, next) {
   res.render('catalog/index', { title: 'Express' });
 });
 
-router.get('/AdotarApadrinhar-caes', function(req, res, next) {
-  res.render('catalog/list', { id: req.params.id });
+router.get('/cats', function(req, res, next) {
+  res.render('catalog/catsList', { id: req.params.id });
 });
 
-router.get('/AdotarApadrinhar-gatos', function(req, res, next) {
+router.get('/dogs', function(req, res, next) {
+  res.render('catalog/dogsList', { title: 'Express' });
+});
+
+router.get('/missing', function(req, res, next) {
+  res.render('catalog/missOnesList', { title: 'Express' });
+});
+
+router.get('/list', function(req, res, next) {
   res.render('catalog/list', { title: 'Express' });
 });
 
