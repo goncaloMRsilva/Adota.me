@@ -3,19 +3,19 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('user/index', { title: 'Express' });
+  res.render('profile/index', { title: 'Express' });
 });
 
 router.put('/update/:id', function(req, res, next) {
-    res.render('user/create-update', { id: req.params.id });
+    res.render('profile/create-update', { id: req.params.id });
   });
 
   router.post('/create', function(req, res, next) {
-    res.render('user/create-update', { id : null });
+    res.render('profile/create-update', { id : null });
   });
 
   router.get('/list', function(req, res, next) {
-    res.render('user/list', { title: 'Express' });
+    res.render('profile/list', { title: 'Express' });
   });
 
 module.exports = router;
