@@ -7,8 +7,12 @@ v_id_profile adotame.profile.id_profile%type;
 v_id_catalog adotame.catalog.id_catalog%type;
 v_id_animal adotame.animal.id_animal%type;
 
+v_id_profile_guest adotame.profile.id_profile%type;
+v_id_permission adotame.permission.id_permission%type;
+
 begin
 
+--admin
 insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'admin', 'admin@gmail.com', 909897987)
 RETURNING id_user into v_id_user;
 
@@ -19,6 +23,24 @@ insert into adotame.profile(id_profile, name, id_login) values (gen_random_uuid(
 RETURNING id_profile into v_id_profile;
 
 insert into adotame.login_profile(id_profile, id_login) values(v_id_profile, v_id_login);
+--
+
+--guest
+insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'guest', 'guest@guest.com', 286594743)
+returning id_user into v_id_user;
+
+insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'guest', 'guest123', v_id_user)
+returning id_login into v_id_login;
+
+insert into adotame.profile(id_profile, name, id_login) values(gen_random_uuid(), 'guest', v_id_login)
+returning id_profile into v_id_profile;
+
+insert into adotame.login_profile(id_profile, id_login) values(v_id_profile, v_id_login);
+--
+
+--user
+
+--
 
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Gerir Sistema');
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Validar Pedidos');
@@ -31,6 +53,7 @@ insert into adotame.permission(id_permission, name) values (gen_random_uuid(), '
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Apadrinhar');
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Donativos');
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Ver Historico de notificacoes');
+
 
 insert into adotame.profile_permission(id_permission, id_profile)
 select id_permission, id_profile
@@ -132,7 +155,7 @@ RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal)
 select id_catalog, id_animal
 from adotame.catalog, adotame.animal
-where id_catalog = v_id_catalog; 
+where id_catalog = v_id_catalog;
 
 
 insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Avistar Desaparecido');
