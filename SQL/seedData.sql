@@ -10,6 +10,8 @@ v_id_animal adotame.animal.id_animal%type;
 v_id_permission adotame.permission.id_permission%type;
 v_id_profile_guest adotame.profile.id_profile%type;
 
+v_id_profile_commom_user adotame.profile.id_profile%type;
+
 begin
 
 --admin
@@ -39,32 +41,67 @@ insert into adotame.login_profile(id_profile, id_login) values(v_id_profile_gues
 --
 
 --user
+insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'user', 'user@user.com', 984759408)
+returning id_user into v_id_user;
 
+insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'user', 'user123', v_id_user)
+returning id_login into v_id_login;
+
+insert into adotame.profile(id_profile, name, id_login) values(gen_random_uuid(), 'user', v_id_login)
+returning id_profile into v_id_profile_commom_user;
+
+insert into adotame.login_profile(id_profile, id_login) values(v_id_profile_commom_user, v_id_login);
 --
 
+--permissions
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Gerir Sistema');
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Validar Pedidos');
-insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Reportar Desaparecido');
-insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Comunicar Avisto Desaparecido');
-insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Adicionar Animal');
+
+insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Reportar Desaparecido')
+returning id_permission into v_id_permission;
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
+insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Comunicar Avisto Desaparecido')
+returning id_permission into v_id_permission;
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
+insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Adicionar Animal')
+returning id_permission into v_id_permission;
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Ver Catalogos')
 returning id_permission into v_id_permission;
 insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_guest);
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Ver Caracteristicas dos Animais')
 returning id_permission into v_id_permission;
 insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_guest);
-insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Adotar');
-insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Apadrinhar');
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
+insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Adotar')
+returning id_permission into v_id_permission;
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
+insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Apadrinhar')
+returning id_permission into v_id_permission;
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+
 insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Donativos')
 returning id_permission into v_id_permission;
 insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_guest);
-insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Ver Historico de notificacoes');
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
 
+insert into adotame.permission(id_permission, name) values (gen_random_uuid(), 'Ver Historico de notificacoes')
+returning id_permission into v_id_permission;
+insert into adotame.profile_permission(id_permission, id_profile) values(v_id_permission, v_id_profile_commom_user);
+--
 
 insert into adotame.profile_permission(id_permission, id_profile)
 select id_permission, id_profile
 from adotame.permission, adotame.profile
-where id_profile != v_id_profile_guest;
+where id_profile != v_id_profile_guest
+and id_profile != v_id_profile_commom_user;
 
 
 insert into adotame.catalog(id_catalog, name) values (gen_random_uuid(), 'Adotar e Apadrinhar')
