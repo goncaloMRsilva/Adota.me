@@ -10,6 +10,12 @@ var loginRouter =     require("./routes/login");
 var catalogRouter = require("./routes/catalog");
 var animalRouter = require("./routes/animal");
 var requestRouter = require("./routes/request");
+var adoptRouter = require("./routes/adopt");
+var donateRouter = require("./routes/donate");
+var missingRouter = require("./routes/missing");
+var notificationRouter = require("./routes/notification");
+var permissionRouter = require("./routes/permission");
+var profileRouter = require("./routes/profile");
 
 var app = express();
 
@@ -30,6 +36,12 @@ app.use("/login", loginRouter);
 app.use("/catalog", catalogRouter);
 app.use("/animal", animalRouter);
 app.use("/request", requestRouter);
+app.use("/adopt", adoptRouter);
+app.use("/donate", donateRouter);
+app.use("/missing", missingRouter);
+app.use("/notification", notificationRouter);
+app.use("/permission", permissionRouter);
+app.use("/profile", profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

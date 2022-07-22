@@ -11,7 +11,7 @@ router.put('/update/:id', function(req, res, next) {
   });
 
   router.post('/create', function(req, res, next) {
-    res.render('profile/create-update', { id : null });
+    res.render('profile/create-update');
   });
 
   router.get('/list', function(req, res, next) {
