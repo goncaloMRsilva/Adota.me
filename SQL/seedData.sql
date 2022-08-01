@@ -22,7 +22,7 @@ RETURNING id_user into v_id_user;
 insert into adotame.login(id_login, username, password, id_user) values (gen_random_uuid(), 'admin', 'admin123', v_id_user)
 RETURNING id_login into v_id_login;
 
-insert into adotame.profile(id_profile, name, id_login) values (gen_random_uuid(), 'admin', v_id_login)
+insert into adotame.profile(id_profile, name) values (gen_random_uuid(), 'admin')
 RETURNING id_profile into v_id_profile;
 
 insert into adotame.login_profile(id_profile, id_login) values(v_id_profile, v_id_login);
@@ -35,7 +35,7 @@ returning id_user into v_id_user;
 insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'guest', 'guest123', v_id_user)
 returning id_login into v_id_login;
 
-insert into adotame.profile(id_profile, name, id_login) values(gen_random_uuid(), 'guest', v_id_login)
+insert into adotame.profile(id_profile, name) values(gen_random_uuid(), 'guest')
 returning id_profile into v_id_profile_guest;
 
 insert into adotame.login_profile(id_profile, id_login) values(v_id_profile_guest, v_id_login);
@@ -48,7 +48,7 @@ returning id_user into v_id_user;
 insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'user', 'user123', v_id_user)
 returning id_login into v_id_login;
 
-insert into adotame.profile(id_profile, name, id_login) values(gen_random_uuid(), 'user', v_id_login)
+insert into adotame.profile(id_profile, name) values(gen_random_uuid(), 'user')
 returning id_profile into v_id_profile_commom_user;
 
 insert into adotame.login_profile(id_profile, id_login) values(v_id_profile_commom_user, v_id_login);

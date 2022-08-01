@@ -1,4 +1,6 @@
 create schema if not exists adotame;
+--CREATE EXTENSION pgcrypto;
+
 
 create table if not exists adotame.user(
     id_user uuid primary key,
@@ -16,8 +18,7 @@ create table if not exists adotame.login(
 
 create table if not exists adotame.profile(
     id_profile uuid primary key,
-    name varchar(250) not null,
-    id_login uuid references adotame.login (id_login)
+    name varchar(250) not null
 );
 
 create table if not exists adotame.login_profile(
@@ -46,15 +47,15 @@ create table if not exists adotame.animal(
     type varchar(100) not null,    /* cao ou gato?*/
     photo varchar(500) not null,
     gender varchar(100) not null,
-    age bigint not null,
-    size varchar (100) not null,
-    fur varchar(100) not null,    /*pelagem*/
-    breed varchar(300) not null,   /*raca*/
+    age int not null,
+    size varchar (100) null,
+    fur varchar(100) null,    /*pelagem*/
+    breed varchar(300) null,   /*raca*/
     color varchar(250) null,
     vaccines varchar(500) null,
     portion varchar(300) null,
-    state varchar(500) not null,
-    cares varchar(1000) not null
+    state varchar(500) null,
+    cares varchar(1000) null
 );
 
 create table if not exists adotame.catalog_animal(
