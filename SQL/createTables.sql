@@ -70,8 +70,8 @@ create table if not exists adotame.request_type(
 
 create table if not exists adotame.request(
     id_request uuid primary key,
-    username varchar(250) not null,
     date_request date not null,
+    status varchar(100) check (status in('Aproved', 'Reproved', 'Pending')),
     id_user uuid references adotame.user (id_user),
     id_request_type uuid references adotame.request_type (id_request_type)
 );
