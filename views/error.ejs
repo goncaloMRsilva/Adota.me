@@ -1,4 +1,16 @@
-<h1><%= message %></h1>
-<h1><%= mensagem %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<% include('partials/head', {title}) %>
+
+  <body>
+    <h1>
+      <%= message %>
+    </h1>
+    <h1>
+      <%= mensagem %>
+    </h1>
+    <h2>
+      <%= error.status %>
+    </h2>
+    <pre><%= error.stack %></pre>
+
+    <% include partials/scripts %>
+  </body>
