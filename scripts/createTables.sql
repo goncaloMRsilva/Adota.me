@@ -1,6 +1,4 @@
 create schema if not exists adotame;
---CREATE EXTENSION pgcrypto;
-
 
 create table if not exists adotame.user(
     id_user uuid primary key,
