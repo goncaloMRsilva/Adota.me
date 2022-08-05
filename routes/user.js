@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('user/index', { title: 'Express' });
+  res.render('user/index');
 });
 
 router.put('/update/:id', function(req, res, next) {
