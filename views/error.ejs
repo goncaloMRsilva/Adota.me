@@ -1,13 +1,14 @@
-<% include('partials/head'); %>
+<% include('partials/head', {title: 'Error page'}); %>
 
   <body>
     <h1>
       <%= message %>
     </h1>
     <h2>
-      <%= error.status %>
+      status
+      <%= error.severity %>
     </h2>
-    <pre><%= error.stack %></pre>
+    <pre> stack<%= error.stack %></pre>
 
     <% include partials/scripts %>
   </body>

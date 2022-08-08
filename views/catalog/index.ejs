@@ -1,16 +1,17 @@
 <%- include('../partials/head', {title: 'Adopt list'}) %>
 
 <body>
-
-  <% if(type === "cats"){ %> 
-      <h1><%= type %> catalog</h1>
-    <% }else if(type === "dogs"){ %>
-      <h1><%= type %> catalog</h1>
-    <% }else if(type === "missing"){ %>
-      <h1><%= type %> catalog</h1>
-    <% }else{ %>
-      <h1>Cannot find <em><%= type %></em></h1>
-  <% } %>   
+  <img src="/images/icons/paper.svg" alt="iconPaper">
+  <ul>
+    <% animals.forEach(function(animal){ %>
+      <li>
+        <%= animal.name  %>
+        <%=  animal.type %>  
+        <%= animal.gender %>
+        <%= animal.age %>
+      </li>
+    <% }); %> 
+  </ul> 
 
   <% include ../partials/scripts %>
 </body>
