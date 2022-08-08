@@ -3,7 +3,11 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('animal/list', {nome: 'bobby'});
+  var animal = [
+    {name: 'Bobby', type: 'dog', gender: 'M', age: 13}
+  ];
+
+  res.render('animal/list', {animals: animal});
 });
 
 
