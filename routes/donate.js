@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('donate/index');
 });
 
-router.post('/create', function(req, res, next) {
+router.get('/create', function(req, res, next) {
   res.render('donate/create-update');
 });
 

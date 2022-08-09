@@ -6,9 +6,9 @@ var router = express.Router();
 router.get('/:type', function(req, res, next) {
   var type = req.params.type;
   var catalog = req.query.catalog ||  "Adotar e Apadrinhar";
-  if ( catalog !== 'Adotar e Apadrinhar' || catalog !== "Desaparecido") {
-    catalog = "Adotar e Apadrinhar";
-  }
+  // if ( catalog !== 'Adotar e Apadrinhar' || catalog !== "Desaparecido") {
+  //   catalog = "Adotar e Apadrinhar";
+  // }
 
   db.any(`select a.* from adotame.animal a 
   inner join adotame.catalog_animal ca 
@@ -20,11 +20,11 @@ router.get('/:type', function(req, res, next) {
   .then(rows => {
     console.log(rows);
     res.render('catalog/index', {type: req.params.type, animals: rows});       
-})
-.catch(err => {
+  })
+  .catch(err => {
     console.log(err);
     res.render('error', {error: err, message: 'Not possible render this page'});
-})
+  })
 
 });
 

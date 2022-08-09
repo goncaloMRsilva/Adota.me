@@ -11,12 +11,12 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/create', function(req, res, next) {
+router.get('/create', function(req, res, next) {
   res.render('animal/create-update');
 });
 
 
-router.put('/update/:id', function(req, res, next) {
+router.get('/update/:id', function(req, res, next) {
   res.render('animal/create-update');
 });
 

@@ -6,11 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('profile/index', { title: 'Express' });
 });
 
-router.put('/update/:id', function(req, res, next) {
+router.get('/update/:id', function(req, res, next) {
     res.render('profile/create-update', { id: req.params.id });
   });
 
-  router.post('/create', function(req, res, next) {
+  router.get('/create', function(req, res, next) {
     res.render('profile/create-update');
   });
 

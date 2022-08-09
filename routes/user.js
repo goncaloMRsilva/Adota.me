@@ -6,11 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('user/index');
 });
 
-router.put('/update/:id', function(req, res, next) {
+router.get('/update/:id', function(req, res, next) {
     res.render('user/create-update', { id: req.params.id });
 });
 
-router.post('/create', function(req, res, next) {
+router.get('/create', function(req, res, next) {
     res.render('user/create-update');
 });
 
