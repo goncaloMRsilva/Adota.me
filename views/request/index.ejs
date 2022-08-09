@@ -1,2 +1,14 @@
-<h1>ola</h1>
-<p>This is the request index page</p>
+<%- include('../partials/head', {title: 'Requests list'}) %>
+
+<body>
+
+    <ul>
+        <% requests.forEach(function(request){ %>
+            <li>
+                <%= request.name %> 
+            </li>
+        <% }); %> 
+    </ul>    
+
+    <% include ../partials/scripts %>
+</body>

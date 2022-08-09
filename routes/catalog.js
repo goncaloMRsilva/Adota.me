@@ -25,7 +25,6 @@ router.get('/:type', function(req, res, next) {
     console.log(err);
     res.render('error', {error: err, message: 'Not possible render this page'});
   })
-
 });
 
 
