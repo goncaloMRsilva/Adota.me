@@ -16,6 +16,7 @@ var missingRouter = require("./routes/missing");
 var notificationRouter = require("./routes/notification");
 var permissionRouter = require("./routes/permission");
 var profileRouter = require("./routes/profile");
+var registryRouter = require("./routes/registry");
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use("/missing", missingRouter);
 app.use("/notification", notificationRouter);
 app.use("/permission", permissionRouter);
 app.use("/profile", profileRouter);
+app.use("/registry", registryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
