@@ -16,7 +16,7 @@ v_id_catalog_missing adotame.catalog.id_catalog%type;
 begin
 
 --admin
-insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'admin', 'admin@gmail.com', 909897987)
+insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'admin', 'admin@admin.com', 909897987)
 RETURNING id_user into v_id_user;
 
 insert into adotame.login(id_login, username, password, id_user) values (gen_random_uuid(), 'admin', 'admin123', v_id_user)

@@ -3,8 +3,8 @@ create schema if not exists adotame;
 create table if not exists adotame.user(
     id_user uuid primary key,
     name varchar(250) not null,
-    email varchar(100) not null,
-    phone bigint not null
+    email varchar(100) unique not null,
+    phone bigint null
 );
 
 create table if not exists adotame.login(

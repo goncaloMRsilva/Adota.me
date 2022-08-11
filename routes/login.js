@@ -1,23 +1,23 @@
 var express = require('express');
 const db = require('../database');
 var router = express.Router();
-
+const bcrypt = require("bcrypt");
 
 router.get('/', function(req, res, next) {
-  var email = req.query.email;
-  var password = req.query.password;
+  res.render('login/index');
+});
 
-  db.any(`select $1, $2
-  from adotame.user u , adotame.login l
-  where u.id_user = l.id_user`, [email, password])
-  .then(rows => {
+router.post('/', function(req, res, next){
+
+  const bodyEmail = req.body.email;
+  console.log(bodyEmail);
+
+
+  db.any(`select u.* from adotame.user u
+          where u.email = $1`, [bodyEmail]).then(rows =>{
     console.log(rows);
-    res.render('login/index', {email, password});
-  })
-  .catch(err => {
-    console.log(err);
-    res.render('error', {error: err, message: 'Not possible render this page'});
-  })
+  });
+
 });
 
 router.get('/update/:id', function(req, res, next) {
