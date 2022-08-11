@@ -8,16 +8,23 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next){
-
   const bodyEmail = req.body.email;
+  const Password = req.body.password;
   console.log(bodyEmail);
+  console.log(Password);
 
 
-  db.any(`select u.* from adotame.user u
-          where u.email = $1`, [bodyEmail]).then(rows =>{
-    console.log(rows);
+  db.any(`select * from adotame.user u
+          inner join adotame.login l on l.id_user = u.id_user
+          where u.email = $1
+          and l.password = $2`, [bodyEmail, Password]).then(rows =>{
+    
+    if (rows.length > 0) {
+      res.send("Welcome");
+    }else{
+      res.send("Invalid User");
+    }
   });
-
 });
 
 router.get('/update/:id', function(req, res, next) {
