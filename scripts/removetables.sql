@@ -1,3 +1,4 @@
+drop extension pgcrypto;
 drop table adotame.profile_permission;
 drop table adotame.catalog_animal;
 drop table adotame.login_profile;

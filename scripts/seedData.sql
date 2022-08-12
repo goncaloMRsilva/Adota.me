@@ -19,7 +19,7 @@ begin
 insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'admin', 'admin@admin.com', 909897987)
 RETURNING id_user into v_id_user;
 
-insert into adotame.login(id_login, username, password, id_user) values (gen_random_uuid(), 'admin', 'admin123', v_id_user)
+insert into adotame.login(id_login, username, password, id_user) values (gen_random_uuid(), 'admin', crypt('admin123', gen_salt('bf')), v_id_user)
 RETURNING id_login into v_id_login;
 
 insert into adotame.profile(id_profile, name) values (gen_random_uuid(), 'admin')
@@ -32,7 +32,7 @@ insert into adotame.login_profile(id_profile, id_login) values(v_id_profile, v_i
 insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'guest', 'guest@guest.com', 286594743)
 returning id_user into v_id_user;
 
-insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'guest', 'guest123', v_id_user)
+insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'guest', crypt('guest123', gen_salt('bf')), v_id_user)
 returning id_login into v_id_login;
 
 insert into adotame.profile(id_profile, name) values(gen_random_uuid(), 'guest')
@@ -45,7 +45,7 @@ insert into adotame.login_profile(id_profile, id_login) values(v_id_profile_gues
 insert into adotame.user(id_user, name, email, phone) values(gen_random_uuid(), 'user', 'user@user.com', 984759408)
 returning id_user into v_id_user;
 
-insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'user', 'user123', v_id_user)
+insert into adotame.login(id_login, username, password, id_user) values(gen_random_uuid(), 'user', crypt('user123', gen_salt('bf')), v_id_user)
 returning id_login into v_id_login;
 
 insert into adotame.profile(id_profile, name) values(gen_random_uuid(), 'user')
