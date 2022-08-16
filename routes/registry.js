@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post("/", function(req,res, next) {
-  var name = req.body.name;
+  var frontName = req.body.name;
   var frontEmail = req.body.email;
   var frontEmail1 = req.body.email1;
   var frontPassword = req.body.password;
@@ -21,7 +21,15 @@ router.post("/", function(req,res, next) {
     res.send("Password don`t match");
   }
 
-  res.send(`HI ${name}`);
+  db.one(`insert into adotame.user(id_user, name, email, phone) values($1, $2, $3, $4)`, [gen_random_uuid(), frontName, frontEmail], 12345).then(rows => {
+    console.log(rows);
+  });
+
+  db.one(`insert into adotame.login(id_login, username, password) values($1, $2, $3)`, [gen_random_uuid(), frontEmail, frontPassword]).then(rows => {
+    console.log(rows);
+  });
+
+  res.send(`HI ${frontName}`);
 });
 
 module.exports = router;
