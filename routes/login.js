@@ -28,7 +28,7 @@ router.post('/', function(req, res, next){
       bcrypt.hash(password, saltRounds, function(err, hash) {
         console.log(hash);
         // bcrypt.compare(password2.password, hash, function(err, result) {
-          if (hash == password2.password) {
+          if (hash == password2) {
             res.send("welcome");
           }else{
             res.send("invalid user");
