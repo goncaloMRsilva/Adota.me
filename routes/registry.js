@@ -1,7 +1,7 @@
 var express = require('express');
 const db = require('../database');
 var router = express.Router();
-
+const crypto = require('crypto');
 
 router.get('/', function(req, res, next) {
   res.render('registry/index');
@@ -21,11 +21,11 @@ router.post("/", function(req,res, next) {
     res.send("Password don`t match");
   }
 
-  db.one(`insert into adotame.user(id_user, name, email, phone) values($1, $2, $3, $4)`, [gen_random_uuid(), frontName, frontEmail], 12345).then(rows => {
+  db.one(`insert into adotame.user(id_user, name, email, phone) values($1, $2, $3, $4)`, [crypto.randomUUID(), frontName, frontEmail, 12345]).then(rows => {
     console.log(rows);
   });
 
-  db.one(`insert into adotame.login(id_login, username, password) values($1, $2, $3)`, [gen_random_uuid(), frontEmail, frontPassword]).then(rows => {
+  db.one(`insert into adotame.login(id_login, username, password) values($1, $2, $3)`, [crypto.randomUUID(), frontEmail, frontPassword]).then(rows => {
     console.log(rows);
   });
 
