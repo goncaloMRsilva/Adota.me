@@ -2,10 +2,46 @@
 
   <body>
     
-    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
-    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
-    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+    <h1>ADOTA.ME</h1>
+    <p>Adicionar animal</p>
+
+    <form action="/create-update" method="post">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <select class="form-select" aria-label="Default select example" required>
+        <option selected>Selecione uma opção</option>
+        <option value="1">Cão</option>
+        <option value="2">Gato</option>
+      </select>
+
+      <div class="mb-3">
+        <label for="photo" class="form-label">Fotografia</label>
+        <input type="text" class="form-control" id="photo" name="photo" required>
+      </div>
+
+      <select class="form-select" aria-label="Default select example" required>
+        <option selected>Género</option>
+        <option value="1">Macho</option>
+        <option value="2">Fêmea</option>
+      </select>
+
+      <div class="mb-3">
+        <label for="age" class="form-label">Idade</label>
+        <input type="number" class="form-control" id="age" name="age" required>
+      </div>
+
+      <select class="form-select" aria-label="Default select example" required>
+        <option selected>Tamanho</option>
+        <option value="1">Macho</option>
+        <option value="2">Fêmea</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">Criar</button>
+    </form>
     
     <% include ../partials/scripts %>
-    
   </body>

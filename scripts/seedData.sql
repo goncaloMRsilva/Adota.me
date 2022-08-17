@@ -109,171 +109,171 @@ insert into adotame.catalog(id_catalog, name) values (gen_random_uuid(), 'Desapa
 RETURNING id_catalog into v_id_catalog_missing;
 
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Capuchin',       'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',       Now(),     'small',          'straight', 'Bulldog',           'Green',     'nao tem',  'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Capuchin',       'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',       Now(),     'pequeno',          'liso', 'Bulldog',           'castanho',     'nao tem',  'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Bushpig',       'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Female',     Now(),     'huge',            'straight', 'Bulldog',           'Goldenrod', 'nao tem',  'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Bushpig',       'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Femea',     Now(),     'grande',            'liso', 'Bulldog',           'castanho', 'nao tem',  'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eurasian',      'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',       Now(),      'medium',         'straight', 'Bulldog',           'Yellow',    'tem',      'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eurasian',      'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',       Now(),      'medio',         'liso', 'Bulldog',           'castanho',    'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Mocking',       'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Female',     Now(),     'small',          'straight', 'Retriever',         'Teal',      'nao tem',  'pedigree', 'good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Mocking',       'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Femea',     Now(),     'pequeno',          'liso', 'Retriever',         'castanho',      'nao tem',  'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Roadrunner',    'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Female',     Now(),      'small',          'straight', 'Retriever',         'Violet',    'tem',      'pedigree', 'good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Roadrunner',    'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Femea',     Now(),      'pequeno',          'liso', 'Retriever',         'castanho',    'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Red',           'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',       Now(),     'extra small',    'straight', 'Retriever',         'Yellow',    'tem',      'pedigree', 'good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Red',           'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',       Now(),     'muito pequeno',    'liso', 'Retriever',         'castanho',    'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Marshbird',     'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Female',     Now(),      'extra small',    'straight', 'Retriever',         'Crimson',   'tem',      'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Marshbird',     'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Femea',     Now(),      'muito pequeno',    'liso', 'Retriever',         'castanho',   'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Bleu',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Female',     Now(),      'extra small',    'straight', 'Chihuahua',         'Teal',      'tem',      'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Bleu',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Femea',     Now(),      'muito pequeno',    'liso', 'Chihuahua',         'castanho',      'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Hawk',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',       Now(),     'medium',         'straight', 'Chihuahua',         'Green',     'tem',      'pedigree', 'bad', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Hawk',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',       Now(),     'medio',         'liso', 'Chihuahua',         'castanho',     'tem',      'pedigree', 'nao saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Antelope',     'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',      Now(),     'small',          'straight', 'Chihuahua',         'Turquoise', 'tem',      'pedigree', 'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Antelope',     'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',      Now(),     'pequeno',          'liso', 'Chihuahua',         'preto',    'tem',      'pedigree', 'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Violet',       'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Female',     Now(),     'small',          'straight', 'Chihuahua',         'Indigo',    'nao tem',  'pedigree', 'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Violet',       'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Femea',     Now(),     'pequeno',          'liso', 'Chihuahua',         'preto',    'nao tem',  'pedigree', 'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eastern',      'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',       Now(),     'huge',            'straight', 'Chihuahua',         'Violet',    'nao tem',  'pedigree', 'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eastern',      'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',       Now(),     'grande',            'liso', 'Chihuahua',         'preto',    'nao tem',  'pedigree', 'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Emerald',      'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Female',     Now(),     'medium',         'straight', 'British-Shorthair',             'Maroon',    'nao tem',  'whiskas', 'good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Emerald',      'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Femea',     Now(),     'medio',         'liso', 'British-Shorthair',             'preto',    'nao tem',  'whiskas', 'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'American',     'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Male',       Now(),      'huge',            'straight', 'British-Shorthair',             'Goldenrod', 'nao tem',  'whiskas', 'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'American',     'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Macho',       Now(),      'grande',            'liso', 'British-Shorthair',             'preto', 'nao tem',  'whiskas', 'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tinamou',      'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Male',      Now(),     'extra huge',      'straight', 'British-Shorthair', 'Blue',      'nao tem',  'whiskas',  'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tinamou',      'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Macho',      Now(),     'muito grande',      'liso', 'British-Shorthair', 'preto',      'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Greater',      'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Male',       Now(),      'medium',         'straight', 'British-Shorthair', 'Indigo',    'nao tem',  'whiskas',  'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Greater',      'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Macho',       Now(),      'medio',         'liso', 'British-Shorthair', 'preto',    'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Turkey',       'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Female',     Now(),      'extra huge',      'straight', 'British-Shorthair', 'Fuscia',    'tem',      'whiskas',  'good', 'Technetium Tc-99m Generator')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Turkey',       'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Femea',     Now(),      'muito grande',      'liso', 'British-Shorthair', 'preto',    'tem',      'whiskas',  'saudavel', 'Technetium Tc-99m Generator')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Koala',        'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Female',     Now(),      'small',          'straight', 'British-Shorthair', 'Blue',      'nao tem',  'whiskas',  'good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Koala',        'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Femea',     Now(),      'pequeno',          'liso', 'British-Shorthair', 'preto',      'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Indian',       'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Male',       Now(),      'huge',            'straight', 'British-Shorthair', 'Turquoise', 'tem',      'whiskas',  'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Indian',       'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Macho',       Now(),      'grande',            'liso', 'British-Shorthair', 'preto', 'tem',      'whiskas',  'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Openbill',     'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Male',       Now(),      'medium',         'straight', 'British-Shorthair', 'Indigo',    'tem',      'whiskas',  'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Openbill',     'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Macho',       Now(),      'medio',         'liso', 'British-Shorthair', 'castanho',    'tem',      'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'African',      'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Female',    Now(),     'small',          'straight', 'British-Shorthair', 'Khaki',     'nao tem',  'whiskas',  'good', 'walk for pee')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'African',      'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Femea',    Now(),     'pequeno',          'liso', 'British-Shorthair', 'castanho',     'nao tem',  'whiskas',  'saudavel', 'walk for pee')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Cap',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Male',       Now(),     'small',          'straight', 'Bulldog',           'Green',     'nao tem',  'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Cap',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Macho',       Now(),     'pequeno',          'liso', 'Bulldog',           'castanho',     'nao tem',  'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Bus',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Female',     Now(),     'huge',            'straight', 'Bulldog',           'Goldenrod', 'nao tem',  'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Bus',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Femea',     Now(),     'grande',            'liso', 'Bulldog',           'castanho', 'nao tem',  'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eur',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Male',      Now(),      'medium',         'straight', 'Bulldog',           'Yellow',    'tem',      'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eur',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Macho',      Now(),      'medio',         'liso', 'Bulldog',           'castanho',    'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Moc',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Female',     Now(),     'small',          'straight', 'Retriever',         'Teal',      'nao tem',  'pedigree', 'good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Moc',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Femea',     Now(),     'pequeno',          'liso', 'Retriever',         'castanho',      'nao tem',  'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Roa',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Female',     Now(),      'small',          'straight', 'Retriever',         'Violet',    'tem',      'pedigree', 'good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Roa',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Femea',     Now(),      'pequeno',          'liso', 'Retriever',         'castanho',    'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Re',           'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Male',       Now(),     'extra small',    'straight', 'Retriever',         'Yellow',    'tem',      'pedigree', 'good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Re',           'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Macho',       Now(),     'muito pequeno',    'liso', 'Retriever',         'castanho',    'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Mar',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Female',     Now(),      'extra small',    'straight', 'Retriever',         'Crimson',   'tem',      'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Mar',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Femea',     Now(),      'muito pequeno',    'liso', 'Retriever',         'castanho',   'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Boo',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Female',     Now(),      'extra small',    'straight', 'Chihuahua',         'Teal',      'tem',      'pedigree', 'very good', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Boo',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Femea',     Now(),      'muito pequeno',    'liso', 'Chihuahua',         'castanho',      'tem',      'pedigree', 'saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Hwq',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Male',       Now(),     'medium',         'straight', 'Chihuahua',         'Green',     'tem',      'pedigree', 'bad', 'change water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Hwq',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Macho',       Now(),     'medio',         'liso', 'Chihuahua',         'castanho',     'tem',      'pedigree', 'nao saudavel', 'dar agua freca todos os dias')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ant',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',         'Male',       Now(),     'small',          'straight', 'Chihuahua',         'Turquoise', 'tem',      'pedigree', 'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ant',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',         'Macho',       Now(),     'pequeno',          'liso', 'Chihuahua',         'castanho', 'tem',      'pedigree', 'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Vio',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Female',     Now(),     'small',          'straight', 'Chihuahua',         'Indigo',    'nao tem',  'pedigree', 'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Vio',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',      'Femea',     Now(),     'pequeno',          'liso', 'Chihuahua',         'preto',    'nao tem',  'pedigree', 'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eas',          'dog',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Male',       Now(),     'huge',            'straight', 'Chihuahua',         'Violet',    'nao tem',  'pedigree', 'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eas',          'cao',      'https://images.dog.ceo/breeds/appenzeller/n02107908_691.jpg',       'Macho',       Now(),     'grande',            'liso', 'Chihuahua',         'preto',    'nao tem',  'pedigree', 'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eme',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Female',     Now(),     'medium',         'straight', 'British-Shorthair',             'Maroon',    'nao tem',  'whiskas', 'good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Eme',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Femea',     Now(),     'medio',         'liso', 'British-Shorthair',             'preto',    'nao tem',  'whiskas', 'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog_missing, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ame',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                  'Male',       Now(),      'huge',            'straight', 'British-Shorthair',             'Goldenrod', 'nao tem',  'whiskas', 'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ame',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                  'Macho',       Now(),      'grande',            'liso', 'British-Shorthair',             'preto', 'nao tem',  'whiskas', 'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tin',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Male',       Now(),     'extra huge',      'straight', 'British-Shorthair', 'Blue',      'nao tem',  'whiskas',  'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tin',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Macho',       Now(),     'muito grande',      'liso', 'British-Shorthair', 'preto',      'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Gre',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Male',       Now(),      'medium',         'straight', 'British-Shorthair', 'Indigo',    'nao tem',  'whiskas',  'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Gre',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Macho',       Now(),      'medio',         'liso', 'British-Shorthair', 'preto',    'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tur',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Female',     Now(),      'extra huge',      'straight', 'British-Shorthair', 'Fuscia',    'tem',      'whiskas',  'good', 'Technetium Tc-99m Generator')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tur',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Femea',     Now(),      'muito grande',      'liso', 'British-Shorthair', 'preto',    'tem',      'whiskas',  'saudavel', 'Technetium Tc-99m Generator')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Koa',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',               'Female',     Now(),      'small',          'straight', 'British-Shorthair', 'Blue',      'nao tem',  'whiskas',  'good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Koa',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',               'Femea',     Now(),      'pequeno',          'liso', 'British-Shorthair', 'preto',      'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ind',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Male',       Now(),      'huge',            'straight', 'British-Shorthair', 'Turquoise', 'tem',      'whiskas',  'bad', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ind',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Macho',       Now(),      'grande',            'liso', 'British-Shorthair', 'preto', 'tem',      'whiskas',  'nao saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ope',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                  'Male',      Now(),      'medium',         'straight', 'British-Shorthair', 'Indigo',    'tem',      'whiskas',  'very good', 'cuddles water erery day')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Ope',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                  'Macho',      Now(),      'medio',         'liso', 'British-Shorthair', 'preto',    'tem',      'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Afe',          'cat',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Female',     Now(),     'small',          'straight', 'British-Shorthair', 'Khaki',     'nao tem',  'whiskas',  'good', 'walk for pee')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Afe',          'gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Femea',     Now(),     'pequeno',          'liso', 'British-Shorthair', 'preto',     'nao tem',  'whiskas',  'saudavel', 'walk for pee')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 

@@ -43,11 +43,11 @@ create table if not exists adotame.catalog(
 create table if not exists adotame.animal(
     id_animal uuid primary key,
     name varchar(100) not null,
-    type varchar(100) check(type in('dog', 'cat', 'all')), 
+    type varchar(100) check(type in('cao', 'gato', 'todos')), 
     photo varchar(500) not null,
     gender varchar(100) not null,
     age date not null,
-    size varchar(50) check(size in('extra small', 'small', 'medium', 'huge', 'extra huge')),
+    size varchar(50) check(size in('muito pequeno', 'pequeno', 'medio', 'grande', 'muito grande')),
     fur varchar(100) null,    /*pelagem*/
     breed varchar(300) null,   /*raca*/
     color varchar(250) null,
