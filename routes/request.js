@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/create', function(req, res, next) {
-  res.render('request/create-update');
+  res.render('request/create-update', {title: 'create request'});
 });
 
 router.get('/list', function(req, res, next) {

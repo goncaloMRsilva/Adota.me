@@ -39,7 +39,7 @@ router.post("/", function (req, res, next) {
         );
       })
         .then(() => {
-          res.send(`Hi ${frontName}`);
+          res.send(`Welcome ${frontName}!`);
         })
         .catch((error) => {
           console.log("ERROR:", error);
