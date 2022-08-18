@@ -5,49 +5,49 @@
     <h1>ADOTA.ME</h1>
     <p>Adicionar animal</p>
 
-    <form action="/create-update" method="post">
+    <form action="/animal" method="post">
 
       <div class="mb-3">
         <label for="name" class="form-label">Nome</label>
         <input type="text" class="form-control" id="name" name="name" required>
       </div>
 
-      <select class="form-select" aria-label="Default select example" required>
-        <option selected>Selecione uma opção</option>
-        <option value="1">Cão</option>
-        <option value="2">Gato</option>
-      </select>
+      <div>
+        <label for="type">Tipo</label>
+        <select class="form-select" id="type" name="type" required>
+          <option value="1">Cao</option>
+          <option value="2">Gato</option>
+        </select>
+      </div>
 
       <div class="mb-3">
         <label for="photo" class="form-label">Fotografia</label>
         <input type="text" class="form-control" id="photo" name="photo" required>
       </div>
 
-      <select class="form-select" aria-label="Default select example" required>
-        <option selected>Género</option>
-        <option value="1">Macho</option>
-        <option value="2">Fêmea</option>
-      </select>
+      <div>
+        <label for="gender">Genero</label>
+        <select class="form-select" id="gender" name="gender" required>
+          <option value="1">Macho</option>
+          <option value="2">Femea</option>
+        </select>
+      </div>
 
       <div class="mb-3">
         <label for="age" class="form-label">Data de nascimento</label>
         <input type="date" class="form-control" id="age" name="age" required>
       </div>
 
-      <select class="form-select" aria-label="Default select example" required>
-        <option selected>Género</option>
-        <option value="1">Macho</option>
-        <option value="2">Fêmea</option>
-      </select>
-
-      <select class="form-select" aria-label="Default select example" required>
-        <option selected>Tamanho</option>
-        <option value="1">Muito pequeno</option>
-        <option value="2">Pequeno</option>
-        <option value="3">Medio</option>
-        <option value="4">Grande</option>
-        <option value="5">Muito grande</option>
-      </select>
+      <div>
+        <label for="size">Tamanho</label>
+        <select class="form-select" id="size" name="size" required>
+          <option value="1">Muito pequeno</option>
+          <option value="2">Pequeno</option>
+          <option value="3">Medio</option>
+          <option value="4">Grande</option>
+          <option value="5">Muito grande</option>
+        </select>
+      </div>
 
       <div class="mb-3">
         <label for="fur" class="form-label">Pelo</label>
