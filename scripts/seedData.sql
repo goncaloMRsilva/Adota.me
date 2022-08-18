@@ -284,10 +284,10 @@ insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v
 -- where id_catalog = v_id_catalog;
 
 
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Avistar Desaparecido');
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Reportar Desaparecido');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Avistar desaparecido');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Reportar desaparecido');
 insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adotar');
 insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Apadrinhar');
-insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adicionar Animal');
+insert into adotame.request_type(id_request_type, name) values(gen_random_uuid(), 'Adicionar animal');
 
 end $$;

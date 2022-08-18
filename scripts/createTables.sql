@@ -45,7 +45,7 @@ create table if not exists adotame.animal(
     name varchar(100) not null,
     type varchar(100) check(type in('Cao', 'Gato', 'Todos')), 
     photo varchar(500) not null,
-    gender varchar(100) not null,
+    gender varchar(100) check(gender in('Macho', 'Femea')),
     age date default current_date null,
     size varchar(50) check(size in('Muito pequeno', 'Pequeno', 'Medio', 'Grande', 'Muito grande')),
     fur varchar(100) null,    /*pelagem*/
@@ -64,13 +64,13 @@ create table if not exists adotame.catalog_animal(
 
 create table if not exists adotame.request_type(
     id_request_type uuid primary key,
-    name varchar(250) not null
+    name varchar(250) check(name in('Reportar desaparecido', 'Avistar desaparecido', 'Adicionar animal', 'Adotar', 'Apadrinhar'))
 );
 
 create table if not exists adotame.request(
     id_request uuid primary key,
     date_request date not null,
-    status varchar(100) check (status in('Aproved', 'Reproved', 'Pending')),
+    status varchar(100) check(status in('Aprovado', 'Reprovado', 'Pendente')),
     id_user uuid references adotame.user (id_user),
     id_request_type uuid references adotame.request_type (id_request_type)
 );
