@@ -7,7 +7,7 @@ router.get('/:animalId', function(req, res, next) {
 });
 
 router.get('/:animalId', function(req, res, next) {
-    res.render('adopt/patronize-form', {type: req.params.type});
+    res.render('adopt/list', {type: req.params.type});
 });
 
 

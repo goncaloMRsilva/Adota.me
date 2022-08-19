@@ -3,6 +3,15 @@ var router = express.Router();
 const db = require("../database");
 const crypto = require("crypto");
 
+// var today = new Date();
+// var d = today.getDay();
+// var m = today.getMonth();
+// var y = today.getFullYear();
+// today = d + '-' + m + '-' + y;
+// console.log(today);
+
+// var today = new Date();
+// console.log(today.toLocaleDateString());
 
 router.get('/', function(req, res, next) {
   var animal = db.any(`select * from adotame.animal`).then(rows => {
@@ -17,8 +26,14 @@ router.get('/create', function(req, res, next) {
 
 router.post('/create', function(req, res, next) {
   var name = req.body.name;
-  console.log(name);
   
+  // var birth = req.body.age;
+  // var dd = birth.Day;
+  // var mm = birth.Month;
+  // var yyyy = birth.FullYear;
+  // console.log(birth);
+  // console.log(dd + '-' + mm + '-' + yyyy);
+
   if((name.length >= 15) || (name.length < 2)) {
     res.send("Name is not valid");
   }else{
