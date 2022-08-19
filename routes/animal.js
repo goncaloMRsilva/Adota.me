@@ -5,11 +5,10 @@ const crypto = require("crypto");
 
 
 router.get('/', function(req, res, next) {
-  var animal = [
-    {name: 'Bobby', type: 'dog', gender: 'M', age: 13}
-  ];
-
-  res.render('animal/list', {animals: animal});
+  var animal = db.any(`select * from adotame.animal`).then(rows => {
+    console.log(rows);
+    res.render('animal/list', {animals: rows});
+  })
 });
 
 
@@ -20,9 +19,6 @@ router.get('/create', function(req, res, next) {
 router.post('/create', function(req, res, next) {
   var name = req.body.name;
   console.log(name);
-
-  var type = req.body.type;
-  console.log(type);
   
   if((name.length >= 15) || (name.length < 2)) {
     res.send("Name is not valid");

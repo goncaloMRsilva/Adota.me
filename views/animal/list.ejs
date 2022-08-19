@@ -2,13 +2,11 @@
 
 <body>
 
-    <ul>
+    <ul action="/animal" method="get">
       <% animals.forEach(function(animal){ %>
         <li>
           <%= animal.name  %>
           <%=  animal.type %>  
-          <%= animal.gender %>
-          <%= animal.age %>
         </li>
       <% }); %> 
     </ul>
