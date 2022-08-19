@@ -6,8 +6,8 @@ router.get('/:animalId', function(req, res, next) {
   res.render('adopt/form', {type: req.params.type});
 });
 
-router.get('/', function(req, res, next) {
-    res.render('adopt/list', {type: req.params.type});
+router.get('/:animalId', function(req, res, next) {
+    res.render('adopt/patronize-form', {type: req.params.type});
 });
 
 

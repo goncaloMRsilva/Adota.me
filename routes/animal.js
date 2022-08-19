@@ -6,7 +6,6 @@ const crypto = require("crypto");
 
 router.get('/', function(req, res, next) {
   var animal = db.any(`select * from adotame.animal`).then(rows => {
-    console.log(rows);
     res.render('animal/list', {animals: rows});
   })
 });
