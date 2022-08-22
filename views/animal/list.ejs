@@ -1,15 +1,8 @@
-<%- include('../partials/head', {title: 'Animals List'}) %>
-
-<body>
-
-    <ul action="/animal" method="get">
-      <% animals.forEach(function(animal){ %>
-        <li>
-          <%= animal.name  %>
-          <%=  animal.type %>  
-        </li>
-      <% }); %> 
-    </ul>
-
-    <% include ../partials/scripts %>
-</body>
+<ul action="/animal" method="get">
+  <% animals.forEach(function(animal){ %>
+    <li>
+      <%= animal.name %>
+        <%= animal.type %>
+    </li>
+    <% }); %>
+</ul>

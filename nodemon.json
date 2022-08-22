@@ -1,0 +1,7 @@
+{
+  "execMap": {
+    "js": "node --harmony ./www/bin"
+  },
+  "watch": ["public/", "routes/", "views/", "./app.js", "www/"],
+  "ext": "*"
+}

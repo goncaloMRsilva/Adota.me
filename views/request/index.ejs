@@ -1,14 +1,7 @@
-<%- include('../partials/head', {title: 'Requests list'}) %>
-
-<body>
-
-    <ul>
-        <% requests.forEach(function(request){ %>
-            <li>
-                <%= request.name %> 
-            </li>
-        <% }); %> 
-    </ul>    
-
-    <% include ../partials/scripts %>
-</body>
+<ul>
+    <% requests.forEach(function(request){ %>
+        <li>
+            <%= request.name %>
+        </li>
+        <% }); %>
+</ul>
