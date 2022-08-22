@@ -8,6 +8,10 @@ router.get('/form', function(req, res, next) {
   res.render('adopt/form');
 });
 
+router.get('/patronize-form', function(req, res, next) {
+  res.render('adopt/patronize-form');
+});
+
 router.post('/form', function(req, res, next) {
    db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, married, childs,
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,

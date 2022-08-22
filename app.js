@@ -47,6 +47,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.use(function (req, res, next) {
   res.locals.currentPath = req.path
+  res.locals.title = ''
   // res.locals.menu = constants.menu
   next()
 })
