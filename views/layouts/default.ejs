@@ -21,11 +21,27 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="d-flex flex-column">
 		<%- include('../partials/header.ejs') %>
-			<%- body %>
+			<div class="d-flex flex-row">
+				<%- include('../partials/side-bar.ejs') %>
+					<div class="d-flex container-app rounded-4">
+						<div class="bg-light d-flex flex-grow-1 rounded-4">
+							<%- body %>
+						</div>
+					</div>
+			</div>
 	</div>
 	<%- include('../partials/scripts.ejs') %>
 </body>
+
+<style>
+	.container-app {
+		background-color: lightgray;
+		height: 85vh;
+		width: 78vw;
+		padding: 3.5rem 5.5rem;
+	}
+</style>
 
 </html>
