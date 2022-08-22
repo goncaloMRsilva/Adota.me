@@ -3,11 +3,11 @@ var router = express.Router();
 
 
 router.get('/:animalId', function(req, res, next) {
-  res.render('adopt/form', {type: req.params.type});
+  res.render('adopt/form');
 });
 
 router.get('/:animalId', function(req, res, next) {
-    res.render('adopt/list', {type: req.params.type});
+    res.render('adopt/list');
 });
 
 

@@ -257,7 +257,7 @@ insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tur',          'Gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Femea',     10,      'Muito grande',      'liso', 'British-Shorthair', 'preto',    'tem',      'whiskas',  'saudavel', 'Technetium Tc-99m Generator')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Tur',          'Gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                'Femea',     10,      'Muito grande',      'liso', 'British-Shorthair', 'preto',    'tem',      'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
@@ -273,7 +273,7 @@ insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
-insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Afe',          'Gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Femea',     10,     'Pequeno',          'liso', 'British-Shorthair', 'preto',     'nao tem',  'whiskas',  'saudavel', 'walk for pee')
+insert into adotame.animal (id_animal, name, type, photo, gender, age, size, fur, breed, color, vaccines, portion, health, cares) values (gen_random_uuid(), 'Afe',          'Gato',      'https://cdn2.thecatapi.com/images/MTU0ODc1Nw.jpg',                 'Femea',     10,     'Pequeno',          'liso', 'British-Shorthair', 'preto',     'nao tem',  'whiskas',  'saudavel', 'voltinha a rua')
 RETURNING id_animal into v_id_animal;
 insert into adotame.catalog_animal(id_catalog, id_animal) values(v_id_catalog, v_id_animal);
 
