@@ -1,91 +1,84 @@
-<%- include('../partials/head', {title: 'Create Animal'}) %>
+<h1>ADOTA.ME</h1>
+<p>Adicionar animal</p>
 
-  <body>
-    
-    <h1>ADOTA.ME</h1>
-    <p>Adicionar animal</p>
+<form action="/animal/create" method="post">
 
-    <form action="/animal/create" method="post">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="name" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
+  <div>
+    <label for="type">Tipo</label>
+    <select class="form-select" id="type" name="type" required>
+      <option value="Cao">Cao</option>
+      <option value="Gato">Gato</option>
+    </select>
+  </div>
 
-      <div>
-        <label for="type">Tipo</label>
-        <select class="form-select" id="type" name="type" required>
-          <option value="Cao">Cao</option>
-          <option value="Gato">Gato</option>
-        </select>
-      </div>
+  <div class="mb-3">
+    <label for="photo" class="form-label">Fotografia</label>
+    <input type="text" class="form-control" id="photo" name="photo" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="photo" class="form-label">Fotografia</label>
-        <input type="text" class="form-control" id="photo" name="photo" required>
-      </div>
+  <div>
+    <label for="gender">Genero</label>
+    <select class="form-select" id="gender" name="gender" required>
+      <option value="Macho">Macho</option>
+      <option value="Femea">Femea</option>
+    </select>
+  </div>
 
-      <div>
-        <label for="gender">Genero</label>
-        <select class="form-select" id="gender" name="gender" required>
-          <option value="Macho">Macho</option>
-          <option value="Femea">Femea</option>
-        </select>
-      </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Data de nascimento</label>
+    <input type="date" class="form-control" id="age" name="age" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="age" class="form-label">Data de nascimento</label>
-        <input type="date" class="form-control" id="age" name="age" required>
-      </div>
+  <div>
+    <label for="size">Tamanho</label>
+    <select class="form-select" id="size" name="size" required>
+      <option value="Muito pequeno">Muito pequeno</option>
+      <option value="Pequeno">Pequeno</option>
+      <option value="Medio">Medio</option>
+      <option value="Grande">Grande</option>
+      <option value="Muito grande">Muito grande</option>
+    </select>
+  </div>
 
-      <div>
-        <label for="size">Tamanho</label>
-        <select class="form-select" id="size" name="size" required>
-          <option value="Muito pequeno">Muito pequeno</option>
-          <option value="Pequeno">Pequeno</option>
-          <option value="Medio">Medio</option>
-          <option value="Grande">Grande</option>
-          <option value="Muito grande">Muito grande</option>
-        </select>
-      </div>
+  <div class="mb-3">
+    <label for="fur" class="form-label">Pelo</label>
+    <input type="text" class="form-control" id="fur" name="fur" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="fur" class="form-label">Pelo</label>
-        <input type="text" class="form-control" id="fur" name="fur" required>
-      </div>
+  <div class="mb-3">
+    <label for="breed" class="form-label">Raça</label>
+    <input type="text" class="form-control" id="breed" name="breed" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="breed" class="form-label">Raça</label>
-        <input type="text" class="form-control" id="breed" name="breed" required>
-      </div>
+  <div class="mb-3">
+    <label for="color" class="form-label">Cor do animal</label>
+    <input type="text" class="form-control" id="color" name="color" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="color" class="form-label">Cor do animal</label>
-        <input type="text" class="form-control" id="color" name="color" required>
-      </div>
+  <div class="mb-3">
+    <label for="vaccines" class="form-label">Vacinas</label>
+    <input type="text" class="form-control" id="vaccines" name="vaccines" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="vaccines" class="form-label">Vacinas</label>
-        <input type="text" class="form-control" id="vaccines" name="vaccines" required>
-      </div>
+  <div class="mb-3">
+    <label for="portion" class="form-label">Ração</label>
+    <input type="text" class="form-control" id="portion" name="portion" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="portion" class="form-label">Ração</label>
-        <input type="text" class="form-control" id="portion" name="portion" required>
-      </div>
+  <div class="mb-3">
+    <label for="health" class="form-label">Saúde</label>
+    <input type="text" class="form-control" id="health" name="health" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="health" class="form-label">Saúde</label>
-        <input type="text" class="form-control" id="health" name="health" required>
-      </div>
+  <div class="mb-3">
+    <label for="cares" class="form-label">Cuidados</label>
+    <input type="text" class="form-control" id="cares" name="cares" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="cares" class="form-label">Cuidados</label>
-        <input type="text" class="form-control" id="cares" name="cares" required>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Criar</button>
-    </form>
-    
-    <% include ../partials/scripts %>
-  </body>
+  <button type="submit" class="btn btn-primary">Criar</button>
+</form>

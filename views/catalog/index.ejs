@@ -1,25 +1,19 @@
-<%- include('../partials/head', {title: 'Adopt list'}) %>
-
-<body>
-  <img src="/images/icons/paper.svg" alt="iconPaper">
-  <img src="/images/icons/mail.svg" alt="iconMail">
-  <img src="/images/icons/config.svg" alt="iconConfig">
-  <img src="/images/icons/hand.svg" alt="iconHand">
-  <img src="/images/icons/sendButton.svg" alt="iconSend">
-  <img src="/images/icons/bell.svg" alt="iconBell">
-  <img src="/images/icons/bell1.svg" alt="iconBell1">
-  <img src="/images/icons/doubleButton.svg" alt="iconDouble">
-  <ul>
-    <% animals.forEach(function(animal){ %>
-      <li>
-        <%= animal.name  %>
-        <%=  animal.type %>  
-        <%= animal.gender %>
-        <a href="/adopt/form">Adotar</a>
-        <a href="/adopt/patronize-form">Apadrinhar</a>
-      </li>
-    <% }); %> 
-  </ul> 
-
-  <% include ../partials/scripts %>
-</body>
+<img src="/images/icons/paper.svg" alt="iconPaper">
+<img src="/images/icons/mail.svg" alt="iconMail">
+<img src="/images/icons/config.svg" alt="iconConfig">
+<img src="/images/icons/hand.svg" alt="iconHand">
+<img src="/images/icons/sendButton.svg" alt="iconSend">
+<img src="/images/icons/bell.svg" alt="iconBell">
+<img src="/images/icons/bell1.svg" alt="iconBell1">
+<img src="/images/icons/doubleButton.svg" alt="iconDouble">
+<ul>
+  <% animals.forEach(function(animal){ %>
+    <li>
+      <%= animal.name %>
+        <%= animal.type %>
+          <%= animal.gender %>
+            <a href="/adopt/form">Adotar</a>
+            <a href="/adopt/patronize-form">Apadrinhar</a>
+    </li>
+    <% }); %>
+</ul>

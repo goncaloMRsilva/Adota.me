@@ -1,14 +1,8 @@
-<% include('partials/head', {title: 'Error page'}); %>
-
-  <body>
-    <h1>
-      <%= message %>
-    </h1>
-    <h2>
-      status
-      <%= error.severity %>
-    </h2>
-    <pre> stack<%= error.stack %></pre>
-
-    <% include partials/scripts %>
-  </body>
+<h1>
+  <%= message %>
+</h1>
+<h2>
+  status
+  <%= error.severity %>
+</h2>
+<pre> stack<%= error.stack %></pre>
