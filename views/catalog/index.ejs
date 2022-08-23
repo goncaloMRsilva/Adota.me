@@ -1,19 +1,15 @@
-<img src="/images/icons/paper.svg" alt="iconPaper">
-<img src="/images/icons/mail.svg" alt="iconMail">
-<img src="/images/icons/config.svg" alt="iconConfig">
-<img src="/images/icons/hand.svg" alt="iconHand">
-<img src="/images/icons/sendButton.svg" alt="iconSend">
-<img src="/images/icons/bell.svg" alt="iconBell">
-<img src="/images/icons/bell1.svg" alt="iconBell1">
-<img src="/images/icons/doubleButton.svg" alt="iconDouble">
-<ul>
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-5">
   <% animals.forEach(function(animal){ %>
-    <li>
-      <%= animal.name %>
-        <%= animal.type %>
-          <%= animal.gender %>
-            <a href="/adopt/form">Adotar</a>
-            <a href="/adopt/patronize-form">Apadrinhar</a>
-    </li>
-    <% }); %>
-</ul>
+    <div class="card" style="width: 18rem;">
+      <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
+      <div class="card-body text-center">
+        <h5 class="card-title"> <%= animal.name%> </h5>
+        <p class="card-text"> <%= animal.age %> anos</p>
+        <p class="card-text"> <%= animal.gender %> </p>
+        <a href="/adopt/form" class="btn btn-primary">Adotar</a>
+        <a href="/adopt/patronize-form" class="btn btn-primary">Apadrinhar</a>
+      </div>
+    </div>
+  <% }) %> 
+</div>
+
