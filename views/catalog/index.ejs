@@ -1,13 +1,17 @@
 <div class="d-flex flex-wrap justify-content-between align-items-center gap-5">
   <% animals.forEach(function(animal){ %>
     <div class="card" style="width: 18rem;">
-      <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
+      <div>   
+        <a href="/animal/profile">
+          <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
+        </a>
+      </div>
       <div class="card-body text-center">
-        <h5 class="card-title"> <%= animal.name%> </h5>
-        <p class="card-text"> <%= animal.age %> anos</p>
-        <p class="card-text"> <%= animal.gender %> </p>
-        <a href="/adopt/form" class="btn btn-primary">Adotar</a>
-        <a href="/adopt/patronize-form" class="btn btn-primary">Apadrinhar</a>
+          <h5 class="card-title"> <%= animal.name%> </h5>
+          <p class="card-text"> <%= animal.age %> anos</p>
+          <p class="card-text"> <%= animal.gender %> </p>
+          <a href="/adopt/form" class="btn btn-primary">Adotar</a>
+          <a href="/adopt/patronize-form" class="btn btn-primary">Apadrinhar</a>
       </div>
     </div>
   <% }) %> 
