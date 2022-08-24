@@ -15,7 +15,7 @@ const crypto = require("crypto");
 
 
 router.get('/', function(req, res, next) {
-  var animal = db.any(`select * from adotame.animal`).then(rows => {
+  db.any(`select * from adotame.animal`).then(rows => {
     res.render('animal/list', {animals: rows});
   })
 });
@@ -59,8 +59,10 @@ router.post('/create', function(req, res, next) {
 });
 
 
-router.get('/update/:id', function(req, res, next) {
-  res.render('animal/create-update');
+router.get('/profile', function(req, res, next) {
+  db.any(`select * from adotame.animal`).then(rows => {
+    res.render('animal/profile', {animals: rows});
+  })
 });
 
 
