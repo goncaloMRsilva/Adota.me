@@ -1,8 +1,44 @@
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="w-100 h-100">
+  <div class="text-center mt-2">
+    <h1>Desaparecido Avistado</h1>
+    <p>Responda a este inquérito e espere até analisarmos a sua<br> resposta! Obrigado por nos ajudar!</p>
+  </div>
+
+  <div class="mt-5">
+    <form action="/animal/create" method="post" class="fs-5">
+
+      <div class="mt-4">
+        <label for="seen_place" class="form-label">Local onde foi avistado</label>
+        <input type="text" class="form-control mt-2 form-bar rdo-style" id="seen_place" name="seen_place" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="phone" class="form-label">Contato</label>
+        <input type="text" class="form-control form-bar rdo-style mt-2" id="phone" name="phone" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="details" class="form-label">Detalhes adicionais</label>
+        <input type="text" class="form-control form-bar mt-2" style="height: 6rem;" id="details" name="details" required>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary">Criar</button>
+      </div>
+    </form>
+  </div>
 </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+
+<style>
+  .form-bar{
+    width: 50rem;
+    height: 2.5rem;
+    background-color: rgba(29, 29, 27, 0.11);
+    border-radius: 2rem;
+  }
+
+  .rdo-style{
+    background-color: rgba(29, 29, 27, 0.11);
+  }
+
+</style>

@@ -3,15 +3,15 @@ var router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('missing/form');
+  res.render('missing/list');
 });
 
 router.get('/report', function(req, res, next) {
   res.render('missing/report');
 });
 
-router.get('/list', function(req, res, next) {
-  res.render('missing/list');
+router.get('/seen', function(req, res, next) {
+  res.render('missing/form');
 });
 
 module.exports = router;
