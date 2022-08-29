@@ -1,4 +1,10 @@
-<div class="d-flex flex-wrap justify-content-between align-items-center gap-5">
+<div class="d-flex ps-4 gap-4 mt-2">
+  <button class="btndef">Todos</button>
+  <button class="btndef">Cães</button>
+  <button class="btndef">Gatos</button>
+</div>
+
+<div class="d-flex flex-wrap gap-5 ps-4 pt-4 pb-4 mt-3">
   <% animals.forEach(function(animal){ %>
     <div class="card" style="width: 18rem;">
       <div>   
@@ -16,4 +22,15 @@
     </div>
   <% }) %> 
 </div>
+
+<style>
+  .btndef{
+    width: 5rem;
+    height: 3rem;
+    border-radius: 55%;
+    background-color: #CE8927;
+    border: 2px solid #CE8927;
+    color: white;
+  }
+</style>
 
