@@ -1,8 +1,112 @@
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="w-100 h-100">
+  <div class="text-center mt-2">
+    <h1>Reportar Desaparecido</h1>
+    <p>Responda a este inquérito e espere até analisarmos a sua<br> resposta! Obrigado por nos ajudar!</p>
+  </div>
+
+  <div class="mt-5">
+    <form action="/animal/create" method="post" class="fs-5">
+
+      <div class="mt-4">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control mt-2 form-bar rdo-style" id="name" name="name" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="photo" class="form-label">Fotografia</label>
+        <input type="text" class="form-control form-bar rdo-style mt-2" id="photo" name="photo" placeholder="link" required>
+      </div>
+
+      <div class="mt-4">
+        <div><label>Tamanho</label></div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Macho">
+          <label class="form-check-label" for="size">Muito pequeno</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Pequeno</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Médio</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Grande</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Muito grande</label>
+        </div>
+      </div>
+      
+      <div class="mt-4">
+        <div><label>Tipo</label></div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="option1">
+          <label class="form-check-label" for="type">Cão</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="option2">
+          <label class="form-check-label" for="type">Gato</label>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <div><label>Género</label></div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Macho">
+          <label class="form-check-label" for="type">Macho</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Femea">
+          <label class="form-check-label" for="type">Fêmea</label>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <label for="breed" class="form-label">Raça</label>
+        <input type="text" class="form-control form-bar mt-2" id="breed" name="breed" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="fur" class="form-label">Pelo</label>
+        <input type="text" class="form-control form-bar mt-2" id="fur" name="fur" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="color" class="form-label">Cor do animal</label>
+        <input type="text" class="form-control form-bar mt-2" id="color" name="color" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="last_seen_place" class="form-label">Sítio pela última vez visto</label>
+        <input type="text" class="form-control form-bar mt-2" style="height: 6rem;" id="last_seen_place" name="last_seen_place" required>
+      </div>
+
+      <div class="mt-4">
+        <label for="description" class="form-label">Descrição</label>
+        <input type="text" class="form-control form-bar mt-2" style="height: 6rem;" id="description" name="description" required>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary">Criar</button>
+      </div>
+    </form>
+  </div>
 </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+
+<style>
+  .form-bar{
+    width: 50rem;
+    height: 2.5rem;
+    background-color: rgba(29, 29, 27, 0.11);
+    border-radius: 2rem;
+  }
+
+  .rdo-style{
+    background-color: rgba(29, 29, 27, 0.11);
+  }
+
+</style>
