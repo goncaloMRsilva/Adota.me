@@ -1,89 +1,127 @@
-<div>
-
-  <div class="text-center">
+<div class="w-100 h-100">
+  <div class="text-center mt-2">
     <h1>Adicionar Animal</h1>
     <br>Responda a este inquérito e espere até analisarmos a sua<br> resposta! Obrigado por nos ajudar!</p>
   </div>
 
-    <form action="/animal/create" method="post">
+  <div class="mt-5">
+    <form action="/animal/create" method="post" class="fs-5">
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="name" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <input type="text" class="form-control mt-2 form-bar rdo-style" id="name" name="name" required>
       </div>
 
-      <div>
-        <label for="type">Tipo</label>
-        <select class="form-select" id="type" name="type" required>
-          <option value="Cao">Cao</option>
-          <option value="Gato">Gato</option>
-        </select>
+      <div class="mt-4">
+        <div><label>Tipo</label></div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="option1">
+          <label class="form-check-label" for="type">Cão</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="option2">
+          <label class="form-check-label" for="type">Gato</label>
+        </div>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="photo" class="form-label">Fotografia</label>
-        <input type="text" class="form-control" id="photo" name="photo" required>
+        <input type="text" class="form-control form-bar rdo-style mt-2" id="photo" name="photo" placeholder="link" required>
       </div>
 
-      <div>
-        <label for="gender">Genero</label>
-        <select class="form-select" id="gender" name="gender" required>
-          <option value="Macho">Macho</option>
-          <option value="Femea">Femea</option>
-        </select>
+      <div class="mt-4">
+        <div><label>Género</label></div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Macho">
+          <label class="form-check-label" for="type">Macho</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Femea">
+          <label class="form-check-label" for="type">Fêmea</label>
+        </div>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="age" class="form-label">Data de nascimento</label>
-        <input type="date" class="form-control" id="age" name="age" required>
+        <input type="date" class="form-control form-bar rdo-style mt-2" id="age" name="age" required>
       </div>
 
-      <div>
-        <label for="size">Tamanho</label>
-        <select class="form-select" id="size" name="size" required>
-          <option value="Muito pequeno">Muito pequeno</option>
-          <option value="Pequeno">Pequeno</option>
-          <option value="Medio">Medio</option>
-          <option value="Grande">Grande</option>
-          <option value="Muito grande">Muito grande</option>
-        </select>
+      <div class="mt-4">
+        <div><label>Tamanho</label></div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Macho">
+          <label class="form-check-label" for="size">Muito pequeno</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Pequeno</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Médio</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Grande</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
+          <label class="form-check-label" for="size">Muito grande</label>
+        </div>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="fur" class="form-label">Pelo</label>
-        <input type="text" class="form-control" id="fur" name="fur" required>
+        <input type="text" class="form-control form-bar mt-2" id="fur" name="fur" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="breed" class="form-label">Raça</label>
-        <input type="text" class="form-control" id="breed" name="breed" required>
+        <input type="text" class="form-control form-bar mt-2" id="breed" name="breed" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="color" class="form-label">Cor do animal</label>
-        <input type="text" class="form-control" id="color" name="color" required>
+        <input type="text" class="form-control form-bar mt-2" id="color" name="color" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="vaccines" class="form-label">Vacinas</label>
-        <input type="text" class="form-control" id="vaccines" name="vaccines" required>
+        <input type="text" class="form-control form-bar mt-2" style="height: 6rem;" id="vaccines" name="vaccines" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="portion" class="form-label">Ração</label>
-        <input type="text" class="form-control" id="portion" name="portion" required>
+        <input type="text" class="form-control form-bar mt-2" id="portion" name="portion" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="health" class="form-label">Saúde</label>
-        <input type="text" class="form-control" id="health" name="health" required>
+        <input type="text" class="form-control form-bar mt-2" style="height: 6rem;" id="health" name="health" required>
       </div>
 
-      <div class="mb-3">
+      <div class="mt-4">
         <label for="cares" class="form-label">Cuidados</label>
-        <input type="text" class="form-control" id="cares" name="cares" required>
+        <input type="text" class="form-control form-bar mt-2" style="height: 6rem;" id="cares" name="cares" required>
       </div>
 
-      <button type="submit" class="btn btn-primary">Criar</button>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary">Criar</button>
+      </div>
     </form>
   </div>
+</div>
+
+<style>
+  .form-bar{
+    width: 50rem;
+    height: 2.5rem;
+    background-color: rgba(29, 29, 27, 0.11);
+    border-radius: 2rem;
+  }
+
+  .rdo-style{
+    background-color: rgba(29, 29, 27, 0.11);
+  }
+
+</style>
