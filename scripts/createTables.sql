@@ -79,7 +79,7 @@ create table if not exists adotame.request(
     postal_code varchar(100) null,
     locality varchar(100) null,
     phone bigint null,
-    description varchar(1000) null,
+    description varchar(5000) null,
     married varchar(50) check(married in('Sim', 'Nao')) null,
     childs varchar(50) check(childs in('Sim', 'Nao')) null,
     live_with varchar(500) null,
@@ -99,5 +99,11 @@ create table if not exists adotame.request(
     animal_cares_expenses varchar(50) check(animal_cares_expenses in('Sim', 'Nao')) null,
     teach_plans varchar(1000) null,
     moving_home_animal_effects varchar(1000) null,
-    give_up_circumstances varchar(1000) null
+    give_up_circumstances varchar(1000) null,
+    financial_payment_method varchar(50) check(financial_payment_method in('Semanal', 'Mensal', 'Anual')) null,
+    value_ammout int null,
+    hobbie varchar(1000) check(hobbie in('Passeios', 'Fins de semana', 'Divulgacao do animal', 'Vacinacao', 'Tratamentos', 'Tosquia')) null,
+    last_seen_place varchar(2000) null,
+    seen_place varchar(5000) null,
+    details varchar(5000) null
 );
