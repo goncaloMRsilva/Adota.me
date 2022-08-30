@@ -1,32 +1,34 @@
-<header class="header d-flex align-items-center">
-		<div class="pt-4 logo">
-			<img src="/images/logo/logo.svg" class="logo" alt="logoAnimal">
+<header class="header">
+	<div class="container text-start">
+		<div class="row">
+			<div class="col-2 pt-5">
+				<img src="/images/logo/logo.svg" alt="logoLogo">
+			</div>
+			<div class="col-6 pt-5">
+				<h1>Catálogo</h1>
+				<p>Esperamos que encontre algum amiguinho novo!!</p>
+			</div>
+			<div class="col-4 pt-5 notifi-pad">
+				<img src="/images/icons/bell.svg" alt="iconBell">
+				<a href="/login" class="ps-4">Login/Registar</a>
+			</div>
 		</div>
-		<div style="padding-top: 5rem; padding-left: 9rem;">
-			<h1>Catálogo</h1>
-			<p>Esperamos que encontre algum amiguinho novo!!</p>
-		</div>
-		<div class="pt-5" style="padding-left: 40rem;">
-			<img src="/images/icons/bell.svg" alt="iconBell" class="imgdef">
-			<a class="ps-5" href="/login">Login/Registar</a>
-		</div>
+	</div>
 </header>
 
 <style>
 	.header {
-		height: 10vh;
+		height: 20vh;
 		width: 100vw;
 	}
 
-	.logo{
-		padding-left: 1rem;
-		width: 6rem;
-		height: 8rem;
+	.notifi-pad{
+		padding-left: 15rem;
 	}
 
-	.imgdef{
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
+	@media screen and (max-width: 400px), (max-height: 400px) {
+		.header{
+			display: column;
+		}
 	}
 </style>
