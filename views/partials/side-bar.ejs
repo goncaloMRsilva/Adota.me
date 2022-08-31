@@ -1,16 +1,16 @@
-<aside class="sidebar d-flex ps-3 bg-dark">
-	<div>
-		<div>
-			<img src="/images/icons/paper.svg" class="w-15 h-15" alt="iconPaper">
-			<a href="/catalog/all">Catálogo</a>
+<aside class="sidebar btn-width pt-5">
+	<div class="d-flex flex-column gap-5">
+		<div class="d-flex gap-3">
+			<img src="/images/icons/paper.svg" alt="iconPaper">
+			<a href="/catalog/all" class="remove_underline">Catálogo</a>
 		</div>
-		<div class="mt-3">
-			<img src="/images/icons/greyMail.svg" class="w-15 h-15" alt="iconGreyMail">
-			<a href="/request">Pedidos</a>
+		<div class="d-flex gap-3">
+			<img src="/images/icons/greyMail.svg" alt="iconGreyMail">
+			<a href="/request" class="remove_underline">Pedidos</a>
 		</div>
-		<div class="mt-3">
-			<img src="/images/icons/config.svg" class="w-15 h-15" alt="iconConfig">
-			<a href="/donate">Suporte</a>
+		<div class="d-flex gap-3">
+			<img src="/images/icons/config.svg" alt="iconConfig">
+			<a href="/donate" class="remove_underline">Suporte</a>
 		</div>
 	</div>
 </aside>
@@ -19,5 +19,14 @@
 	.sidebar {
 		height: 85vh;
 		width: 18vw;
+	}
+
+	.remove_underline{
+		text-decoration: none;
+		color: black;
+	}
+
+	.btn-width{
+		padding-left: 6rem;
 	}
 </style>
