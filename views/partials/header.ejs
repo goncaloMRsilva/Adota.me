@@ -1,34 +1,18 @@
 <header class="header">
 	<div class="d-flex">
-		<div class="flex-grow-3 p-5">
+		<div class="d-flex justify-content-center pt-2 logo-width">
 			<img src="/images/logo/logo.svg" alt="logoLogo">
 		</div>
-		<div class="flex-grow-1 pt-5 pb-5 notifi-pad">
+		<div class="d-flex flex-column pt-4 text-width">
 			<h1>Catálogo</h1>
 			<p>Esperamos que encontre algum amiguinho novo!!</p>
 		</div>
-		<div class="flex-grow-2 p-5">
+		<div class="d-flex bell-with">
 			<img src="/images/icons/bell.svg" alt="iconBell">
-			<a href="/login" class="ps-4">Login/Registar</a>
+			<a href="/login" class="pt-5">Login/Registar</a>
 		</div>
 	</div>
 </header>
-
-<!-- <div class="container text-start">
-	<div class="row">
-		<div class="col-2 pt-5">
-			<img src="/images/logo/logo.svg" alt="logoLogo">
-		</div>
-		<div class="col-6 pt-5">
-			<h1>Catálogo</h1>
-			<p>Esperamos que encontre algum amiguinho novo!!</p>
-		</div>
-		<div class="col-4 pt-5 notifi-pad">
-			<img src="/images/icons/bell.svg" alt="iconBell">
-			<a href="/login" class="ps-4">Login/Registar</a>
-		</div>
-	</div>
-</div> -->
 
 <style>
 	.header {
@@ -36,13 +20,21 @@
 		width: 100vw;
 	}
 
-	.notifi-pad{
-		padding-left: 8rem;
+	.logo-width{
+		width: 18%;
 	}
 
-	@media screen and (max-width: 400px), (max-height: 400px) {
+	.text-width{
+		width: 67%;
+	}
+
+	.bell-with{
+		width: 11%;
+	}
+
+	/* @media screen and (max-width: 400px), (max-height: 400px) {
 		.header{
 			display: column;
 		}
-	}
+	} */
 </style>
