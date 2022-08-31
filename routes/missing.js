@@ -10,6 +10,9 @@ router.get('/report', function(req, res, next) {
   res.render('missing/report');
 });
 
+router.post('/report', function(req, res, next) {
+});
+
 router.get('/seen', function(req, res, next) {
   res.render('missing/form');
 });

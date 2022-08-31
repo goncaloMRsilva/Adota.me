@@ -65,5 +65,20 @@ router.get('/profile', function(req, res, next) {
   })
 });
 
+// router.get('/profile/:id_animal', function(req, res, next) {
+//   var id_animal = req.params.id_animal;
+//   console.log(id_animal);
+//   db.any(`select * from adotame.animal`).then(rows => {
+//     res.render('animal/profile', {animals: rows});
+//   })
+// });
+
+// router.get('/profile', function(req, res, next) {
+//   db.any(`select name, vaccines, portion, health, cares, size, fur, breed, color from adotame.animal
+//           where id_animal = $1`, [req.params.id_animal]).then(rows => {
+//     res.render('animal/profile', {animals: rows});
+//   })
+// });
+
 
 module.exports = router;
