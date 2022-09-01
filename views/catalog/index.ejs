@@ -4,20 +4,24 @@
   <button class="btndef">Gatos</button>
 </div>
 
-<div class="d-flex flex-wrap justify-content-center gap-3 pt-4 pb-4">
+<div class="d-flex flex-wrap justify-content-center gap-4 pt-4 pb-4">
   <% animals.forEach(function(animal){ %>
-    <div class="card" style="width: 18rem;">
+    <div class="card rounded-5" style="width: 18rem;">
       <div>   
         <a href="/animal/profile">
-          <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
+        <img src="/images/logo/dog.svg" class="card-img-top p-4" alt="logoDog">
         </a>
       </div>
-      <div class="card-body text-center">
-          <h5 class="card-title"> <%= animal.name%> </h5>
+      <div class="card-body text-center py-1">
+        <div class="pb-3">
+          <h4 class="card-title"> <%= animal.name%> </h4>
           <p class="card-text"> <%= animal.age %> anos</p>
           <p class="card-text"> <%= animal.gender %> </p>
+        </div>
+        <div class="pb-2">
           <a href="/adopt/form" class="btn card-button">Adotar</a>
           <a href="/adopt/patronize-form" class="btn card-button">Apadrinhar</a>
+        </div>
       </div>
     </div>
   <% }) %> 
@@ -26,8 +30,8 @@
 <style>
   .btndef{
     width: 5rem;
-    height: 3rem;
-    border-radius: 55%;
+    height: 2.5rem;
+    border-radius: 2rem;
     background-color: #CE8927;
     border: solid #CE8927;
     color: white;
@@ -37,7 +41,7 @@
     width: 7rem;
     height: 2rem;
     border-radius: 1rem;
-    background-color: #CE8927;
+    background-image: linear-gradient(to right, #D14C1F, #F39200, #ECB800);
     text-decoration: none;
     color: white;
     text-align: center;

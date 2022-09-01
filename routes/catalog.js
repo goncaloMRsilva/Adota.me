@@ -27,5 +27,15 @@ router.get('/:type', function(req, res, next) {
   })
 });
 
+// router.get('/caes', function(req, res, next) {
+//   db.one(`select * from adotame.animal where type = $1`, ['Cao'])
+//   .then(rows => {
+//     console.log(rows);
+//     res.render('catalog/index');
+//   })
+//   .catch(err => {
+//     res.render('error', {error: err, message: 'Not possible render this page'});
+//   })
+// });
 
 module.exports = router;
