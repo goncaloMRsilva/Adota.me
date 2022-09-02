@@ -27,7 +27,7 @@ router.get('/:type', function(req, res, next) {
   })
 });
 
-// router.get('/caes', function(req, res, next) {
+// router.get('/dogs', function(req, res, next) {
 //   db.one(`select * from adotame.animal where type = $1`, ['Cao'])
 //   .then(rows => {
 //     console.log(rows);
