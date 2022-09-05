@@ -37,7 +37,7 @@ if (process.env.NODE_ENV !== "production") {
 app.use(expressLayouts)
 app.set("views", path.join(__dirname, "views"))
 app.set("layout", "layouts/default")
-app.set("layout", "layouts/noaside")
+app.set("layoutNoAside", "layouts/noaside")
 app.set("view engine", "ejs")
 
 app.use(logger("dev"))
