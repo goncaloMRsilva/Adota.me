@@ -1,37 +1,35 @@
-<div>
-  <div class="text-center pt-2">
-    <h1>Desaparecido Avistado</h1>
-    <p>Responda a este inquérito e espere até analisarmos a sua<br> resposta! Obrigado por nos ajudar!</p>
-  </div>
+<div class="text-center pt-2">
+  <h1>Desaparecido Avistado</h1>
+  <p>Responda a este inquérito e espere até analisarmos a sua<br> resposta! Obrigado por nos ajudar!</p>
+</div>
 
-  <div class="d-flex flex-column justify-content-start pt-4">
-    <form action="/animal/create" method="post" class="fs-5">
-
+<div class="pt-4 d-flex flex-column">
+  <form action="/animal/create" method="post" class="fs-5">
+    <ol>
       <div class="pt-4">
-        <label for="seen_place" class="form-label">Local onde foi avistado</label>
-        <input type="text" class="form-control pt-2 form-bar rdo-style" id="seen_place" name="seen_place" required>
+        <li><label for="seen_place" class="form-label">Local onde foi avistado</label></li>
+        <input type="text" class="form-control form-bar rdo-style pt-2" id="seen_place" name="seen_place" required>
       </div>
 
       <div class="pt-4">
-        <label for="phone" class="form-label">Contato</label>
+        <li><label for="phone" class="form-label">Contato</label></li>
         <input type="text" class="form-control form-bar rdo-style pt-2" id="phone" name="phone" required>
       </div>
 
       <div class="pt-4">
-        <label for="details" class="form-label">Detalhes adicionais</label>
+        <li><label for="details" class="form-label">Detalhes adicionais</label></li>
         <input type="text" class="form-control form-bar pt-2" style="height: 6rem;" id="details" name="details" required>
       </div>
-
+    </ol>
       <div class="text-center pt-4">
-        <button type="submit" class="btn btn-primary">Criar</button>
+        <button type="submit" class="btn card-button">Enviar</button>
       </div>
-    </form>
-  </div>
+  </form>
 </div>
 
 <style>
   .form-bar{
-    width: 50rem;
+    width: 55vw;
     height: 2.5rem;
     background-color: rgba(29, 29, 27, 0.11);
     border-radius: 2rem;
@@ -41,8 +39,15 @@
     background-color: rgba(29, 29, 27, 0.11);
   }
 
-  .label-input-width{
-    width: 30%;
+  .card-button{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, #D14C1F, #F39200, #ECB800);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding-top: 2px;
   }
 
 </style>
