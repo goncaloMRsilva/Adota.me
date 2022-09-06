@@ -46,7 +46,7 @@ create table if not exists adotame.animal(
     type varchar(100) check(type in('Cao', 'Gato', 'Todos')), 
     photo varchar(500) not null,
     gender varchar(100) check(gender in('Macho', 'Femea')),
-    age int not null,
+    birth_date date not null,
     size varchar(50) check(size in('Muito pequeno', 'Pequeno', 'Medio', 'Grande', 'Muito grande')),
     fur varchar(100) null,    /*pelagem*/
     breed varchar(300) null,   /*raca*/
