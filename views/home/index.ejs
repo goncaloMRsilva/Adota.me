@@ -1,4 +1,4 @@
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide carousel-dimensions" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="images/icons/bobby.svg" class="d-block w-100" alt="iconBobby">
@@ -24,7 +24,7 @@
   <div class="text-center pb-5">
     <h1>Ajude-nos a ajudar!! Conheça os novos felpudos ^^</h1>
   </div>
-  <div class="border-middle p-3">
+  <div class="border-middle p-4">
     <div class="d-flex justify-content-center gap-5">
       <div class="align-self-center">
         <img src="images/icons/hand.svg" alt="iconHand">
@@ -203,8 +203,9 @@
     .border-middle{
         border: 3px solid #CE8927;
         border-radius: 1rem;
-        margin-right: 25vw;
-        margin-left: 25vw;
+        width: 20vw;
+        margin: auto;
+        min-width: 300px;
         box-shadow: 1px 1px 30px;
     }
 
@@ -244,6 +245,7 @@
 
    .half-vw{
     width: 50vw;
+    height: auto;
    }
 
    .font-mission-color{
@@ -260,5 +262,11 @@
 
    .footer-bg{
     background-color: #ba5d06;
+   }
+
+   .carousel-dimensions{
+    width: 40vw;
+    height: auto; 
+    margin: auto;
    }
 </style>
