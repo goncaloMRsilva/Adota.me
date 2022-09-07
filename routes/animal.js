@@ -19,26 +19,9 @@ router.post("/create", function (req, res, next) {
   var get_birth_date = new Date(req.body.birth_date);
   var getSysDate = new Date();
 
-  // var yyyy = get_birth_date.getFullYear();
-  // var mm = get_birth_date.getMonth() + 1;
-  // var dd = get_birth_date.getDate();
-  // var req_birth_date = `${yyyy}-${mm}-${dd}`;
-  // console.log(req_birth_date);
-
-  // var year = getSysDate.getFullYear();
-  // var month = getSysDate.getMonth() + 1;
-  // var day = getSysDate.getDate();
-  // var system_date = `${year}-${month}-${day}`;
-  // console.log(system_date);
-
-  // (dd > day && mm == month && yyyy == year) ||
-  // (yyyy == year && mm > month) ||
-  // (dd == day && mm == month && yyyy > year)
-
-
   if (name.length >= 15 || name.length < 2) {
     res.send("Nome para este animal é inválido!");
-  } else if (get_birth_date.toLocaleString("en-ZA") > getSysDate.toLocaleString("en-ZA")) {
+  } else if (get_birth_date.toLocaleString("pt-PT") > getSysDate.toLocaleString("pt-PT")) {
     res.send("Data inserida não pode ser maior do que a data atual!");
   } else {
     db.one(
@@ -71,9 +54,10 @@ router.post("/create", function (req, res, next) {
   }
 });
 
-router.get("/profile", function (req, res, next) {
-  db.any(`select * from adotame.animal`).then((rows) => {
-    res.render("animal/profile", { animals: rows });
+router.get("/profile/:id", function (req, res, next) {
+  db.any(`select * from adotame.animal where id_animal = $1`, [req.params.id])
+  .then((rows) => {
+    res.render("animal/profile", {id: req.params.id, animals_data: rows });
   });
 });
 

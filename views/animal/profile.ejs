@@ -1,8 +1,9 @@
+<% animals_data.forEach(function(animal_id){ %>  
         <div class="d-flex justify-content-center gap-5">
             <div class="card" style="width: 18rem;">
                 <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
                 <div class="card-body">
-                <div class="card-title bg-white fs-4"><strong>Nome</strong></div>
+                <div class="card-title bg-white fs-4"><strong>Nome</strong><p><%= animal_id.name %> </p></div>
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">Contacto</li>
@@ -13,16 +14,16 @@
                 <a href="/adopt/patronize-form" class="btn card-button">Apadrinhar</a>
             </div>
             </div>
-
+   
             <div>
                 <div class="card mb-3" style="max-width: 18rem;">
                     <div class="card-header bg-white fs-4"><strong>Saúde</strong></div>
                     <div class="card-body">
                         <ul>
-                            <li><span>Vacinas</span></li>
-                            <li><span>Ração</span></li>
-                            <li><span>Estado</span></li>
-                            <li><span>Cuidados</span></li>
+                            <li><span>Vacinas</span> <%= animal_id.vaccines%></li>
+                            <li><span>Ração</span> <%= animal_id.portion%></li>
+                            <li><span>Estado</span> <%= animal_id.health%></li>
+                            <li><span>Cuidados</span> <%= animal_id.cares%></li>
                         </ul>
                     </div>
                 </div>
@@ -31,15 +32,16 @@
                     <div class="card-header bg-white fs-4"><strong>Perfil</strong></div>
                     <div class="card-body">
                         <ul>
-                            <li><span>Tamanho</span></li>
-                            <li><span>Pelo</span></li>
-                            <li><span>Raça</span></li>
-                            <li><span>Cor</span></li>
+                            <li><span>Tamanho</span> <%= animal_id.size%></li>
+                            <li><span>Pelo</span> <%= animal_id.fur%></li>
+                            <li><span>Raça</span> <%= animal_id.breed%></li>
+                            <li><span>Cor</span> <%= animal_id.color%></li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
+<% }) %>
 
 <style>
     li::marker{
