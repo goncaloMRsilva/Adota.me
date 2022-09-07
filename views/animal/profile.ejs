@@ -1,34 +1,45 @@
 <% animals_data.forEach(function(animal_id){ %>  
-        <div class="d-flex justify-content-center gap-5">
-            <div class="card" style="width: 18rem;">
-                <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
+        <div class="d-flex justify-content-center gap-5 py-5 px-3">
+            <div class="card rounded-5" style="width: 25rem;">
+                <img src="/images/logo/dog.svg" class="card-img-top p-3" alt="logoDog">
                 <div class="card-body">
-                <div class="card-title bg-white fs-4"><strong>Nome</strong><p><%= animal_id.name %> </p></div>
+                    <div class="card-title fs-4">
+                        <div class="d-flex justify-content-between">
+                            <h3>Nome</h3>
+                            <p class="font-p"><%= animal_id.name %></p>
+                        </div>
+                        <div class="d-flex justify-content-between gap-5">
+                            <h3>Data</h3>
+                            <p class="font-p"><%= animal_id.birth_date %> </p>
+                        </div>
+                    </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item">Contacto</li>
+                    <li class="list-group-item">Contacto</li>
                 </ul>
-            <div class="text-center">
-                <p>Queres dar-lhe uma vida cheia de amor? Clica aqui!</p>
-                <a href="/adopt/form" class="btn card-button">Adotar</a>
-                <a href="/adopt/patronize-form" class="btn card-button">Apadrinhar</a>
-            </div>
+                <div class="text-center pb-4 px-3 pt-2">
+                    <p>Queres dar-lhe uma vida cheia de amor? Clica aqui!</p>
+                    <div class="d-flex justify-content-center gap-5">
+                        <a href="/adopt/form" class="btn card-button">Adotar</a>
+                        <a href="/adopt/patronize-form" class="btn card-button">Apadrinhar</a>
+                    </div>
+                </div>
             </div>
    
-            <div>
-                <div class="card mb-3" style="max-width: 18rem;">
+            <div class="d-flex flex-column justify-content-between">
+                <div class="card rounded-5" style="width: 25rem;">
                     <div class="card-header bg-white fs-4"><strong>Saúde</strong></div>
                     <div class="card-body">
                         <ul>
-                            <li><span>Vacinas</span> <%= animal_id.vaccines%></li>
-                            <li><span>Ração</span> <%= animal_id.portion%></li>
-                            <li><span>Estado</span> <%= animal_id.health%></li>
-                            <li><span>Cuidados</span> <%= animal_id.cares%></li>
+                            <li><span>Vacinas</span> <%=animal_id.vaccines%></li>
+                            <li><span>Ração</span> <%=animal_id.portion%></li>
+                            <li><span>Estado</span> <%=animal_id.health%></li>
+                            <li><span>Cuidados</span> <%=animal_id.cares%></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="card" style="max-width: 18rem;">
+                <div class="card rounded-5" style="width: 25rem;">
                     <div class="card-header bg-white fs-4"><strong>Perfil</strong></div>
                     <div class="card-body">
                         <ul>
@@ -55,13 +66,17 @@
     }
 
     .card-button{
-    width: 7rem;
-    height: 2rem;
-    border-radius: 1rem;
-    background-color: #CE8927;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    padding-top: 2px;
-  }
+        width: 7rem;
+        height: 2rem;
+        border-radius: 1rem;
+        background-image: linear-gradient(to right, #D14C1F, #F39200, #ECB800);
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        padding-top: 2px;
+    }
+
+    .font-p{
+        color: #adada8;
+    }
 </style>
