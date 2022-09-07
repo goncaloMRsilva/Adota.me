@@ -6,11 +6,8 @@ var router = express.Router();
 router.get('/:type', function(req, res, next) {
   var type = req.params.type;
   var catalog = req.query.catalog ||  "Adotar e Apadrinhar";
-  // if ( catalog !== 'Adotar e Apadrinhar' || catalog !== "Desaparecido") {
-  //   catalog = "Adotar e Apadrinhar";
-  // }
 
-  db.any(`select a.* from adotame.animal a 
+  db.any(`select a.*, AGE(now(), a.birth_date) as age from adotame.animal a 
   inner join adotame.catalog_animal ca 
   on a.id_animal = ca.id_animal 
   inner join adotame.catalog c 
@@ -27,15 +24,5 @@ router.get('/:type', function(req, res, next) {
   })
 });
 
-// router.get('/dogs', function(req, res, next) {
-//   db.one(`select * from adotame.animal where type = $1`, ['Cao'])
-//   .then(rows => {
-//     console.log(rows);
-//     res.render('catalog/index');
-//   })
-//   .catch(err => {
-//     res.render('error', {error: err, message: 'Not possible render this page'});
-//   })
-// });
 
 module.exports = router;

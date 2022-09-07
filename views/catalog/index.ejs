@@ -15,7 +15,7 @@
       <div class="card-body text-center py-1">
         <div class="pb-3">
           <h4 class="card-title"> <%= animal.name%> </h4>
-          <p class="card-text"> <%=  %> anos</p>
+          <p class="card-text"> <%= animal.age.years %> anos, <%= animal.age.months %> meses, <%= animal.age.days %> dias</p>
           <p class="card-text"> <%= animal.gender %> </p>
         </div>
         <div class="pb-2">
@@ -26,6 +26,7 @@
     </div>
   <% }) %> 
 </div>
+
 
 <style>
   .btndef{
