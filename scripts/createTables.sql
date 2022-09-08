@@ -105,5 +105,6 @@ create table if not exists adotame.request(
     hobbie varchar(1000) check(hobbie in('Passeios', 'Fins de semana', 'Divulgacao do animal', 'Vacinacao', 'Tratamentos', 'Tosquia')) null,
     last_seen_place varchar(2000) null,
     seen_place varchar(5000) null,
-    details varchar(5000) null
+    details varchar(5000) null,
+    id_animal uuid null
 );
