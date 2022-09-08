@@ -4,12 +4,18 @@ const db = require("../database");
 const crypto = require("crypto");
 
 
-router.get('/form', function(req, res, next) {
-  res.render('adopt/form');
+router.get('/form/:id', function(req, res, next) {
+  db.one(`select name, birth_date from adotame.animal where id_animal = $1`, [req.params.id])
+  .then(rows => {
+    res.render('adopt/form', {id: req.params.id, animal_name: rows});
+  })
 });
 
-router.get('/patronize-form', function(req, res, next) {
-  res.render('adopt/patronize-form');
+router.get('/patronize-form/:id', function(req, res, next) {
+  db.one(`select name, birth_date from adotame.animal where id_animal = $1`, [req.params.id])
+  .then(rows => {
+    res.render('adopt/patronize-form', {id: req.params.id, animal_name_date: rows});
+  })  
 });
 
 router.post('/form', function(req, res, next) {
