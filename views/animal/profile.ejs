@@ -10,7 +10,7 @@
                         </div>
                         <div class="d-flex justify-content-between gap-5">
                             <h3>Data</h3>
-                            <p class="font-p"><%= animal_id.birth_date.toLocaleString("pt-PT") %> </p>
+                            <p class="font-p"><%= animal_id.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %> </p>
                         </div>
                     </div>
                 </div>
@@ -31,10 +31,10 @@
                     <div class="card-header bg-white fs-4"><strong>Saúde</strong></div>
                     <div class="card-body">
                         <ul>
-                            <li><span>Vacinas</span> <%=animal_id.vaccines%></li>
-                            <li><span>Ração</span> <%=animal_id.portion%></li>
-                            <li><span>Estado</span> <%=animal_id.health%></li>
-                            <li><span>Cuidados</span> <%=animal_id.cares%></li>
+                            <li><span>Vacinas</span> <span class="float-end font-p"><%=animal_id.vaccines%></span></li>
+                            <li><span>Ração</span> <span class="float-end font-p"><%=animal_id.portion%></span></li>
+                            <li><span>Estado</span> <span class="float-end font-p"><%=animal_id.health%></span></li>
+                            <li><span>Cuidados</span> <span class="float-end font-p"><%=animal_id.cares%></span></li>
                         </ul>
                     </div>
                 </div>
@@ -43,10 +43,10 @@
                     <div class="card-header bg-white fs-4"><strong>Perfil</strong></div>
                     <div class="card-body">
                         <ul>
-                            <li><span>Tamanho</span> <%= animal_id.size%></li>
-                            <li><span>Pelo</span> <%= animal_id.fur%></li>
-                            <li><span>Raça</span> <%= animal_id.breed%></li>
-                            <li><span>Cor</span> <%= animal_id.color%></li>
+                            <li><span>Tamanho</span> <span class="float-end font-p"><%= animal_id.size%></li></span>
+                            <li><span>Pelo</span> <span class="float-end font-p"><%= animal_id.fur%></li></span>
+                            <li><span>Raça</span> <span class="float-end font-p"><%= animal_id.breed%></li></span>
+                            <li><span>Cor</span> <span class="float-end font-p"><%= animal_id.color%></li></span>
                         </ul>
                     </div>
                 </div>

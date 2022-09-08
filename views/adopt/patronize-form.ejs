@@ -114,7 +114,7 @@
           <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
           <div class="card-body text-end">
             <h4><%= animal_name_date.name %></h4>
-            <h5><%= animal_name_date.birth_date.toLocaleString("pt-PT") %></h5>
+            <h5><%= animal_name_date.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %></h5>
           </div>
         </div>
       </div>
