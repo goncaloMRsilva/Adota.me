@@ -101,7 +101,7 @@ create table if not exists adotame.request(
     moving_home_animal_effects varchar(1000) null,
     give_up_circumstances varchar(1000) null,
     financial_payment_method varchar(50) check(financial_payment_method in('Semanal', 'Mensal', 'Anual')) null,
-    value_amout int null,
+    value_amount int null,
     hobby varchar(1000) check(hobby in('Passeios', 'Fins de semana', 'Divulgacao do animal', 'Vacinacao', 'Tratamentos', 'Tosquia')) null,
     last_seen_place varchar(2000) null,
     seen_place varchar(5000) null,

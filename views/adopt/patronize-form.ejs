@@ -6,7 +6,7 @@
 
   <div class="pt-5 d-flex gap-3">
     <div>
-      <form action="/adopt/form" method="post" class="fs-5">
+      <form action="/adopt/patronize-form" method="post" class="fs-5">
         <div>
           <label for="birth_date" class="form-label">Data de nascimento</label>
           <input type="date" class="form-control form-bar rdo-style" id="birth_date" name="birth_date" required>
@@ -44,53 +44,49 @@
         <div class="pt-4">
           <div><label>Financeira</label></div>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="option1">
+            <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Semanal">
             <label class="form-check-label" for="costs">Semanal</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="option2">
+            <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Mensal">
             <label class="form-check-label" for="costs">Mensal</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="option2">
+            <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Anual">
             <label class="form-check-label" for="costs">Anual</label>
           </div>
         </div>
 
         <div class="pt-4">
-          <label for="value" class="form-label">Valor</label>
-          <input type="text" class="form-control pt-2 form-bar" id="value" name="value" required>
+          <label for="value_amount" class="form-label">Valor</label>
+          <input type="number" class="form-control pt-2 form-bar" id="value_amount" name="value_amount" required>
         </div>
 
         <div class="pt-4">
           <div><label>Investimento</label></div>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option1">
-            <label class="form-check-label" for="investment">Passeios</label>
+            <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Passeios">
+            <label class="form-check-label" for="hobby">Passeios</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option2">
-            <label class="form-check-label" for="investment">Fins de semana</label>
+            <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Fins de semana">
+            <label class="form-check-label" for="hobby">Fins de semana</label>
           </div>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option1">
-            <label class="form-check-label" for="investment">Divulgação do animal</label>
+            <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Divulgacao do animal">
+            <label class="form-check-label" for="hobby">Divulgação do animal</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option2">
-            <label class="form-check-label" for="investment">Vacinação</label>
+            <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Vacinacao">
+            <label class="form-check-label" for="hobby">Vacinação</label>
           </div>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option1">
-            <label class="form-check-label" for="investment">Tratamentos</label>
+            <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Tratamentos">
+            <label class="form-check-label" for="hobby">Tratamentos</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option2">
-            <label class="form-check-label" for="investment">Tosquia</label>
-          </div>
-          <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input rdo-style" type="radio" name="investment" id="investment" value="option1">
-            <label class="form-check-label" for="investment">Outra</label>
+            <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Tosquia">
+            <label class="form-check-label" for="hobby">Tosquia</label>
           </div>
         </div>
         

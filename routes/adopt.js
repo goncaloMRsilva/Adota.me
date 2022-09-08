@@ -27,16 +27,13 @@ router.post("/patronize-form", function(req, res, next) {
   var get_birth_date = new Date(req.body.birth_date);
   var getSysDate = new Date();
 
-  if (get_birth_date.toLocaleString("pt-PT") > getSysDate.toLocaleString("pt-PT")){
+  if (get_birth_date.toLocaleString("en-ZA") > getSysDate.toLocaleString("en-ZA")){
     res.send("Data inválida!")
   }else{
-    db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_ammout, hobbie)
-            values($1, now(), $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)`,
+    db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby)
+            values($1, now(), 'Pendente', 'a3bf5656-3614-4176-a84a-233c2391cb04', '5995b6bf-3b93-4946-be1a-977e1864e0d5', $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
             [
               crypto.randomUUID(),
-              'Pendente',
-              "41b2a5cd-fab8-48cf-9269-5a73a341826d",
-              "d47ae7d0-8d37-4d0f-a746-915bb952e051",
               req.body.birth_date,
               req.body.nif,
               req.body.address,
@@ -44,13 +41,15 @@ router.post("/patronize-form", function(req, res, next) {
               req.body.locality,
               req.body.phone,
               req.body.financial_payment_method,
-              req.body.value_ammout,
-              req.body.hobbie
+              req.body.value_amount,
+              req.body.hobby
             ]
             ).then(rows => {
               console.log(rows);
-              res.send("Pedido enviado com sucesso!");
-            })
+            }).catch(error => {
+              console.log("ERROR:", error);
+            });
+            res.send("Pedido enviado com sucesso!");
   }
 });
 
@@ -61,7 +60,7 @@ router.post("/form", function (req, res, next) {
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
             why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
             pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances)
-            VALUES($1, now(), 'Pendente', '7c420b70-6c16-4850-b10a-9a5c0f712972', '1590e795-1264-46d2-ae12-f78df34073b0', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)`,
+            VALUES($1, now(), 'Pendente', 'a3bf5656-3614-4176-a84a-233c2391cb04', '1a87e1b7-2b89-4dc9-8185-5fd6490a0fac', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)`,
     [
       crypto.randomUUID(),
       req.body.married,
