@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/report', function(req, res, next) {
-  res.render('missing/report');
+  res.render('missing/report', {title: 'Reportar desaparecido', paragraph: 'Reporte um caso de desaparecimento'});
 });
 
 router.post('/report', function(req, res, next) {
@@ -34,7 +34,7 @@ router.post('/report', function(req, res, next) {
 });
 
 router.get('/seen', function(req, res, next) {
-  res.render('missing/form');
+  res.render('missing/form', {title: 'Desaparecido avistado', paragraph: 'Encontrou algum animal desaparecido?'});
 });
 
 module.exports = router;

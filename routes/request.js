@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   db.any(`select name from adotame.request_type`)
   .then(rows => {
     console.log(rows);
-    res.render('request/index', {requests: rows});
+    res.render('request/index', {requests: rows, title: 'Pedidos', paragraph: 'Crie um pedido à sua escolha'});
   })
   .catch(err => {
     console.log(err);
@@ -21,7 +21,7 @@ router.get('/create', function(req, res, next) {
 });
 
 router.get('/list', function(req, res, next) {
-  res.render('request/list');
+  res.render('request/list', {title: 'Lista de Pedidos', paragraph: 'Consulte e valide os diversos pedidos propostos'});
 });
 
 module.exports = router;

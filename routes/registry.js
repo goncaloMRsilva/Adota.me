@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 
 router.get("/", function (req, res, next) {
-  res.render("registry/index");
+  res.render("registry/index", {title: 'Registo', paragraph: 'Crie uma conta no nosso sistema'});
 });
 
 router.post("/", function (req, res, next) {

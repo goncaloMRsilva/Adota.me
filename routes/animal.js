@@ -5,12 +5,12 @@ const crypto = require("crypto");
 
 router.get("/", function (req, res, next) {
   db.any(`select * from adotame.animal`).then((rows) => {
-    res.render("animal/list", { animals: rows });
+    res.render("animal/list", { animals: rows});
   });
 });
 
 router.get("/create", function (req, res, next) {
-  res.render("animal/create-update");
+  res.render("animal/create-update", {title: 'Adicionar animal', paragraph: 'Adicione um novo animal ao catálogo'});
 });
 
 router.post("/create", function (req, res, next) {
@@ -57,7 +57,7 @@ router.post("/create", function (req, res, next) {
 router.get("/profile/:id", function (req, res, next) {
   db.any(`select * from adotame.animal where id_animal = $1`, [req.params.id])
   .then((rows) => {
-    res.render("animal/profile", {id: req.params.id, animals_data: rows });
+    res.render("animal/profile", {id: req.params.id, animals_data: rows, title: 'Adotar', paragraph: 'Esperemos que encontre algum amiguinho novo!!'});
   });
 });
 

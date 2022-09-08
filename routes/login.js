@@ -4,7 +4,7 @@ var router = express.Router();
 const bcrypt = require("bcrypt");
 
 router.get('/', function(req, res, next) {
-  res.render('login/index');
+  res.render('login/index', {title: 'Login', paragraph: 'Faça login no sistema'});
 });
 
 router.post('/', function(req, res, next){

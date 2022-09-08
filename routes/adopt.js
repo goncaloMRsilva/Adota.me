@@ -8,7 +8,7 @@ router.get("/form/:id", function (req, res, next) {
   db.one(`select name, birth_date from adotame.animal where id_animal = $1`, [
     req.params.id,
   ]).then((rows) => {
-    res.render("adopt/form", { id: req.params.id, animal_name: rows });
+    res.render("adopt/form", { id: req.params.id, animal_name: rows, title: 'Catálogo > Adotar > Inquérito', paragraph: 'Esperemos que encontre algum amiguinho novo!!'});
   });
 });
 
@@ -19,6 +19,7 @@ router.get("/patronize-form/:id", function (req, res, next) {
     res.render("adopt/patronize-form", {
       id: req.params.id,
       animal_name_date: rows,
+      title: 'Catálogo > Apadrinhar > Inquérito', paragraph: 'Esperemos que encontre algum amiguinho novo!!'
     });
   });
 });

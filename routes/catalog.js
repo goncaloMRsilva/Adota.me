@@ -16,7 +16,7 @@ router.get('/:type', function(req, res, next) {
   and c.name = $2`, [type, catalog])
   .then(rows => {
     console.log(rows);
-    res.render('catalog/index', {type: req.params.type, animals: rows});       
+    res.render('catalog/index', {type: req.params.type, animals: rows, title: 'Catálogo', paragraph: 'Esperamos que encontre algum amiguinho novo!!'});       
   })
   .catch(err => {
     console.log(err);
