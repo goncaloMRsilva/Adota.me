@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const db = require("../database");
 const crypto = require("crypto");
+const { func } = require("../database");
 
 router.get("/form/:id", function (req, res, next) {
   db.one(`select name, birth_date from adotame.animal where id_animal = $1`, [
@@ -22,18 +23,47 @@ router.get("/patronize-form/:id", function (req, res, next) {
   });
 });
 
+router.post("/patronize-form", function(req, res, next) {
+  var get_birth_date = new Date(req.body.birth_date);
+  var getSysDate = new Date();
+
+  if (get_birth_date.toLocaleString("pt-PT") > getSysDate.toLocaleString("pt-PT")){
+    res.send("Data inválida!")
+  }else{
+    db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_ammout, hobbie)
+            values($1, now(), $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)`,
+            [
+              crypto.randomUUID(),
+              'Pendente',
+              "41b2a5cd-fab8-48cf-9269-5a73a341826d",
+              "d47ae7d0-8d37-4d0f-a746-915bb952e051",
+              req.body.birth_date,
+              req.body.nif,
+              req.body.address,
+              req.body.postal_code,
+              req.body.locality,
+              req.body.phone,
+              req.body.financial_payment_method,
+              req.body.value_ammout,
+              req.body.hobbie
+            ]
+            ).then(rows => {
+              console.log(rows);
+              res.send("Pedido enviado com sucesso!");
+            })
+  }
+});
+
+
 router.post("/form", function (req, res, next) {
   db.one(
     `insert into adotame.request(id_request, date_request, status, id_user, id_request_type, married, childs,
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
             why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
             pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances)
-            VALUES($1, now(), $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24)`,
+            VALUES($1, now(), 'Pendente', '7c420b70-6c16-4850-b10a-9a5c0f712972', '1590e795-1264-46d2-ae12-f78df34073b0', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)`,
     [
       crypto.randomUUID(),
-      "Pendente",
-      "41b2a5cd-fab8-48cf-9269-5a73a341826d",
-      "7e3760d3-6d85-401b-81e1-490683bcd189",
       req.body.married,
       req.body.childs,
       req.body.live_with,
@@ -53,12 +83,14 @@ router.post("/form", function (req, res, next) {
       req.body.animal_cares_expenses,
       req.body.teach_plans,
       req.body.moving_home_animal_effects,
-      req.body.give_up_circumstances,
+      req.body.give_up_circumstances
     ]
   ).then((rows) => {
     console.log(rows);
-    res.send("request send");
+  }).catch(error => {
+    console.log("ERROR:", error);
   });
+  res.send("Peddido enviado com sucesso")
 });
 
 module.exports = router;
