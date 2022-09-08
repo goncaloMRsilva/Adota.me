@@ -28,7 +28,7 @@ router.post("/patronize-form", function(req, res, next) {
   var get_birth_date = new Date(req.body.birth_date);
   var getSysDate = new Date();
 
-  if (get_birth_date.toLocaleString("en-ZA") > getSysDate.toLocaleString("en-ZA")){
+  if (get_birth_date.toLocaleString("en-ZA", {year: 'numeric', month: 'numeric', day: 'numeric'}) > getSysDate.toLocaleString("en-ZA", {year: 'numeric', month: 'numeric', day: 'numeric'})){
     res.send("Data inválida!")
   }else{
     db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby)

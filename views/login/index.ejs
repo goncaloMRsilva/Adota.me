@@ -14,14 +14,29 @@
       <label for="password" class="form-label"></label>
       <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
     </div>
-    <div class="text-center"><button type="submit" class="btn btn-primary">Entrar</button></div>
+    <div class="text-center"><button type="submit" class="btn card-button">Entrar</button></div>
   </form>
-  <a href="/registry">Registo</a>
+  <a href="/registry" class="no-underline pt-2">Registo</a>
 </div>
 
 <style>
   .logo{
     width: 80px;
     height: 90px;
+  }
+
+  .card-button{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, #D14C1F, #F39200, #ECB800);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+  }
+  .no-underline{
+    text-decoration: none;
+    color: #F39200;
   }
 </style>

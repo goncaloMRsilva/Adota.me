@@ -21,7 +21,7 @@ router.post("/create", function (req, res, next) {
 
   if (name.length >= 15 || name.length < 2) {
     res.send("Nome para este animal é inválido!");
-  } else if (get_birth_date.toLocaleString("pt-PT") > getSysDate.toLocaleString("pt-PT")) {
+  } else if (get_birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) > getSysDate.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'})) {
     res.send("Data inserida não pode ser maior do que a data atual!");
   } else {
     db.one(
