@@ -3,38 +3,30 @@
   <p>Responda a este inquérito e espere até analisarmos a sua<br> resposta! Obrigado por nos ajudar!</p>
 </div>
 
-<div class="pt-4 d-flex flex-column">
   <form action="/animal/create" method="post" class="fs-5">
     <ol>
       <div class="pt-4">
         <li><label for="seen_place" class="form-label">Local onde foi avistado</label></li>
-        <input type="text" class="form-control form-bar rdo-style pt-2" id="seen_place" name="seen_place" required>
+        <input type="text" class="form-control rounded-5 rdo-style pt-2" id="seen_place" name="seen_place" required>
       </div>
 
       <div class="pt-4">
         <li><label for="phone" class="form-label">Contato</label></li>
-        <input type="text" class="form-control form-bar rdo-style pt-2" id="phone" name="phone" required>
+        <input type="text" class="form-control rounded-5 rdo-style pt-2" id="phone" name="phone" required>
       </div>
 
       <div class="pt-4">
         <li><label for="details" class="form-label">Detalhes adicionais</label></li>
-        <input type="text" class="form-control form-bar pt-2" style="height: 6rem;" id="details" name="details" required>
+        <input type="text" class="form-control rounded-5 pt-2 rdo-style" style="height: 6rem;" id="details" name="details" required>
       </div>
     </ol>
       <div class="text-center pt-4">
         <button type="submit" class="btn card-button">Enviar</button>
       </div>
   </form>
-</div>
+
 
 <style>
-  .form-bar{
-    width: 55vw;
-    height: 2.5rem;
-    background-color: rgba(29, 29, 27, 0.11);
-    border-radius: 2rem;
-  }
-
   .rdo-style{
     background-color: rgba(29, 29, 27, 0.11);
   }
