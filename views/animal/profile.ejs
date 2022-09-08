@@ -1,7 +1,7 @@
 <% animals_data.forEach(function(animal_id){ %>  
         <div class="d-flex justify-content-center gap-5 py-5 px-3">
             <div class="card rounded-5" style="width: 25rem;">
-                <img src="/images/logo/dog.svg" class="card-img-top p-3" alt="logoDog">
+                <img src="<%= animal_id.photo %> " class="card-img-top p-3" alt="logoDog">
                 <div class="card-body">
                     <div class="card-title fs-4">
                         <div class="d-flex justify-content-between">

@@ -9,7 +9,7 @@
     <div class="card rounded-5" style="width: 18rem;">
       <div>   
         <a href="/animal/profile/<%-animal.id_animal%>">
-        <img src="/images/logo/dog.svg" class="card-img-top p-4" alt="logoDog">
+        <img src="<%= animal.photo %> " class="card-img-top p-4" alt="logoDog">
         </a>
       </div>
       <div class="card-body text-center py-1">
@@ -18,7 +18,7 @@
           <p class="card-text"> <%= animal.age.years %> anos, <%= animal.age.months %> meses, <%= animal.age.days %> dias</p>
           <p class="card-text"> <%= animal.gender %> </p>
         </div>
-        <div class="pb-2">
+        <div class="pb-2 d-flex justify-content-center gap-3 flex-wrap">
           <a href="/adopt/form/<%-animal.id_animal%>" class="btn card-button">Adotar</a>
           <a href="/adopt/patronize-form/<%-animal.id_animal%>" class="btn card-button">Apadrinhar</a>
         </div>

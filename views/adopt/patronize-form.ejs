@@ -104,14 +104,14 @@
         </div>
             
             <div class="text-center pt-4">
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" class="btn card-button">Enviar</button>
             </div>
         </form>
       </div>
 
       <div>
         <div class="card" style="width: 16rem;">
-          <img src="/images/logo/dog.svg" class="card-img-top" alt="logoDog">
+          <img src="<%= animal_name_date.photo %> " class="card-img-top" alt="logoDog">
           <div class="card-body text-end">
             <h4><%= animal_name_date.name %></h4>
             <h5><%= animal_name_date.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %></h5>
@@ -134,4 +134,14 @@
     background-color: rgba(29, 29, 27, 0.11);
   }
 
+  .card-button{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, #D14C1F, #F39200, #ECB800);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+  }
 </style>
