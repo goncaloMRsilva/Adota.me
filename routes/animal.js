@@ -50,7 +50,7 @@ router.post("/create", function (req, res, next) {
       .catch((error) => {
         console.log("ERROR:", error);
       });
-    res.send("Peddido enviado com sucesso");
+    res.send("Pedido enviado com sucesso");
   }
 });
 
