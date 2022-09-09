@@ -23,16 +23,18 @@
 <body>
 	<div class="d-flex flex-column">
 		<%- include('../partials/header.ejs') %>
-			<div class="d-flex flex-row">
-				<%- include('../partials/side-bar.ejs') %>
-					<div class="d-flex flex-column container-app rounded-4 h-100">
-						<div class="bg-white d-flex flex-grow-1 rounded-4 flex-column p-4">
-							<%- body %>
-						</div>
-					</div>
+		<div class="d-flex flex-row">
+			<%- include('../partials/side-bar.ejs') %>
+			<div class="d-flex flex-column container-app rounded-4 h-100">
+				<div class="bg-white d-flex flex-grow-1 rounded-4 flex-column p-4">
+					<%- body %>
+				</div>
 			</div>
+		</div>
 	</div>
 	<%- include('../partials/scripts.ejs') %>
+	<%- include('../modals/login.ejs') %>
+	<%- include('../modals/registry.ejs') %>
 </body>
 
 <style>

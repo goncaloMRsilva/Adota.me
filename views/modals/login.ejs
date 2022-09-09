@@ -1,0 +1,59 @@
+<div class="modal" id="loginModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+          <div class="text-center">
+              <img src="/images/logo/logo.svg" alt="logoLogo" class="logo-dimensions">
+              <h1 class="title-color">ADOTA.ME</h1>
+              <p class="font-p">Iniciar sessão</p>
+          </div>
+
+          <form action="/registry" method="post" class="pt-3">
+            <div>
+              <input type="email" class="form-control rounded-5 rdo-style" id="email" name="email" placeholder="Email" placeholder="E-mail" required>
+            </div>
+
+            <div class="pt-3">
+              <input type="password" class="form-control rounded-5 rdo-style" id="password" name="password" placeholder="Password" placeholder="Senha" required>
+            </div>
+
+            <div class="text-center mt-4">
+              <p class="font-p m-0">ou</p>
+              <a data-bs-toggle="modal" data-bs-target="#registryModal" class="no-underline">Criar conta</a>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+              <button type="submit" class="btn card-button">Entrar</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .logo{
+    width: 80px;
+    height: 90px;
+  }
+
+  .card-button{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, #D14C1F, #F39200, #ECB800);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+  }
+
+  .no-underline{
+    text-decoration: none;
+    color: #F39200;
+  }
+
+  .rdo-style{
+    background-color: rgba(29, 29, 27, 0.11);
+  }
+</style>
