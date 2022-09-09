@@ -90,7 +90,7 @@ router.post("/form", function (req, res, next) {
   }).catch(error => {
     console.log("ERROR:", error);
   });
-  res.send("Peddido enviado com sucesso")
+  res.render("adopt/modal-thank", {title: null, paragraph: null});
 });
 
 module.exports = router;

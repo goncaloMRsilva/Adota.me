@@ -7,8 +7,10 @@
 			<h1><%= title %></h1>
 			<p><%= paragraph %> </p>
 		</div>
-		<div class="d-flex justify-content-center bell-width">
-			<img src="/images/icons/bell.svg" alt="iconBell">
+		<div class="d-flex justify-content-center bell-width pt-5">
+			<a href="/notification">
+				<img src="/images/icons/bell.svg" alt="iconBell" class="bell-dimensions">
+			</a>
 		</div>
 		<div class="d-flex justify-content-end text-login">
 			<a href="/login" class="login a-prop">Login/Registar</a>
@@ -49,6 +51,11 @@
 
 	.gap-between{
 		padding-right: 5rem;
+	}
+
+	.bell-dimensions{
+		width: 2rem;
+		height: 3rem;
 	}
 
 	/* @media screen and (max-width: 400px), (max-height: 400px) {
