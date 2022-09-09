@@ -90,7 +90,7 @@ router.post("/form", function (req, res, next) {
   }).catch(error => {
     console.log("ERROR:", error);
   });
-  res.render("adopt/modal-thank", {title: null, paragraph: null});
+  res.send("Thank you!");
 });
 
 module.exports = router;
