@@ -24,11 +24,4 @@ router.get('/:type', function(req, res, next) {
   })
 });
 
-// router.get("/dogs", function(req, res, next){
-//   db.any(`select * from adotame.animal where type = $1`, ['Cao']).then(rows => {
-//     console.log(rows);
-//     res.render('catalog/index')
-//   })
-// });
-
 module.exports = router;
