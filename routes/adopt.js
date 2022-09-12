@@ -56,6 +56,9 @@ router.post("/patronize-form", function(req, res, next) {
 
 
 router.post("/form", function (req, res, next) {
+
+  const myModal = new bootstrap.Modal(document.getElementById('modal-thankModal'));
+
   db.one(
     `insert into adotame.request(id_request, date_request, status, id_user, id_request_type, married, childs,
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
@@ -90,7 +93,21 @@ router.post("/form", function (req, res, next) {
   }).catch(error => {
     console.log("ERROR:", error);
   });
-  res.send("Thank you!");
+  res.render(myModal, {title: 'modal', paragraph: 'modal'});
 });
+
+// async function register(){
+//   let res = await fetch("/adopt/form");
+
+//   console.log(res.status);
+
+//   if(res.status(200)){
+//     res.end();
+//   }else if(res.status(400)){
+//     res.end();
+//   }
+//}
+
+// register();
 
 module.exports = router;
