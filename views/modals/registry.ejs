@@ -1,54 +1,61 @@
-<div class="modal" id="registryModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal" id="registryModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body p-5">
-          <div class="text-center">
-              <img src="/images/logo/logo.svg" alt="logoLogo" class="logo-dimensions">
-              <h1 class="title-color">ADOTA.ME</h1>
-              <p class="font-p">Criar uma conta</p>
+        <div class="text-center">
+          <img src="/images/logo/logo.svg" alt="logoLogo" class="logo-dimensions">
+          <h1 class="title-color">ADOTA.ME</h1>
+          <p class="font-p">Criar uma conta</p>
+        </div>
+
+        <form class="pt-3">
+          <div>
+            <input type="text" class="form-control rounded-5 rdo-style" id="name" name="name" placeholder="Nome"
+              required>
           </div>
 
-          <form action="/registry" method="post" class="pt-3">
-            <div>
-              <input type="text" class="form-control rounded-5 rdo-style" id="name" name="name" placeholder="Nome" required>
-            </div>
+          <div class="pt-3">
+            <input type="email" class="form-control rounded-5 rdo-style" id="userEmail" name="email" placeholder="Email"
+              required>
+          </div>
 
-            <div class="pt-3">
-              <input type="email" class="form-control rounded-5 rdo-style" id="email" name="email" placeholder="Email" required>
-            </div>
+          <div class="pt-3">
+            <input type="email" class="form-control rounded-5 rdo-style" id="userEmailConfirm" name="email1"
+              placeholder="Confirmar e-mail" required>
+          </div>
 
-            <div class="pt-3">
-              <input type="email" class="form-control rounded-5 rdo-style" id="email1" name="email1" placeholder="Confirmar e-mail" required>
-            </div>
+          <div class="pt-3">
+            <input type="password" class="form-control rounded-5 rdo-style" id="userPassword" name="password"
+              placeholder="Senha" required>
+          </div>
 
-            <div class="pt-3">
-              <input type="password" class="form-control rounded-5 rdo-style" id="password" name="password" placeholder="Senha" required>
-            </div>
+          <div class="pt-3">
+            <input type="password" class="form-control rounded-5 rdo-style" id="userPasswordConfirm" name="password1"
+              placeholder="Confirmar senha" required>
+          </div>
 
-            <div class="pt-3">
-              <input type="password" class="form-control rounded-5 rdo-style" id="password1" name="password1" placeholder="Confirmar senha" required>
-            </div>
+          <div class="pt-3">
+            <input type="number" class="form-control rounded-5 rdo-style" id="phone" name="phone" placeholder="Contacto"
+              required>
+          </div>
 
-            <div class="pt-3">
-              <input type="number" class="form-control rounded-5 rdo-style" id="phone" name="phone" placeholder="Contacto" required>
-            </div>
+          <div class="text-center mt-4">
+            <p class="font-p m-0">ou</p>
+            <a data-bs-toggle="modal" data-bs-target="#loginModal" class="no-underline">Iniciar sessão</a>
+          </div>
 
-            <div class="text-center mt-4">
-              <p class="font-p m-0">ou</p>
-              <a data-bs-toggle="modal" data-bs-target="#loginModal" class="no-underline">Iniciar sessão</a>
-            </div>
-
-            <div class="d-flex justify-content-center mt-4">
-              <button type="submit" class="btn card-button">Criar</button>
-            </div>
-          </form>
+          <div class="d-flex justify-content-center mt-4">
+            <button type="button" onclick="register()" class="btn card-button">Criar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
 
 <style>
-    .card-button{
+  .card-button {
     width: 7rem;
     height: 2rem;
     border-radius: 1rem;
@@ -59,25 +66,27 @@
     padding-top: 2px;
   }
 
-  .no-underline{
+  .no-underline {
     text-decoration: none;
     color: #CE8926;
   }
 
-  .title-color{
+  .title-color {
     color: #CE8926;
   }
 
-  .font-p{
-        color: #adada8;
-    }
+  .font-p {
+    color: #adada8;
+  }
 
-  .logo-dimensions{
+  .logo-dimensions {
     width: 6rem;
     height: auto;
   }
 
-  .rdo-style{
+  .rdo-style {
     background-color: rgba(29, 29, 27, 0.11);
   }
 </style>
+
+<script src="/js/register.js"></script>
