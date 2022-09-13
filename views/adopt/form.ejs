@@ -1,223 +1,222 @@
-<div>
-  <div class="text-center pt-2">
-    <h1>Tens a certeza que queres<br> uma nova companhia?</h1>
-    <p>Responde a este inquérito para avaliarmos se tem o que é<br> preciso para adotar um novo companheiro.</p>
-  </div>
+<div class="text-center pt-2">
+  <h1>Tens a certeza que queres<br> uma nova companhia?</h1>
+  <p>Responde a este inquérito para avaliarmos se tem o que é<br> preciso para adotar um novo companheiro.</p>
+</div>
 
-  <div class="pt-5 d-flex gap-3">
-    <div>
-      <form action="/adopt/form" method="post" class="fs-5">
-            <div>
-              <div><label>É casado?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="married" id="married" value="Sim">
-                <label class="form-check-label" for="married">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="married" id="married" value="Nao">
-                <label class="form-check-label" for="married">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Tem filhos?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                  <input class="form-check-input rdo-style" type="radio" name="childs" id="childs" value="Sim">
-                  <label class="form-check-label" for="childs">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                  <input class="form-check-input rdo-style" type="radio" name="childs" id="childs" value="Nao">
-                  <label class="form-check-label" for="childs">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <label for="live_with" class="form-label">Com quem é que vive?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="live_with" name="live_with" required>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Todas as pessoas em sua casa concordam com a adoção?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="home_agreement" id="home_agreement" value="Sim">
-                <label class="form-check-label" for="home_agreement">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="home_agreement" id="home_agreement" value="Nao">
-                <label class="form-check-label" for="home_agreement">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Alguém em sua casa tem alergias ou asma?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="allergies_in_relatives" id="allergies_in_relatives" value="Sim">
-                <label class="form-check-label" for="allergies_in_relatives">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="allergies_in_relatives" id="allergies_in_relatives" value="Nao">
-                <label class="form-check-label" for="allergies_in_relatives">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <label for="main_caregiver_name" class="form-label">Quem é que vai ser o cuidador principal?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="main_caregiver_name" name="main_caregiver_name" required>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Está preparado/a para cuidar deste animal por 10-15 anos?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="caregiver_long" id="caregiver_long" value="Sim">
-                <label class="form-check-label" for="caregiver_long">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="caregiver_long" id="caregiver_long" value="Nao">
-                <label class="form-check-label" for="caregiver_long">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <label for="caregiver_illness_name" class="form-label">Quem é que vai cuidar do animal se ficar doente ou incapaz de o fazer?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="caregiver_illness_name" name="caregiver_illness_name" required>
-            </div>
-
-            <div class="pt-4">
-              <label for="why_adopt" class="form-label">Porque é que quer adotar um animal?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="why_adopt" name="why_adopt" required>
-            </div>
-
-            <div class="pt-4">
-              <label for="address" class="form-label">Onde vive?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="address" name="address" required>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Tem quintal?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="yard" id="yard" value="Sim">
-                <label class="form-check-label" for="yard">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="yard" id="yard" value="Nao">
-                <label class="form-check-label" for="yard">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <label for="animal_sleep_place" class="form-label">Onde é que o animal vai dormir?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="animal_sleep_place" name="animal_sleep_place" required>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Vai deixar o animal sozinho ao longo do dia?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="animal_loneless_daytime" id="animal_loneless_daytime" value="Sim">
-                <label class="form-check-label" for="animal_loneless_daytime">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="animal_loneless_daytime" id="animal_loneless_daytime" value="Nao">
-                <label class="form-check-label" for="animal_loneless_daytime">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <label for="animal_alone_place" class="form-label">Onde é que o animal vai ser deixado sozinho?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="animal_alone_place" name="animal_alone_place" required>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Vai ter tempo para brincar com o seu animal?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="playtime" id="playtime" value="Sim">
-                <label class="form-check-label" for="playtime">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="playtime" id="playtime" value="Nao">
-                <label class="form-check-label" for="playtime">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Já teve algum animal de estimação antes?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="pet_before" id="pet_before" value="Sim">
-                <label class="form-check-label" for="pet_before">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="pet_before" id="pet_before" value="Nao">
-                <label class="form-check-label" for="pet_before">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Tem atualmente algum animal de estimação?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="pet_nowdays" id="pet_nowdays" value="Sim">
-                <label class="form-check-label" for="pet_nowdays">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="pet_nowdays" id="pet_nowdays" value="Nao">
-                <label class="form-check-label" for="pet_nowdays">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <div><label>Tem possibilidades de pagar todas as despesas veterinárias?</label></div>
-              <div class="form-check form-check-inline pt-2">
-                <input class="form-check-input rdo-style" type="radio" name="animal_cares_expenses" id="animal_cares_expenses" value="Sim">
-                <label class="form-check-label" for="animal_cares_expenses">Sim</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input rdo-style" type="radio" name="animal_cares_expenses" id="animal_cares_expenses" value="Nao">
-                <label class="form-check-label" for="animal_cares_expenses">Não</label>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <label for="teach_plans" class="form-label">Como planeia ensinar o seu animal?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="teach_plans" name="teach_plans" required>
-            </div>
-
-            <div class="pt-4">
-              <label for="moving_home_animal_effects" class="form-label">O que fará ao animal se mudar de casa?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="moving_home_animal_effects" name="moving_home_animal_effects" required>
-            </div>
-
-            <div class="pt-4">
-              <label for="give_up_circumstances" class="form-label">Em que circunstâncias desistiria do seu animal?</label>
-              <input type="text" class="form-control pt-2 form-bar" id="give_up_circumstances" name="give_up_circumstances" required>
-            </div>
-
-            <div class="form-check pt-4">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
-              <label class="form-check-label" for="defaultCheck1">
-                Autorizo a utilização dos dados inseridos, em conformidade com a Política de Privacidade
-              </label>
-            </div>
-            
-            <div class="text-center pt-4">
-              <button type="submit" class="btn card-button">Enviar</button>
-            </div>
-        </form>
+<form action="/adopt/form" method="post" class="fs-5 pt-5">
+  <div class="row">
+    <div class="col">
+      <div>
+        <div><label>1. É casado?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="married" id="married" value="Sim">
+          <label class="form-check-label" for="married">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="married" id="married" value="Nao">
+          <label class="form-check-label" for="married">Não</label>
+        </div>
       </div>
 
-      <div>
-        <div class="card" style="width: 16rem;">
+      <div class="pt-4">
+        <div><label>2. Tem filhos?</label></div>
+        <div class="form-check form-check-inline pt-2">
+            <input class="form-check-input rdo-style" type="radio" name="childs" id="childs" value="Sim">
+            <label class="form-check-label" for="childs">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input rdo-style" type="radio" name="childs" id="childs" value="Nao">
+            <label class="form-check-label" for="childs">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <label for="live_with" class="form-label">3. Com quem é que vive?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="live_with" name="live_with" required>
+      </div>
+    </div>
+
+      <div class="col-sm-3">
+        <div class="card" style="width: auto; border: none;">
             <img src="<%= animal_name.photo %> " class="card-img-top" alt="logoDog">
             <div class="card-body text-end">
-              <h4><%=animal_name.name %></h4>
-              <h5><%=animal_name.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %></h5>
+              <h4><strong><%=animal_name.name %></strong></h4>
+              <h5><strong><%=animal_name.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %></strong></h5>
             </div>
         </div>
       </div>
     </div>
-</div>
+
+    <div class="row">
+      <div class="pt-2">
+        <div><label>4. Todas as pessoas em sua casa concordam com a adoção?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="home_agreement" id="home_agreement" value="Sim">
+          <label class="form-check-label" for="home_agreement">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="home_agreement" id="home_agreement" value="Nao">
+          <label class="form-check-label" for="home_agreement">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <div><label>5. Alguém em sua casa tem alergias ou asma?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="allergies_in_relatives" id="allergies_in_relatives" value="Sim">
+          <label class="form-check-label" for="allergies_in_relatives">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="allergies_in_relatives" id="allergies_in_relatives" value="Nao">
+          <label class="form-check-label" for="allergies_in_relatives">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <label for="main_caregiver_name" class="form-label">6. Quem é que vai ser o cuidador principal?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="main_caregiver_name" name="main_caregiver_name" required>
+      </div>
+
+      <div class="pt-4">
+        <div><label>7. Está preparado/a para cuidar deste animal por 10-15 anos?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="caregiver_long" id="caregiver_long" value="Sim">
+          <label class="form-check-label" for="caregiver_long">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="caregiver_long" id="caregiver_long" value="Nao">
+          <label class="form-check-label" for="caregiver_long">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <label for="caregiver_illness_name" class="form-label">8. Quem é que vai cuidar do animal se ficar doente ou incapaz de o fazer?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="caregiver_illness_name" name="caregiver_illness_name" required>
+      </div>
+
+      <div class="pt-4">
+        <label for="why_adopt" class="form-label">9. Porque é que quer adotar um animal?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="why_adopt" name="why_adopt" required>
+      </div>
+
+      <div class="pt-4">
+        <label for="address" class="form-label">10. Onde vive?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="address" name="address" required>
+      </div>
+
+      <div class="pt-4">
+        <div><label>11. Tem quintal?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="yard" id="yard" value="Sim">
+          <label class="form-check-label" for="yard">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="yard" id="yard" value="Nao">
+          <label class="form-check-label" for="yard">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <label for="animal_sleep_place" class="form-label">12. Onde é que o animal vai dormir?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="animal_sleep_place" name="animal_sleep_place" required>
+      </div>
+
+      <div class="pt-4">
+        <div><label>13. Vai deixar o animal sozinho ao longo do dia?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="animal_loneless_daytime" id="animal_loneless_daytime" value="Sim">
+          <label class="form-check-label" for="animal_loneless_daytime">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="animal_loneless_daytime" id="animal_loneless_daytime" value="Nao">
+          <label class="form-check-label" for="animal_loneless_daytime">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <label for="animal_alone_place" class="form-label">14. Onde é que o animal vai ser deixado sozinho?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="animal_alone_place" name="animal_alone_place" required>
+      </div>
+
+      <div class="pt-4">
+        <div><label>15. Vai ter tempo para brincar com o seu animal?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="playtime" id="playtime" value="Sim">
+          <label class="form-check-label" for="playtime">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="playtime" id="playtime" value="Nao">
+          <label class="form-check-label" for="playtime">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <div><label>16. Já teve algum animal de estimação antes?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="pet_before" id="pet_before" value="Sim">
+          <label class="form-check-label" for="pet_before">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="pet_before" id="pet_before" value="Nao">
+          <label class="form-check-label" for="pet_before">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <div><label>17. Tem atualmente algum animal de estimação?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="pet_nowdays" id="pet_nowdays" value="Sim">
+          <label class="form-check-label" for="pet_nowdays">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="pet_nowdays" id="pet_nowdays" value="Nao">
+          <label class="form-check-label" for="pet_nowdays">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <div><label>18. Tem possibilidades de pagar todas as despesas veterinárias?</label></div>
+        <div class="form-check form-check-inline pt-2">
+          <input class="form-check-input rdo-style" type="radio" name="animal_cares_expenses" id="animal_cares_expenses" value="Sim">
+          <label class="form-check-label" for="animal_cares_expenses">Sim</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input rdo-style" type="radio" name="animal_cares_expenses" id="animal_cares_expenses" value="Nao">
+          <label class="form-check-label" for="animal_cares_expenses">Não</label>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <label for="teach_plans" class="form-label">19. Como planeia ensinar o seu animal?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="teach_plans" name="teach_plans" required>
+      </div>
+
+      <div class="pt-4">
+        <label for="moving_home_animal_effects" class="form-label">20. O que fará ao animal se mudar de casa?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="moving_home_animal_effects" name="moving_home_animal_effects" required>
+      </div>
+
+      <div class="pt-4">
+        <label for="give_up_circumstances" class="form-label">21. Em que circunstâncias desistiria do seu animal?</label>
+        <input type="text" class="form-control pt-2 form-bar" id="give_up_circumstances" name="give_up_circumstances" required>
+      </div>
+
+      <div class="form-check pt-4">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+        <label class="form-check-label" for="defaultCheck1">Autorizo a utilização dos dados inseridos, em conformidade com a Política de Privacidade</label>
+      </div>
+      
+      <div class="text-center pt-4">
+        <button type="submit" class="btn card-button">Enviar</button>
+      </div>
+    </div>
+</form>
+
+
+
 
 <style>
   .form-bar{
-    width: 50rem;
-    height: 2.5rem;
     background-color: rgba(29, 29, 27, 0.11);
     border-radius: 2rem;
   }

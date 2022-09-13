@@ -1,6 +1,7 @@
-<% animals_data.forEach(function(animal_id){ %>  
-        <div class="d-flex justify-content-center gap-5 py-5 px-3">
-            <div class="card rounded-5" style="width: 25rem;">
+<% animals_data.forEach(function(animal_id){ %>
+    <div class="row"> 
+        <div class="col-sm-6"> 
+            <div class="card rounded-5" style="width: auto;">
                 <img src="<%= animal_id.photo %> " class="card-img-top p-3" alt="logoDog">
                 <div class="card-body">
                     <div class="card-title fs-4">
@@ -8,7 +9,7 @@
                             <h3>Nome</h3>
                             <p class="font-p"><%= animal_id.name %></p>
                         </div>
-                        <div class="d-flex justify-content-between gap-5">
+                        <div class="d-flex justify-content-between">
                             <h3>Data</h3>
                             <p class="font-p"><%= animal_id.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %> </p>
                         </div>
@@ -19,15 +20,17 @@
                 </ul>
                 <div class="text-center pb-4 px-3 pt-2">
                     <p>Queres dar-lhe uma vida cheia de amor? Clica aqui!</p>
-                    <div class="d-flex justify-content-center gap-5">
+                    <div>
                         <a href="/adopt/form/<%-animal_id.id_animal%>" class="btn card-button">Adotar</a>
                         <a href="/adopt/patronize-form/<%-animal_id.id_animal%>" class="btn card-button">Apadrinhar</a>
                     </div>
                 </div>
             </div>
+        </div>
    
-            <div class="d-flex flex-column justify-content-between">
-                <div class="card rounded-5" style="width: 25rem;">
+        
+            <div class="col-sm-6 d-flex flex-column justify-content-between">
+                <div class="card rounded-5" style="width: auto;">
                     <div class="card-header bg-white fs-4"><strong>Saúde</strong></div>
                     <div class="card-body">
                         <ul>
@@ -39,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="card rounded-5" style="width: 25rem;">
+                <div class="card rounded-5" style="width: auto;">
                     <div class="card-header bg-white fs-4"><strong>Perfil</strong></div>
                     <div class="card-body">
                         <ul>
@@ -50,8 +53,8 @@
                         </ul>
                     </div>
                 </div>
-            </div> 
-        </div>
+            </div>
+        </div> 
 <% }) %>
 
 <style>

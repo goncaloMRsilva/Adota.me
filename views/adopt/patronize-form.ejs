@@ -3,119 +3,125 @@
   <p>Responde a este inquérito para avaliarmos se tem o que é<br> preciso para adotar um novo companheiro.</p>
 </div>
 
-<div class="row pt-5">
-    <form action="/adopt/patronize-form" method="post" class="fs-5 col-sm-8">
+
+<form action="/adopt/patronize-form" method="post" class="fs-5 pt-5">
+  <div class="row">
+    <div class="col">
       <div>
-        <label for="birth_date" class="form-label">Data de nascimento</label>
+        <label for="birth_date" class="form-label">1. Data de nascimento</label>
         <input type="date" class="form-control form-bar rdo-style" id="birth_date" name="birth_date" required>
       </div>
 
       <div class="pt-4">
-        <label for="nif" class="form-label">NIF</label>
+        <label for="nif" class="form-label">2. NIF</label>
         <input type="text" class="form-control pt-2 form-bar" id="nif" name="nif" required>
       </div>
 
       <div class="pt-4">
-        <label for="address" class="form-label">O seu endereço</label>
+        <label for="address" class="form-label">3. O seu endereço</label>
         <input type="text" class="form-control pt-2 form-bar" id="address" name="address" required>
       </div>
+    </div>
 
-      <div class="pt-4">
-        <label for="postal_code" class="form-label">Código postal</label>
-        <input type="text" class="form-control pt-2 form-bar" id="postal_code" name="postal_code" required>
-      </div>
-
-      <div class="pt-4">
-        <label for="locality" class="form-label">Localidade</label>
-        <input type="text" class="form-control pt-2 form-bar" id="locality" name="locality" required>
-      </div>
-
-      <div class="pt-4">
-        <label for="phone" class="form-label">Contacto telefónico</label>
-        <input type="text" class="form-control pt-2 form-bar" id="phone" name="phone" required>
-      </div>
-      
-      <div class="pt-4">
-        <h2>Contribuições / Apoios</h2>
-      </div>
-
-      <div class="pt-4">
-        <div><label>Financeira</label></div>
-        <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Semanal">
-          <label class="form-check-label" for="costs">Semanal</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Mensal">
-          <label class="form-check-label" for="costs">Mensal</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Anual">
-          <label class="form-check-label" for="costs">Anual</label>
-        </div>
-      </div>
-
-      <div class="pt-4">
-        <label for="value_amount" class="form-label">Valor</label>
-        <input type="number" class="form-control pt-2 form-bar" id="value_amount" name="value_amount" required>
-      </div>
-
-      <div class="pt-4">
-        <div><label>Investimento</label></div>
-        <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Passeios">
-          <label class="form-check-label" for="hobby">Passeios</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Fins de semana">
-          <label class="form-check-label" for="hobby">Fins de semana</label>
-        </div>
-        <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Divulgacao do animal">
-          <label class="form-check-label" for="hobby">Divulgação do animal</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Vacinacao">
-          <label class="form-check-label" for="hobby">Vacinação</label>
-        </div>
-        <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Tratamentos">
-          <label class="form-check-label" for="hobby">Tratamentos</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Tosquia">
-          <label class="form-check-label" for="hobby">Tosquia</label>
-        </div>
-      </div>
-      
-      <div class="pt-4">
-        <p>Para efetuar o pagamento pode fazer depósito, transferência bancária ou pagamento por MBWAY:<hr>
-            IBAN: PT50XXXXXXXXXXXXX<hr>
-            MBWAY: 91xxxxxxx </p>
-      </div>
-
-      <div class="form-check pt-4">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
-        <label class="form-check-label" for="defaultCheck1">
-          Autorizo a utilização dos dados inseridos, em conformidade com a Política de Privacidade
-        </label>
-      </div>
-          
-          <div class="text-center pt-4">
-            <button type="submit" class="btn card-button">Enviar</button>
+      <div class="col-sm-3">
+        <div class="card" style="width: auto; border: none;">
+          <img src="<%= animal_name_date.photo %> " class="card-img-top" alt="logoDog">
+          <div class="card-body text-end">
+            <h4><strong><%= animal_name_date.name %></strong></h4>
+            <h5><strong><%= animal_name_date.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %></strong></h5>
           </div>
-      </form>
+        </div>
+      </div>
+  </div>
 
-  <div class="col-sm-4">
-    <div class="card" style="width: auto; border: none;">
-      <img src="<%= animal_name_date.photo %> " class="card-img-top" alt="logoDog">
-      <div class="card-body text-end">
-        <h4><%= animal_name_date.name %></h4>
-        <h5><%= animal_name_date.birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) %></h5>
+  <div class="row">
+    <div class="pt-3">
+      <label for="postal_code" class="form-label">4. Código postal</label>
+      <input type="text" class="form-control pt-2 form-bar" id="postal_code" name="postal_code" required>
+    </div>
+
+    <div class="pt-4">
+      <label for="locality" class="form-label">5. Localidade</label>
+      <input type="text" class="form-control pt-2 form-bar" id="locality" name="locality" required>
+    </div>
+
+    <div class="pt-4">
+      <label for="phone" class="form-label">6. Contacto telefónico</label>
+      <input type="text" class="form-control pt-2 form-bar" id="phone" name="phone" required>
+    </div>
+    
+    <div class="pt-4">
+      <h2>Contribuições / Apoios</h2>
+    </div>
+
+    <div class="pt-4">
+      <div><label>7. Financeira</label></div>
+      <div class="form-check form-check-inline pt-2">
+        <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Semanal">
+        <label class="form-check-label" for="costs">Semanal</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Mensal">
+        <label class="form-check-label" for="costs">Mensal</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input rdo-style" type="radio" name="costs" id="costs" value="Anual">
+        <label class="form-check-label" for="costs">Anual</label>
       </div>
     </div>
+
+    <div class="pt-4">
+      <label for="value_amount" class="form-label">8. Valor</label>
+      <input type="number" class="form-control pt-2 form-bar" id="value_amount" name="value_amount" required>
+    </div>
+
+    <div class="pt-4">
+      <div><label>9. Investimento</label></div>
+      <div class="form-check form-check-inline pt-2">
+        <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Passeios">
+        <label class="form-check-label" for="hobby">Passeios</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Fins de semana">
+        <label class="form-check-label" for="hobby">Fins de semana</label>
+      </div>
+      <div class="form-check form-check-inline pt-2">
+        <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Divulgacao do animal">
+        <label class="form-check-label" for="hobby">Divulgação do animal</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Vacinacao">
+        <label class="form-check-label" for="hobby">Vacinação</label>
+      </div>
+      <div class="form-check form-check-inline pt-2">
+        <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Tratamentos">
+        <label class="form-check-label" for="hobby">Tratamentos</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input rdo-style" type="radio" name="hobby" id="hobby" value="Tosquia">
+        <label class="form-check-label" for="hobby">Tosquia</label>
+      </div>
+    </div>
+    
+    <div class="pt-4">
+      <p>Para efetuar o pagamento pode fazer depósito, transferência bancária ou pagamento por MBWAY:<hr>
+          IBAN: PT50XXXXXXXXXXXXX<hr>
+          MBWAY: 91xxxxxxx </p>
+    </div>
+
+    <div class="form-check pt-4">
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+      <label class="form-check-label" for="defaultCheck1">
+        Autorizo a utilização dos dados inseridos, em conformidade com a Política de Privacidade
+      </label>
+    </div>
+        
+    <div class="text-center pt-4">
+      <button type="submit" class="btn card-button">Enviar</button>
+    </div>
   </div>
-</div>
+</form>
+
 
 <style>
   .form-bar{
