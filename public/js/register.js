@@ -33,8 +33,8 @@ function register() {
     .then((res) => {
       if (res.status === 200) {
 
-        $('#registryModal').modal('hide');
-        $('#modal-thankModal').modal('show');
+        $('#registryModal').modal().hide();
+        $('#modal-thankModal').modal().show();
 
       } else {
         console.error("Error on register new user", res.statusText)
