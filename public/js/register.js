@@ -1,3 +1,4 @@
+
 function register() {
   const name = document.querySelector("#name").value
   const email = document.querySelector("#userEmail").value
@@ -31,9 +32,10 @@ function register() {
   })
     .then((res) => {
       if (res.status === 200) {
-        // put here code to show modal success and hidden register modal
-        // id - registryModal
-        // id - modal-thankModal
+
+        $('#registryModal').modal('hide');
+        $('#modal-thankModal').modal('show');
+
       } else {
         console.error("Error on register new user", res.statusText)
         return res
