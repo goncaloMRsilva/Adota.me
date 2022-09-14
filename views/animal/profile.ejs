@@ -1,7 +1,7 @@
 <% animals_data.forEach(function(animal_id){ %>
     <div class="row"> 
         <div class="col-sm-6"> 
-            <div class="card rounded-5" style="width: auto;">
+            <div class="card rounded-5 left-card" style="width: auto;">
                 <img src="<%= animal_id.photo %> " class="card-img-top p-3" alt="logoDog">
                 <div class="card-body">
                     <div class="card-title fs-4">
@@ -81,5 +81,10 @@
 
     .font-p{
         color: #adada8;
+    }
+
+    .left-card{
+        min-width: 100%;
+        min-height: 100%;
     }
 </style>

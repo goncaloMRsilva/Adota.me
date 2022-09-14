@@ -1,4 +1,4 @@
-<div class="modal" id="registryModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+<div class="modal fade" id="registryModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
   aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -9,7 +9,7 @@
           <p class="font-p">Criar uma conta</p>
         </div>
 
-        <form class="pt-3">
+        <form class="pt-3" name="contact-form">
           <div>
             <input type="text" class="form-control rounded-5 rdo-style" id="name" name="name" placeholder="Nome"
               required>
@@ -42,11 +42,11 @@
 
           <div class="text-center mt-4">
             <p class="font-p m-0">ou</p>
-            <a data-bs-toggle="modal" data-bs-target="#loginModal" class="no-underline">Iniciar sessão</a>
+            <a data-bs-toggle="modal" data-bs-target="#loginModal" class="no-underline cursor-style">Iniciar sessão</a>
           </div>
 
           <div class="d-flex justify-content-center mt-4">
-            <button type="button" onclick="register()" class="btn card-button">Criar</button>
+            <button type="button" value="submit" id="btnsubmit" onclick="register();" class="btn card-button">Criar</button>
           </div>
         </form>
       </div>
@@ -54,7 +54,19 @@
   </div>
 </div>
 
+<!-- <script>
+  function submitForm(){
+    var frm = document.getElementsByName('contact-form')[0];
+    frm.submit();
+    frm.reset();
+  }
+</script> -->
+
 <style>
+  .cursor-style{
+		cursor: pointer;
+	}
+
   .card-button {
     width: 7rem;
     height: 2rem;
