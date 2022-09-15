@@ -20,39 +20,40 @@ router.post("/", function (req, res, next) {
   var frontPassword1 = req.body.password1
   var frontPhone = req.body.phone
 
+  console.log("start verification");
   if (frontEmail !== frontEmail1) {
     res.status(400).json({ message: "E-mail don`t match" })
   } else if (frontPassword !== frontPassword1) {
     res.status(400).json({ message: "Password don`t match" })
-  }
+  }else{
+    const saltRounds = 10
+    bcrypt.hash(frontPassword, saltRounds, function (err, hash) {
+      if (err) {
+        res.status(500).json({ message: "failed encrypt pass" })
+      } else {
+        db.tx(async (t) => {
+          var user = await t.one(
+            `insert into adotame.user(id_user, name, email, phone) values($1, $2, $3, $4) returning id_user`,
+            [crypto.randomUUID(), frontName, frontEmail, frontPhone]
+          )
 
-  const saltRounds = 10
-  bcrypt.hash(frontPassword, saltRounds, function (err, hash) {
-    if (err) {
-      res.status(500).json({ message: "failed encrypt pass" })
-    } else {
-      db.tx(async (t) => {
-        var user = await t.one(
-          `insert into adotame.user(id_user, name, email, phone) values($1, $2, $3, $4) returning id_user`,
-          [crypto.randomUUID(), frontName, frontEmail, frontPhone]
-        )
-
-        await t.none(
-          `insert into adotame.login(id_login, username, password, id_user) values($1, $2, $3, $4)`,
-          [crypto.randomUUID(), frontEmail, hash, user.id_user]
-        )
-      })
-        .then(() => {
-          res.status(200).json({ message: `Welcome ${frontName}!` })
+          await t.none(
+            `insert into adotame.login(id_login, username, password, id_user) values($1, $2, $3, $4)`,
+            [crypto.randomUUID(), frontEmail, hash, user.id_user]
+          )
         })
-        .catch((error) => {
-          console.log("ERROR:", error)
-          res.status(500).json({
-            message: "failed encrypt pass",
+          .then(() => {
+            res.status(200).end();
           })
-        })
-    }
-  })
+          .catch((error) => {
+            console.log("ERROR:", error)
+            res.status(500).json({
+              message: "failed encrypt pass",
+            })
+          })
+      }
+    })
+  }
 })
 
 module.exports = router

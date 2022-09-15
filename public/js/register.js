@@ -1,19 +1,18 @@
-
 function register() {
-  const name = document.querySelector("#name").value
-  const email = document.querySelector("#userEmail").value
-  const email1 = document.querySelector("#userEmailConfirm").value
-  const password = document.querySelector("#userPassword").value
-  const password1 = document.querySelector("#userPasswordConfirm").value
-  const phone = document.querySelector("#phone").value
+  const name = $("#name").val();
+  const email = $("#userEmail").val();
+  const email1 = $("#userEmailConfirm").val();
+  const password = $("#userPassword").val();
+  const password1 = $("#userPasswordConfirm").val();
+  const phone = $("#phone").val();
 
   function serialize(formData) {
-    let requestArray = []
+    let requestArray = [];
     Object.keys(formData).forEach(function (key) {
-      requestArray.push(key + "=" + formData[key])
-    })
-    if (requestArray.length > 0) return requestArray.join("&")
-    else return false
+      requestArray.push(key + "=" + formData[key]);
+    });
+    if (requestArray.length > 0) return requestArray.join("&");
+    else return false;
   }
 
   fetch("/registry", {
@@ -29,17 +28,20 @@ function register() {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
+  }).then(res => {
+    return res.json();
   })
     .then((res) => {
-      if (res.status === 200) {
-        $('#registryModal').modal('hide');
-        $('#modal-thankModal').modal('show');
+      if (!res.message) {
+        $("#registryModal").modal("hide");
+        $("#modal-thankModal").modal("show");
       } else {
-        console.error("Error on register new user", res.statusText)
-        return res
+        $("#error").text(res.message).show();
       }
     })
-    .catch((err) => {
-      console.error("Error on register new user", err)
-    })
+    .catch((res, err) => {
+      console.log(res);
+      console.error("Error on register new user", err);
+      $("#error").text(res.message).show();
+    });
 }
