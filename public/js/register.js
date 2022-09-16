@@ -32,6 +32,7 @@ function register() {
     return res.json();
   })
     .then((res) => {
+      debugger;
       if (!res.message) {
         $("#registryModal").modal("hide");
         $("#modal-thankModal").modal("show");
@@ -40,7 +41,6 @@ function register() {
       }
     })
     .catch((res, err) => {
-      console.log(res);
       console.error("Error on register new user", err);
       $("#error").text(res.message).show();
     });
