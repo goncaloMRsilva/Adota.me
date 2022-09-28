@@ -70,8 +70,8 @@ router.post("/patronize-form", function(req, res, next) {
   if (get_birth_date.toLocaleString("en-ZA", {year: 'numeric', month: 'numeric', day: 'numeric'}) > getSysDate.toLocaleString("en-ZA", {year: 'numeric', month: 'numeric', day: 'numeric'})){
     res.send("Data inválida!")
   }else{
-    db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby)
-            values($1, now(), 'Pendente', 'a3bf5656-3614-4176-a84a-233c2391cb04', '5995b6bf-3b93-4946-be1a-977e1864e0d5', $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+    db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
+            values($1, now(), 'Pendente', '54525f5b-39a1-4ba4-b647-2d7ab9f6395e', '6a27f1c5-0a7d-4885-bbe4-755fc2cccc26', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
             [
               crypto.randomUUID(),
               req.body.birth_date,
@@ -82,7 +82,8 @@ router.post("/patronize-form", function(req, res, next) {
               req.body.phone,
               req.body.financial_payment_method,
               req.body.value_amount,
-              req.body.hobby
+              req.body.hobby,
+              req.body.animal_ID
             ]
             ).then(rows => {
               console.log(rows);
