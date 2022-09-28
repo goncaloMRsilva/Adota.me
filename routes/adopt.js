@@ -18,7 +18,8 @@ router.post("/form", function (req, res, next) {
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
             why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
             pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances, id_animal)
-            VALUES($1, now(), 'Pendente', '54525f5b-39a1-4ba4-b647-2d7ab9f6395e', '1c0f5e67-fc48-4c6e-b7e5-5c2d345ac505', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)`,
+            VALUES($1, now(), 'Pendente', '54525f5b-39a1-4ba4-b647-2d7ab9f6395e', '1c0f5e67-fc48-4c6e-b7e5-5c2d345ac505', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
+            returning id_request`,
     [
       crypto.randomUUID(),
       req.body.married,
@@ -71,7 +72,8 @@ router.post("/patronize-form", function(req, res, next) {
     res.send("Data inválida!")
   }else{
     db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
-            values($1, now(), 'Pendente', '54525f5b-39a1-4ba4-b647-2d7ab9f6395e', '6a27f1c5-0a7d-4885-bbe4-755fc2cccc26', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+            values($1, now(), 'Pendente', '54525f5b-39a1-4ba4-b647-2d7ab9f6395e', '6a27f1c5-0a7d-4885-bbe4-755fc2cccc26', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            returning id_request`,
             [
               crypto.randomUUID(),
               req.body.birth_date,
@@ -87,6 +89,8 @@ router.post("/patronize-form", function(req, res, next) {
             ]
             ).then(rows => {
               console.log(rows);
+              // var request = rows.id_request;
+              // return request;
             }).catch(error => {
               console.log("ERROR:", error);
             });
