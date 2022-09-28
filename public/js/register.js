@@ -29,10 +29,9 @@ function register() {
       "Content-Type": "application/x-www-form-urlencoded",
     },
   }).then(res => {
-    return res.json();
+    res.json();
   })
-    .then((res) => {
-      debugger;
+    .then((res) => { 
       if (!res.message) {
         $("#registryModal").modal("hide");
         $("#modal-thankModal").modal("show");

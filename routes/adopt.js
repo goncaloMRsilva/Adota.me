@@ -12,6 +12,45 @@ router.get("/form/:id", function (req, res, next) {
   });
 });
 
+router.post("/form", function (req, res, next) {
+  db.one(
+    `insert into adotame.request(id_request, date_request, status, id_user, id_request_type, married, childs,
+            live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
+            why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
+            pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances, id_animal)
+            VALUES($1, now(), 'Pendente', '54525f5b-39a1-4ba4-b647-2d7ab9f6395e', '1c0f5e67-fc48-4c6e-b7e5-5c2d345ac505', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)`,
+    [
+      crypto.randomUUID(),
+      req.body.married,
+      req.body.childs,
+      req.body.live_with,
+      req.body.home_agreement,
+      req.body.allergies_in_relatives,
+      req.body.main_caregiver_name,
+      req.body.caregiver_long,
+      req.body.caregiver_illness_name,
+      req.body.why_adopt,
+      req.body.yard,
+      req.body.animal_sleep_place,
+      req.body.animal_loneless_daytime,
+      req.body.animal_alone_place,
+      req.body.playtime,
+      req.body.pet_before,
+      req.body.pet_nowdays,
+      req.body.animal_cares_expenses,
+      req.body.teach_plans,
+      req.body.moving_home_animal_effects,
+      req.body.give_up_circumstances,
+      req.body.animalID
+    ]
+  ).then((rows) => {
+    console.log(rows);
+  }).catch(error => {
+    console.log("ERROR:", error);
+  });
+  res.send('Pedido enviado');
+});
+
 router.get("/patronize-form/:id", function (req, res, next) {
   db.one(`select name, birth_date, photo from adotame.animal where id_animal = $1`, [
     req.params.id,
@@ -52,45 +91,6 @@ router.post("/patronize-form", function(req, res, next) {
             });
             res.send("Pedido enviado com sucesso!");
   }
-});
-
-
-router.post("/form", function (req, res, next) {
-  db.one(
-    `insert into adotame.request(id_request, date_request, status, id_user, id_request_type, married, childs,
-            live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
-            why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
-            pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances)
-            VALUES($1, now(), 'Pendente', 'a3bf5656-3614-4176-a84a-233c2391cb04', '1a87e1b7-2b89-4dc9-8185-5fd6490a0fac', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)`,
-    [
-      crypto.randomUUID(),
-      req.body.married,
-      req.body.childs,
-      req.body.live_with,
-      req.body.home_agreement,
-      req.body.allergies_in_relatives,
-      req.body.main_caregiver_name,
-      req.body.caregiver_long,
-      req.body.caregiver_illness_name,
-      req.body.why_adopt,
-      req.body.yard,
-      req.body.animal_sleep_place,
-      req.body.animal_loneless_daytime,
-      req.body.animal_alone_place,
-      req.body.playtime,
-      req.body.pet_before,
-      req.body.pet_nowdays,
-      req.body.animal_cares_expenses,
-      req.body.teach_plans,
-      req.body.moving_home_animal_effects,
-      req.body.give_up_circumstances
-    ]
-  ).then((rows) => {
-    console.log(rows);
-  }).catch(error => {
-    console.log("ERROR:", error);
-  });
-  res.send('Pedido enviado')
 });
 
 module.exports = router;
