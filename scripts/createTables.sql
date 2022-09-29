@@ -108,10 +108,10 @@ create table if not exists adotame.request(
     details varchar(5000) null,
     id_animal uuid null,
     report_animal_name varchar(500) null,
-    report_animal_photo varchar(500) null,
-    report_animal_size varchar(50) check(report_animal_size in('Muito pequeno', 'Pequeno', 'Medio', 'Grande', 'Muito grande')) null,
     report_animal_type varchar(100) check(report_animal_type in('Cao', 'Gato', 'Todos')) null,
+    report_animal_photo varchar(500) null,
     report_animal_gender varchar(100) check(report_animal_gender in('Macho', 'Femea')) null,
+    report_animal_size varchar(50) check(report_animal_size in('Muito pequeno', 'Pequeno', 'Medio', 'Grande', 'Muito grande')) null,
     report_animal_fur varchar(100) null,
     report_animal_breed varchar(100) null,
     report_animal_color varchar(250) null

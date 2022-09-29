@@ -24,6 +24,8 @@ router.post("/create", function (req, res, next) {
   } else if (get_birth_date.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'}) > getSysDate.toLocaleString("pt-PT", {year: 'numeric', month: 'numeric', day: 'numeric'})) {
     res.send("Data inserida não pode ser maior do que a data atual!");
   } else {
+  // if utilizador sharedFunction.createAnimal(req.body.name,etc)
+  // else faz o que esta abaixo
     db.one(
       `insert into adotame.animal(id_animal, name, type, photo, gender, birth_date, size, fur, breed, color, vaccines, portion, health, cares, place_belongs)
     values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) returning id_animal`,
