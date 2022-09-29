@@ -5,79 +5,79 @@
   </div>
 
   <div class="pt-4">
-    <form action="/animal/create" method="post" class="fs-5">
+    <form action="/missing/report" method="post" class="fs-5">
 
       <div class="pt-4">
-        <label for="name" class="form-label">1. Nome</label>
-        <input type="text" class="form-control pt-2 form-bar rdo-style" id="name" name="name" required>
+        <label for="report_animal_name" class="form-label">1. Nome</label>
+        <input type="text" class="form-control pt-2 form-bar rdo-style" id="report_animal_name" name="report_animal_name" required>
       </div>
 
       <div class="pt-4">
-        <label for="photo" class="form-label">2. Fotografia</label>
-        <input type="text" class="form-control form-bar rdo-style pt-2" id="photo" name="photo" placeholder="link" required>
+        <label for="report_animal_photo" class="form-label">2. Fotografia</label>
+        <input type="text" class="form-control form-bar rdo-style pt-2" id="report_animal_photo" name="report_animal_photo" placeholder="link" required>
       </div>
 
       <div class="pt-4">
         <div><label>3. Tamanho</label></div>
         <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Macho">
-          <label class="form-check-label" for="size">Muito pequeno</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_size" id="report_animal_size" value="Muito Pequeno">
+          <label class="form-check-label" for="report_animal_size">Muito pequeno</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
-          <label class="form-check-label" for="size">Pequeno</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_size" id="report_animal_size" value="Pequeno">
+          <label class="form-check-label" for="report_animal_size">Pequeno</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
-          <label class="form-check-label" for="size">Médio</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_size" id="report_animal_size" value="Medio">
+          <label class="form-check-label" for="report_animal_size">Médio</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
-          <label class="form-check-label" for="size">Grande</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_size" id="report_animal_size" value="Grande">
+          <label class="form-check-label" for="report_animal_size">Grande</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="size" id="size" value="Femea">
-          <label class="form-check-label" for="size">Muito grande</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_size" id="report_animal_size" value="Muito grande">
+          <label class="form-check-label" for="report_animal_size">Muito grande</label>
         </div>
       </div>
       
       <div class="pt-4">
         <div><label>4. Tipo</label></div>
         <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Cao">
-          <label class="form-check-label" for="type">Cão</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_type" id="report_animal_type" value="Cao">
+          <label class="form-check-label" for="report_animal_type">Cão</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Gato">
-          <label class="form-check-label" for="type">Gato</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_type" id="report_animal_type" value="Gato">
+          <label class="form-check-label" for="report_animal_type">Gato</label>
         </div>
       </div>
 
       <div class="pt-4">
         <div><label>5. Género</label></div>
         <div class="form-check form-check-inline pt-2">
-          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Macho">
-          <label class="form-check-label" for="type">Macho</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_gender" id="report_animal_gender" value="Macho">
+          <label class="form-check-label" for="report_animal_gender">Macho</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input rdo-style" type="radio" name="type" id="type" value="Femea">
-          <label class="form-check-label" for="type">Fêmea</label>
+          <input class="form-check-input rdo-style" type="radio" name="report_animal_gender" id="report_animal_gender" value="Femea">
+          <label class="form-check-label" for="report_animal_gender">Fêmea</label>
         </div>
       </div>
 
       <div class="pt-4">
-        <label for="breed" class="form-label">6. Raça</label>
-        <input type="text" class="form-control form-bar pt-2" id="breed" name="breed" required>
+        <label for="report_animal_breed" class="form-label">6. Raça</label>
+        <input type="text" class="form-control form-bar pt-2" id="report_animal_breed" name="report_animal_breed" required>
       </div>
 
       <div class="pt-4">
-        <label for="fur" class="form-label">7. Pelo</label>
-        <input type="text" class="form-control form-bar pt-2" id="fur" name="fur" required>
+        <label for="report_animal_fur" class="form-label">7. Pelo</label>
+        <input type="text" class="form-control form-bar pt-2" id="report_animal_fur" name="report_animal_fur" required>
       </div>
 
       <div class="pt-4">
-        <label for="color" class="form-label">8. Cor do animal</label>
-        <input type="text" class="form-control form-bar pt-2" id="color" name="color" required>
+        <label for="report_animal_color" class="form-label">8. Cor do animal</label>
+        <input type="text" class="form-control form-bar pt-2" id="report_animal_color" name="report_animal_color" required>
       </div>
 
       <div class="pt-4">

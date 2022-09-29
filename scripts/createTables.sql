@@ -1,5 +1,4 @@
 create schema if not exists adotame;
-create extension pgcrypto;
 
 create table if not exists adotame.user(
     id_user uuid primary key,
@@ -54,7 +53,8 @@ create table if not exists adotame.animal(
     vaccines varchar(500) null,
     portion varchar(300) null,
     health varchar(500) null,
-    cares varchar(1000) null
+    cares varchar(1000) null,
+    place_belongs varchar(500) null
 );
 
 create table if not exists adotame.catalog_animal(
@@ -64,7 +64,7 @@ create table if not exists adotame.catalog_animal(
 
 create table if not exists adotame.request_type(
     id_request_type uuid primary key,
-    name varchar(250) check(name in('Reportar desaparecido', 'Avistar desaparecido', 'Adicionar animal', 'Adotar', 'Apadrinhar'))
+    request_name varchar(250) check(request_name in('Reportar desaparecido', 'Avistar desaparecido', 'Adicionar animal', 'Adotar', 'Apadrinhar'))
 );
 
 create table if not exists adotame.request(
@@ -106,5 +106,13 @@ create table if not exists adotame.request(
     last_seen_place varchar(2000) null,
     seen_place varchar(5000) null,
     details varchar(5000) null,
-    id_animal uuid null
+    id_animal uuid null,
+    report_animal_name varchar(500) null,
+    report_animal_photo varchar(500) null,
+    report_animal_size varchar(50) check(report_animal_size in('Muito pequeno', 'Pequeno', 'Medio', 'Grande', 'Muito grande')) null,
+    report_animal_type varchar(100) check(report_animal_type in('Cao', 'Gato', 'Todos')) null,
+    report_animal_gender varchar(100) check(report_animal_gender in('Macho', 'Femea')) null,
+    report_animal_fur varchar(100) null,
+    report_animal_breed varchar(100) null,
+    report_animal_color varchar(250) null
 );

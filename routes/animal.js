@@ -25,8 +25,8 @@ router.post("/create", function (req, res, next) {
     res.send("Data inserida não pode ser maior do que a data atual!");
   } else {
     db.one(
-      `insert into adotame.animal(id_animal, name, type, photo, gender, birth_date, size, fur, breed, color, vaccines, portion, health, cares)
-    values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)`,
+      `insert into adotame.animal(id_animal, name, type, photo, gender, birth_date, size, fur, breed, color, vaccines, portion, health, cares, place_belongs)
+    values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) returning id_animal`,
       [
         crypto.randomUUID(),
         req.body.name,
@@ -42,6 +42,7 @@ router.post("/create", function (req, res, next) {
         req.body.portion,
         req.body.health,
         req.body.cares,
+        req.body.place_belongs
       ]
     )
       .then((rows) => {
