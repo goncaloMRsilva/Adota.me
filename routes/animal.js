@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const db = require("../database");
 const crypto = require("crypto");
+const { userInfo } = require("os");
 
 router.get("/", function (req, res, next) {
   db.any(`select * from adotame.animal`).then((rows) => {
@@ -48,12 +49,12 @@ router.post("/create", function (req, res, next) {
       ]
     )
       .then((rows) => {
+        res.send("Pedido enviado com sucesso");
         console.log(rows);
       })
       .catch((error) => {
         console.log("ERROR:", error);
       });
-    res.send("Pedido enviado com sucesso");
   }
 });
 

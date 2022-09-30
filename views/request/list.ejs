@@ -11,12 +11,14 @@
                 </div>
                 <div class="d-flex justify-content-evenly flex-wrap">
                     <div>
-                        <img src="<%= request.photo %> " class="card-img-left p-2" alt="logoDog">
+                        <img src="<%= request.photo %> " class="card-img-left p-2 w-100 h-auto" alt="logoDog">
                     </div>
                     <div class="d-flex flex-column align-items-start justify-content-center gap-4">
                         <% if(request.request_name === 'Reportar desaparecido' || request.request_name === 'Adicionar animal'){ %> 
-                        <a href="/missing/report/<%= request.id_request %> " class="anchor-att">Formulário</a> <% }else{ %> 
+                        <a href="/missing/report/<%= request.id_request %> " class="anchor-att">Formulário</a>
+                         <% }else{ %> 
                         <a href="/animal/profile/<%= request.id_animal%> " class="anchor-att">Detalhes do animal</a>
+                        <a href="/missing/report/<%= request.id_request %> " class="anchor-att">Formulário</a>
                         <% } %> 
                     </div>
                 </div>
@@ -27,28 +29,6 @@
             </div>
         </div>
     <% }) %>
-
-    <!-- <div class="col">
-        <div class="card p-4 pb-0 rounded-5 border-att" style="width: auto;">
-            <div class="text-attributes">
-                <h4>Adoção</h4>
-            </div>
-            <div class="d-flex justify-content-evenly flex-wrap">
-                <div>
-                    <img src="/images/logo/dog.svg" class="card-img-left p-2" alt="logoDog">
-                </div>
-                <div class="d-flex flex-column align-items-start justify-content-center gap-4">
-                    <a href="" class="anchor-att">Formulário</a>
-                    <a href="" class="anchor-att">Detalhes do animal</a>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center w-100 h-70px gap-4">
-                <a data-bs-toggle="modal" data-bs-target="#decisionModal" ><img src="/images/icons/close.svg" class="h-50px"  alt="iconClose"></a>
-                <a data-bs-toggle="modal" data-bs-target="#decisionModal" ><img src="/images/icons/accept.svg" class="h-50px" alt="iconAccept"></a>
-            </div>
-        </div>
-    </div> -->
-
 </div>
 
 <style>

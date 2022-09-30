@@ -18,7 +18,7 @@ router.post("/form", function (req, res, next) {
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
             why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
             pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances, id_animal)
-            VALUES($1, now(), 'Pendente', 'fc8df893-ac5a-491f-bd56-97c080ed31c7', 'b7e54ffd-8337-4782-a171-87cbeea5c66a', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
+            VALUES($1, now(), 'Pendente', 'cb3d1fb7-e106-4359-baae-d4edaf577e9a', '4132534c-f0a0-4fbc-a6e3-893e3ced286a', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
             returning id_request`,
     [
       crypto.randomUUID(),
@@ -45,11 +45,11 @@ router.post("/form", function (req, res, next) {
       req.body.animalID
     ]
   ).then((rows) => {
+    res.send('Pedido enviado');
     console.log(rows);
   }).catch(error => {
     console.log("ERROR:", error);
-  });
-  res.send('Pedido enviado');
+  });  
 });
 
 router.get("/patronize-form/:id", function (req, res, next) {
@@ -72,7 +72,7 @@ router.post("/patronize-form", function(req, res, next) {
     res.send("Data inválida!")
   }else{
     db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
-            values($1, now(), 'Pendente', 'fc8df893-ac5a-491f-bd56-97c080ed31c7', '237a2fbb-2a36-4203-9c7a-41edf267e5ea', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            values($1, now(), 'Pendente', 'cb3d1fb7-e106-4359-baae-d4edaf577e9a', '75e281ce-27b1-4627-8d20-7f90f84a7ffa', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
             returning id_request`,
             [
               crypto.randomUUID(),
@@ -88,13 +88,13 @@ router.post("/patronize-form", function(req, res, next) {
               req.body.animal_ID
             ]
             ).then(rows => {
+              res.send("Pedido enviado com sucesso!");
               console.log(rows);
               // var request = rows.id_request;
               // return request;
             }).catch(error => {
               console.log("ERROR:", error);
             });
-            res.send("Pedido enviado com sucesso!");
   }
 });
 
