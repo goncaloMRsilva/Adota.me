@@ -54,7 +54,6 @@ router.get("/seen", function (req, res, next) {
 
 router.get("/data/:id", function (req, res, next) {
   var id_adopt = req.params.id;
-  console.log('ID_ADOPT', id_adopt);
   db.one(`select r.id_request, r.date_request, r.id_user, r.married, r.childs, r.live_with, r.home_agreement,
           r.allergies_in_relatives, r.main_caregiver_name, r.caregiver_long, r.caregiver_illness_name,
           r.why_adopt, yard, r.animal_sleep_place, r.animal_loneless_daytime, r.animal_alone_place,
@@ -67,7 +66,7 @@ router.get("/data/:id", function (req, res, next) {
           )
           .then(rows => {
             console.log(rows);
-            res.render("adopt/list", {title: 'Formulário preenchido', paragraph: "berbevz", id_adopt: req.params.id, adopts: rows});
+            res.render("adopt/list", {title: 'Formulário preenchido', paragraph: "", id_adopt: req.params.id, adopts: rows});
           })
           .catch(error => {
             res.status(500).end();
