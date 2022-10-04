@@ -90,9 +90,8 @@ router.post("/patronize-form", function(req, res, next) {
             ).then(rows => {
               res.send("Pedido enviado com sucesso!");
               console.log(rows);
-              // var request = rows.id_request;
-              // return request;
             }).catch(error => {
+              res.status(500).end();
               console.log("ERROR:", error);
             });
   }

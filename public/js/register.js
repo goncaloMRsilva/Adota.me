@@ -29,7 +29,7 @@ function register() {
       "Content-Type": "application/x-www-form-urlencoded",
     },
   }).then(res => {
-    res.json();
+    return res.json();
   })
     .then((res) => { 
       if (!res.message) {
@@ -43,4 +43,9 @@ function register() {
       console.error("Error on register new user", err);
       $("#error").text(res.message).show();
     });
+}
+
+function showLogin(){
+  $("#modal-thankModal").modal("hide");
+  $("#loginModal").modal("show");
 }

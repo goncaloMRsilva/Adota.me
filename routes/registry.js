@@ -30,6 +30,7 @@ router.post("/", function (req, res, next) {
     bcrypt.hash(frontPassword, saltRounds, function (err, hash) {
       if (err) {
         res.status(500).json({ message: "failed encrypt pass" })
+        console.log(err);
       } else {
         db.tx(async (t) => {
           var user = await t.one(
@@ -43,12 +44,12 @@ router.post("/", function (req, res, next) {
           )
         })
           .then(() => {
-            res.status(200).end();
+            res.status(200).json({message: ''});
           })
           .catch((error) => {
             console.log("ERROR:", error)
             res.status(500).json({
-              message: "failed encrypt pass",
+              message: "failed when save user",
             })
           })
       }
