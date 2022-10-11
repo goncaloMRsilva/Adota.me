@@ -2,7 +2,7 @@ const { request } = require("express");
 var express = require("express");
 const db = require("../database");
 var router = express.Router();
-const shareFunction = require('./shareFunctions');
+const shareFunction = require("./shareFunctions");
 
 router.get("/", function (req, res, next) {
   res.render("request/index", {
@@ -16,8 +16,8 @@ router.get("/create", function (req, res, next) {
 });
 
 router.post("post", function (req, res) {
-  shareFunction.createAnimal(req.body.request_name, etc); 
-})
+  shareFunction.createAnimal(req.body.request_name, etc);
+});
 
 router.get("/list", function (req, res, next) {
   var status = req.query.status || "Pendente";
@@ -28,7 +28,7 @@ router.get("/list", function (req, res, next) {
      left join adotame.animal a 
      on r.id_animal = a.id_animal
      where r.status = $1`,
-     [status]
+    [status]
   )
     .then((rows) => {
       console.log(rows);
@@ -49,6 +49,23 @@ router.get("/list", function (req, res, next) {
         message: "Not possible render this page",
       });
     });
+});
+
+router.get("/reprove/:id", function (req, res) {
+  var id_req = req.params.id;
+  db.one(
+    `UPDATE adotame.request
+     SET status = 'Reprovado'
+     where id_request = $1`,
+    [id_req]
+  ).then((rows) => {
+    console.log(rows);
+    res.render("request/list")
+    .catch((err) => {
+      console.log(err);
+      res.status(500).end();
+    });
+  });
 });
 
 module.exports = router;

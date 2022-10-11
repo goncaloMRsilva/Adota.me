@@ -22,9 +22,10 @@
                         <% } %> 
                     </div>
                 </div>
+                <input name="requestID" value="<%= request.id_request%>" hidden>
                 <div class="d-flex justify-content-center align-items-center w-100 h-70px gap-4">
-                    <a data-bs-toggle="modal" data-bs-target="#decisionModal" ><img src="/images/icons/close.svg" class="h-50px"  alt="iconClose"></a>
-                    <a data-bs-toggle="modal" data-bs-target="#decisionModal" ><img src="/images/icons/accept.svg" class="h-50px" alt="iconAccept"></a>
+                    <a onclick="reproveRequest()"><img src="/images/icons/close.svg" class="h-50px" alt="iconClose"></a>
+                    <a onclick="acceptRequest()"><img src="/images/icons/accept.svg" class="h-50px" alt="iconAccept"></a>
                 </div>
             </div>
         </div>
