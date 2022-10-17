@@ -68,5 +68,22 @@ router.put("/reprove/:idRequest", function (req, res) {
     });
 });
 
+router.put("/accept/:idRequest", function (req, res) {
+  var id_req = req.params.idRequest;
+  db.one(
+    `UPDATE adotame.request
+     SET status = 'Aprovado'
+     where id_request = $1`,
+    [id_req]
+  ).then((rows) => {
+    console.log(rows);
+    res.render("request/list");
+  })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).end();
+    });
+});
+
 
 module.exports = router;

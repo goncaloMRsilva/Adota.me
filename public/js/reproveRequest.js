@@ -22,9 +22,6 @@ function reproveRequest(){
     .then(res => {
         return res.json();
     })
-    .then(res => {
-        res.send("Pedido consolidado!");
-    })
     .catch(err => {
         console.log(err);
     })
