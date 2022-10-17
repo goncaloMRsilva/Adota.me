@@ -1,5 +1,5 @@
-function reproveRequest(id){
-    const id = document.getElementByName("requestID");
+function reproveRequest(){
+    const idRequest = $("#requestID").val();
 
     function serialize(formData) {
         let requestArray = [];
@@ -8,19 +8,22 @@ function reproveRequest(id){
         });
         if (requestArray.length > 0) return requestArray.join("&");
         else return false;
-      }
+    }
 
-    fetch(`request/reprove/${id}`,{
+    fetch(`/request/reprove/${idRequest}`, {
         body: serialize({
-            id
+            idRequest
         }),
-        method: "POST",
+        method: "PUT",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
         }
     })
     .then(res => {
         return res.json();
+    })
+    .then(res => {
+        res.send("Pedido consolidado!");
     })
     .catch(err => {
         console.log(err);

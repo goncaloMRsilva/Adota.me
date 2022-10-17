@@ -1,5 +1,5 @@
 const db = require("../database");
-const crypto = require("crypto");
+const { v4: uuidv4} = require("uuid");
 const { response } = require("express");
 
 module.exports = {
@@ -26,10 +26,10 @@ module.exports = {
             report_animal_birth_date, report_animal_size, report_animal_fur, report_animal_breed,
             report_animal_color, report_animal_vaccines, report_animal_portion, report_animal_health,
             report_animal_cares, report_animal_location)
-            VALUES($1, now(), 'Pendente', 'cb3d1fb7-e106-4359-baae-d4edaf577e9a',
-            '727d3ddf-4ec2-4df4-93e8-5457aeb270d1', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) returning id_request`,
+            VALUES($1, now(), 'Pendente', '188b1825-a609-4ebf-ac5f-be848f80bae7',
+            '5d387a92-1940-4cb6-bab8-d34ea89ec423', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) returning id_request`,
         [
-          crypto.randomUUID(),
+          uuidv4(),
           name,
           type,
           photo,

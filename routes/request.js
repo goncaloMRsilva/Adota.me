@@ -51,8 +51,8 @@ router.get("/list", function (req, res, next) {
     });
 });
 
-router.get("/reprove/:id", function (req, res) {
-  var id_req = req.params.id;
+router.put("/reprove/:idRequest", function (req, res) {
+  var id_req = req.params.idRequest;
   db.one(
     `UPDATE adotame.request
      SET status = 'Reprovado'
@@ -60,12 +60,13 @@ router.get("/reprove/:id", function (req, res) {
     [id_req]
   ).then((rows) => {
     console.log(rows);
-    res.render("request/list")
+    res.render("request/list");
+  })
     .catch((err) => {
       console.log(err);
       res.status(500).end();
     });
-  });
 });
+
 
 module.exports = router;

@@ -3,7 +3,7 @@
 </div>
 
 <div class="pt-5 row justify-content-center gap-2">
-    <% requests.forEach(function(request){ %> 
+    <% requests.forEach(function(request){ %>
         <div class="col">
             <div class="card p-4 pb-0 rounded-5 border-att" style="width: auto;">
                 <div class="text-attributes">
@@ -14,23 +14,25 @@
                         <img src="<%= request.photo %> " class="card-img-left p-2 w-100 h-auto" alt="logoDog">
                     </div>
                     <div class="d-flex flex-column align-items-start justify-content-center gap-4">
-                        <% if(request.request_name === 'Reportar desaparecido' || request.request_name === 'Adicionar animal'){ %> 
+                        <% if(request.request_name === 'Reportar desaparecido' || request.request_name === 'Adicionar animal'){ %>
                             <a href="/missing/report/<%-request.id_request %> " class="anchor-att">Formulário</a>
-                         <% }else{ %> 
+                         <% }else{ %>
                             <a href="/animal/profile/<%= request.id_animal %> " class="anchor-att">Detalhes do animal</a>
                             <a href="/missing/data/<%-request.id_request_type %> " class="anchor-att">Formulário</a>
-                        <% } %> 
+                        <% } %>
                     </div>
                 </div>
-                <input name="requestID" value="<%= request.id_request%>" hidden>
+                <input name="requestID" id="requestID" value="<%= request.id_request%>" hidden>
                 <div class="d-flex justify-content-center align-items-center w-100 h-70px gap-4">
-                    <a onclick="reproveRequest()"><img src="/images/icons/close.svg" class="h-50px" alt="iconClose"></a>
-                    <a onclick="acceptRequest()"><img src="/images/icons/accept.svg" class="h-50px" alt="iconAccept"></a>
+                    <button type="button" onclick="reproveRequest()" class="btn-decoration"><img src="/images/icons/close.svg" class="h-50px" alt="iconClose"></button>
+                    <button type="button" onclick="acceptRequest()" class="btn-decoration"><img src="/images/icons/accept.svg" class="h-50px" alt="iconAccept"></button>
                 </div>
             </div>
         </div>
     <% }) %>
 </div>
+
+<script src="/js/request.js"></script>
 
 <style>
     .text-attributes{
@@ -53,6 +55,11 @@
 
     .h-50px{
         height: 50px;
+    }
+
+    .btn-decoration{
+        border: none;
+        background-color: white;
     }
 
 </style>

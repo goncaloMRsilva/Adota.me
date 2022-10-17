@@ -2,7 +2,7 @@ var express = require("express")
 const db = require("../database")
 var router = express.Router()
 const bcrypt = require("bcrypt")
-const crypto = require("crypto")
+const { v4: uuidv4} = require("uuid");
 
 router.get("/", function (req, res, next) {
   res.render("registry/index", {
@@ -35,12 +35,12 @@ router.post("/", function (req, res, next) {
         db.tx(async (t) => {
           var user = await t.one(
             `insert into adotame.user(id_user, name, email, phone) values($1, $2, $3, $4) returning id_user`,
-            [crypto.randomUUID(), frontName, frontEmail, frontPhone]
+            [uuidv4(), frontName, frontEmail, frontPhone]
           )
 
           await t.none(
             `insert into adotame.login(id_login, username, password, id_user) values($1, $2, $3, $4)`,
-            [crypto.randomUUID(), frontEmail, hash, user.id_user]
+            [uuidv4(), frontEmail, hash, user.id_user]
           )
         })
           .then(() => {

@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const db = require("../database");
-const crypto = require("crypto");
+const { v4: uuidv4} = require("uuid");
 const { func } = require("../database");
 
 router.get("/form/:id", function (req, res, next) {
@@ -18,10 +18,10 @@ router.post("/form", function (req, res, next) {
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
             why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
             pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances, id_animal)
-            VALUES($1, now(), 'Pendente', 'cb3d1fb7-e106-4359-baae-d4edaf577e9a', '4132534c-f0a0-4fbc-a6e3-893e3ced286a', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
+            VALUES($1, now(), 'Pendente', '188b1825-a609-4ebf-ac5f-be848f80bae7', '2dc60a87-63e1-42e3-b700-14784234faf1', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
             returning id_request`,
     [
-      crypto.randomUUID(),
+      uuidv4(),
       req.body.married,
       req.body.childs,
       req.body.live_with,
@@ -72,7 +72,7 @@ router.post("/patronize-form", function(req, res, next) {
     res.send("Data inválida!")
   }else{
     db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
-            values($1, now(), 'Pendente', 'cb3d1fb7-e106-4359-baae-d4edaf577e9a', '75e281ce-27b1-4627-8d20-7f90f84a7ffa', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            values($1, now(), 'Pendente', '188b1825-a609-4ebf-ac5f-be848f80bae7', 'cb30b43b-0f64-4413-a23e-1371c0fb7958', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
             returning id_request`,
             [
               crypto.randomUUID(),
