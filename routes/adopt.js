@@ -18,7 +18,7 @@ router.post("/form", function (req, res, next) {
             live_with, home_agreement, allergies_in_relatives, main_caregiver_name, caregiver_long, caregiver_illness_name,
             why_adopt, yard, animal_sleep_place, animal_loneless_daytime, animal_alone_place, playtime, pet_before,
             pet_nowdays, animal_cares_expenses, teach_plans, moving_home_animal_effects, give_up_circumstances, id_animal)
-            VALUES($1, now(), 'Pendente', '188b1825-a609-4ebf-ac5f-be848f80bae7', '2dc60a87-63e1-42e3-b700-14784234faf1', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
+            VALUES($1, now(), 'Pendente', '08ea5fbe-244b-4a8b-bab2-384e2d3c8069', '327bcd1d-5e81-4056-a955-7cd829b84ded', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
             returning id_request`,
     [
       uuidv4(),
@@ -72,7 +72,7 @@ router.post("/patronize-form", function(req, res, next) {
     res.send("Data inválida!")
   }else{
     db.one(`insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
-            values($1, now(), 'Pendente', '188b1825-a609-4ebf-ac5f-be848f80bae7', 'cb30b43b-0f64-4413-a23e-1371c0fb7958', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            values($1, now(), 'Pendente', '08ea5fbe-244b-4a8b-bab2-384e2d3c8069', '8d5e180a-9732-418d-8ea6-79ec5ad9a949', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
             returning id_request`,
             [
               crypto.randomUUID(),

@@ -67,20 +67,24 @@
     </div> -->
 
     <div class="line"></div>
-    <div class="d-flex justify-content-between align-items-center">
-        <div class="circle-width">
-            <a href=""><img src="/images/icons/bulletHole.svg" alt="iconBulletHole" class="h-30px"></a>
+    <% notifis.forEach(function(notifi){ %>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="circle-width">
+                <a href=""><img src="/images/icons/bulletHole.svg" alt="iconBulletHole" class="h-30px"></a>
+            </div>
+            <div class="pt-3 date-width">
+                <p>21/06/2022, 17:05</p>
+            </div>
+            <div class="pt-3 txt-width">
+                <% if(notifi.status === 'Aprovado'){ %>
+                    <p>Seu pedido foi aceite. <br> Parabéns!</p>
+                <% } %>
+            </div>
+            <div class="bin-width">
+                <a href=""><img src="/images/icons/recycleBin.svg" alt="iconRecycleBin" class="h-30px"></a>
+            </div>
         </div>
-        <div class="pt-3 date-width">
-            <p>21/06/2022, 17:05</p>
-        </div>
-        <div class="pt-3 txt-width">
-            <p>Proposta de apadrinhamento foi aceite. <br> Parabéns!</p>
-        </div>
-        <div class="bin-width">
-            <a href=""><img src="/images/icons/recycleBin.svg" alt="iconRecycleBin" class="h-30px"></a>
-        </div>
-    </div>
+    <% }) %>
 </div>
 
 <style>

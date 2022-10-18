@@ -122,3 +122,16 @@ create table if not exists adotame.request(
     report_animal_cares varchar(1000) null,
     report_animal_location varchar(500) null
 );
+
+create table if not exists adotame.animal_status(
+    id_animal_status uuid primary key,
+    status varchar(100) check(status in('Adotado', 'Apadrinhado')),
+    start_date date not null,
+    end_date date null,
+    id_request uuid references adotame.request (id_request)
+);
+
+create table if not exists adotame.animal_animal_status(
+    id_animal uuid references adotame.animal (id_animal),
+    id_animal_status uuid references adotame.animal_status (id_animal_status)
+);
