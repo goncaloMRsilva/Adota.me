@@ -42,7 +42,7 @@ create table if not exists adotame.catalog(
 create table if not exists adotame.animal(
     id_animal uuid primary key,
     name varchar(100) not null,
-    type varchar(100) check(type in('Cao', 'Gato', 'Todos')), 
+    type varchar(100) check(type in('Cao', 'Gato', 'Todos')),
     photo varchar(500) not null,
     gender varchar(100) check(gender in('Macho', 'Femea')),
     birth_date date not null,
@@ -125,13 +125,12 @@ create table if not exists adotame.request(
 
 create table if not exists adotame.animal_status(
     id_animal_status uuid primary key,
-    status varchar(100) check(status in('Adotado', 'Apadrinhado')),
-    start_date date not null,
-    end_date date null,
-    id_request uuid references adotame.request (id_request)
+    status varchar(100) check(status in('Adotar', 'Apadrinhar', 'Reportar desaparecido'))
 );
 
 create table if not exists adotame.animal_animal_status(
-    id_animal uuid references adotame.animal (id_animal),
-    id_animal_status uuid references adotame.animal_status (id_animal_status)
+    id_animal uuid not null references adotame.animal (id_animal),
+    id_animal_status uuid not null references adotame.animal_status (id_animal_status),
+    id_request uuid not null references adotame.request (id_request),
+    constraint pk_animal_status primary key (id_animal, id_animal_status, id_request)
 );

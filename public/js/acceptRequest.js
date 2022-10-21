@@ -1,5 +1,7 @@
 function acceptRequest(){
     const idRequest = $("#requestID").val();
+    const idRequestName = $("#requestName").val();
+    const idAnimal = $("#id_animal").val();
 
     function serialize(formData) {
         let requestArray = [];
@@ -12,7 +14,9 @@ function acceptRequest(){
 
     fetch(`/request/accept/${idRequest}`, {
         body: serialize({
-            idRequest
+            idRequest,
+            idRequestName,
+            idAnimal
         }),
         method: "PUT",
         headers: {

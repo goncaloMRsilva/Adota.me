@@ -23,6 +23,8 @@
                     </div>
                 </div>
                 <input name="requestID" id="requestID" value="<%= request.id_request%>" hidden>
+                <input name="requestName" id="requestName" value="<%= request.request_name%>" hidden>
+                <input name="id_animal" id="id_animal" value="<%= request.id_animal%>" hidden>
                 <div class="d-flex justify-content-center align-items-center w-100 h-70px gap-4">
                     <button type="button" onclick="reproveRequest()" class="btn-decoration"><img src="/images/icons/close.svg" class="h-50px" alt="iconClose"></button>
                     <button type="button" onclick="acceptRequest()" class="btn-decoration"><img src="/images/icons/accept.svg" class="h-50px" alt="iconAccept"></button>

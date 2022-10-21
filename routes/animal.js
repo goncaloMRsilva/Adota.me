@@ -30,7 +30,8 @@ router.post("/create", function (req, res, next) {
     shareFunctions.createAnimal(req.body.name, req.body.type, req.body.photo, req.body.gender,
       req.body.birth_date, req.body.size, req.body.fur, req.body.breed, req.body.color, req.body.vaccines,
       req.body.portion, req.body.health, req.body.cares, req.body.location)
-      .then(() => { 
+      .then((rows) => {
+        console.log(rows);
         res.send('Pedido enviado com sucesso');
       }).catch(error => {
         res.status(500).end();
