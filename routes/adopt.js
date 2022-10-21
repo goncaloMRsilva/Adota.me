@@ -53,35 +53,34 @@ router.post("/form", function (req, res, next) {
       ]
     );
 
-     await t.one(
-      `insert into adotame.animal_status(id_animal_status, status)
+    await t
+      .one(
+        `insert into adotame.animal_status(id_animal_status, status)
            values($1, 'Adotar')
            returning id_animal_status`,
-      [uuidv4()]
-    )
-      .then((rows) => {
-        console.log(rows);
-        t.none(
-          `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
-          values($1, $2, $3)`,
-          [req.body.animalID, rows.id_animal_status, adoptRequest.id_request]
-        )
-          .then(() => {
-            res.send("Pedido enviado");
-          })
-          .catch((err) => {
-            console.log(err);
-            res.status(500).json({
-              message: "failed to insert on table animal_animal_status",
-            });
-          });
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json({
-          message: "failed when save adopt request",
-        });
+        [uuidv4()]
+      )
+      // .then((rows) => {
+      //   console.log(rows);
+      //   t.none(
+      //     `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
+      //     values($1, $2, $3)`,
+      //     [req.body.animalID, rows.id_animal_status, adoptRequest.id_request]
+      //   )
+      .then(() => {
+        res.send("Pedido enviado");
       });
+    // .catch((err) => {
+    //   console.log(err);
+    //   res.status(500).json({
+    //     message: "failed to insert on table animal_animal_status",
+    //   });
+    // });
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json({
+      message: "failed when save adopt request",
+    });
   });
 });
 
@@ -137,36 +136,36 @@ router.post("/patronize-form", function (req, res, next) {
         ]
       );
 
-      await t.one(
-        `insert into adotame.animal_status(id_animal_status, status)
+      await t
+        .one(
+          `insert into adotame.animal_status(id_animal_status, status)
          values($1, 'Apadrinhar')
          returning id_animal_status`,
-         [uuidv4()]
-      )
-      .then((rows) => {
-        console.log(rows);
-        t.none(
-          `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
-          values($1, $2, $3)`,
-          [req.body.animal_ID, rows.id_animal_status, request.id_request]
+          [uuidv4()]
         )
-    })
-      .then(() => {
-        res.send("pedido enviado");
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json({
-          message: "failed to insert on table animal_animal_status",
+        //   .then((rows) => {
+        //     console.log(rows);
+        //     t.none(
+        //       `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
+        //       values($1, $2, $3)`,
+        //       [req.body.animal_ID, rows.id_animal_status, request.id_request]
+        //     )
+        // })
+        .then(() => {
+          res.send("pedido enviado");
         });
+      // .catch((err) => {
+      //   console.log(err);
+      //   res.status(500).json({
+      //     message: "failed to insert on table animal_animal_status",
+      //   });
+      // });
+    }).catch((error) => {
+      console.log(error);
+      res.status(500).json({
+        message: "failed when save patronize request",
       });
-    })
-      .catch((error) => {
-        console.log(error);
-        res.status(500).json({
-          message: "failed when save patronize request",
-        });
-      });
+    });
   }
 });
 

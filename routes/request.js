@@ -55,8 +55,8 @@ router.put("/reprove/:idRequest", function (req, res) {
   var id_req = req.params.idRequest;
   db.one(
     `UPDATE adotame.request
-     SET status = 'Reprovado'
-     where id_request = $1`,
+      SET status = 'Reprovado'
+      where id_request = $1`,
     [id_req]
   )
     .then((rows) => {
@@ -81,16 +81,18 @@ router.put("/accept/:idRequest", function (req, res) {
   )
     .then((rows) => {
       console.log(rows);
-      db.one(`select id_status from adotame.animal_status where name = $1`, [
-        request_name,
-      ]).then((rows1) => {
-        if (!rows1.id_status) {
+      db.one(
+        `select id_animal_status from adotame.animal_status where status = $1`,
+        [request_name]
+      ).then((rows1) => {
+        console.log(rows1);
+        if (!rows1.id_animal_status) {
           return res.render("request/list");
         }
         db.one(
           `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
            values($1, $2, $3)`,
-          [idAnimal, rows1.id_status, id_req]
+          [idAnimal, rows1.id_animal_status, id_req]
         ).then(() => {
           return res.render("request/list");
         });
