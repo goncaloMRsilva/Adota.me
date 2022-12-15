@@ -118,8 +118,10 @@ router.post("/patronize-form", function (req, res, next) {
   } else {
     db.tx(async (t) => {
       var request = await t.one(
-        `insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif, address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
-         values($1, now(), 'Pendente', '79734220-0e4c-4d00-ba84-d0c8c2f7f8d6', 'c1cdc8a4-5124-4398-9b96-1e5615a81de3', $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+        `insert into adotame.request(id_request, date_request, status, id_user, id_request_type, birth_date, nif,
+           address, postal_code, locality, phone, financial_payment_method, value_amount, hobby, id_animal)
+         values($1, now(), 'Pendente', '79734220-0e4c-4d00-ba84-d0c8c2f7f8d6', 'c1cdc8a4-5124-4398-9b96-1e5615a81de3',
+          $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
          returning id_request`,
         [
           uuidv4(),

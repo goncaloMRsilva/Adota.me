@@ -8,12 +8,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next){
-  db.one(`select password from adotame.login l where l.username = $1`, [req.body.email]).then(response => {
+  db.one(`select password, username from adotame.login l where l.username = $1`, [req.body.email]).then(response => {
         bcrypt.compare(req.body.password, response.password, function(err, result) {
           if (result) {
-            res.send("welcome");
+            res.send(`Bem-vindo ${response.username}`);
           }else{
-            res.send("invalid user");
+            res.send("Utilizador inválido!");
           }
       });
     });

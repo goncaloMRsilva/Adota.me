@@ -22,7 +22,8 @@ router.post("post", function (req, res) {
 router.get("/list", function (req, res, next) {
   var status = req.query.status || "Pendente";
   db.any(
-    `select rt.id_request_type, rt.request_name, r.report_animal_photo, a.photo, a.id_animal, r.id_request from adotame.request r
+    `select rt.id_request_type, rt.request_name, r.report_animal_photo, a.photo, a.id_animal, r.id_request
+     from adotame.request r
      inner join adotame.request_type rt
      on r.id_request_type = rt.id_request_type
      left join adotame.animal a
@@ -73,35 +74,51 @@ router.put("/accept/:idRequest", function (req, res) {
   var id_req = req.params.idRequest;
   var request_name = req.body.idRequestName;
   var idAnimal = req.body.idAnimal;
-  db.one(
-    `UPDATE adotame.request
-     SET status = 'Aprovado'
-     where id_request = $1`,
-    [id_req]
-  )
-    .then((rows) => {
-      console.log(rows);
-      db.one(
-        `select id_animal_status from adotame.animal_status where status = $1`,
-        [request_name]
-      ).then((rows1) => {
-        console.log(rows1);
-        if (!rows1.id_animal_status) {
-          return res.render("request/list");
-        }
-        db.one(
-          `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
-           values($1, $2, $3)`,
-          [idAnimal, rows1.id_animal_status, id_req]
-        ).then(() => {
-          return res.render("request/list");
-        });
+  console.log(request_name);
+  db.tx(async (t) => {
+    await t
+      .one(
+        `UPDATE adotame.request
+         SET status = 'Aprovado'
+         where id_request = $1`,
+        [id_req]
+      )
+      .then(() => {
+        t.one(
+          `select id_animal_status from adotame.animal_status where status = $1
+          returning id_animal_status`,
+          [request_name]
+        )
+          .then((rows) => {
+            console.log(rows.id_animal_status);
+            if (!rows.id_animal_status) {
+              return res.render("request/list");
+            }
+            t.one(
+              `insert into adotame.animal_animal_status(id_animal, id_animal_status, id_request)
+              values($1, $2, $3)`,
+              [idAnimal, rows.id_animal_status, id_req]
+            )
+              .then(() => {
+                return res.render("request/list");
+              })
+              .catch((err) => {
+                console.log(err);
+                res.status(500).json({
+                  message: "Error on insert into adotame.animal_animal_status",
+                });
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+            res.status(500).json({ message: "Error while available request" });
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).end();
       });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).end();
-    });
+  });
 });
 
 module.exports = router;
